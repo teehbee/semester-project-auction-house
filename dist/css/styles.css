@@ -12662,6 +12662,10 @@ html * {
   font-family: Inter;
 }
 
+.font-source-serif-4 {
+  font-family: "Source Serif 4";
+}
+
 .nav-links-ul {
   gap: 20px;
 }
@@ -12693,8 +12697,8 @@ html * {
   object-fit: cover;
 }
 
-.hero-banner-text h1, .hero-banner-text .h1 {
-  font-size: 1rem;
+.white-button {
+  border: 0.5 #3e3e3e solid;
 }
 
 .fs-1-125rem {
@@ -12729,6 +12733,15 @@ html * {
 @media (min-width: 992px) {
   .fs-1-5rem-lg-2-25rem {
     font-size: 2.25rem;
+  }
+}
+
+.fs-1-5rem-md-2-5rem {
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  .fs-1-5rem-md-2-5rem {
+    font-size: 2.5rem;
   }
 }
 
@@ -12776,11 +12789,15 @@ html * {
     height: 300px;
     max-width: 50%;
     margin-left: auto;
+    position: relative;
   }
   .hero-banner-text {
     position: absolute;
-    top: 20%;
-    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .hero-banner-text button {
+    width: 50%;
   }
 }
 @media screen and (min-width: 1200px) {
