@@ -15,15 +15,16 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script defer type="module" src="src/js/index.js"></script>
     <title>Get Rid of it - Frontpage</title>
   </head>
-  <body>
+  <body class="">
     <header class="main-color-light">
       <nav class="upper-nav py-3">
         <div class="container">
           <div class="row text-center">
             <div class="left-icon col-2 align d-flex align-items-center">
-              <a class="d-block d-lg-none" href="#"><img src="assets/logo/bars-dark.svg" /></a>
+              <a class="d-block d-lg-none" id="hamburger-icon" href="#"><img src="assets/logo/bars-dark.svg" /></a>
               <a class="nav-link d-none d-lg-block" href="#"><img src="assets/logo/search-32px-dark.svg" /></a>
             </div>
             <div class="col-8 logo-container">
@@ -41,19 +42,19 @@
           </div>
         </div>
         <div class="container-fluid p-0">
-          <div class="nav-links menu-change w-100 d-none d-lg-block">
-            <ul id="nav-icons" class="d-flex d-block d-lg-none list-style-off">
-              <li>
-                <a class="d-block d-lg-none" href=""><img src="assets/logo/bars-dark.svg" /></a>
+          <div class="nav-links menu-change w-100">
+            <ul ul id="nav-icons" class="d-flex d-block d-lg-none list-style-off light-icons ps-0 pb-3 border-bottom">
+              <li class="me-auto">
+                <a class="d-block d-lg-none pb-5" id="close-menu" href="#"><img src="assets/logo/logo-close-light.svg" /></a>
               </li>
-              <li>
-                <a class="d-block d-lg-none" href=""><img src="assets/logo/search-32px-dark.svg" /></a>
+              <li class="ms-auto ps-3">
+                <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-search-light.svg" /></a>
               </li>
-              <li>
-                <a class="d-block d-lg-none" href=""><img src="assets/logo/heart-32px-dark.svg" /></a>
+              <li class="ps-3">
+                <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-heart-light.svg" /></a>
               </li>
-              <li>
-                <a class="d-block d-lg-none" href=""><img src="assets/logo/user-32px-dark.svg" /></a>
+              <li class="ps-3">
+                <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-user-light.svg" /></a>
               </li>
             </ul>
             <ul class="d-flex justify-content-center flex-column flex-lg-row nav-links-ul list-unstyled pt-3">

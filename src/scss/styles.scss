@@ -99,16 +99,31 @@ $custom-fs-2-25: 2.25rem;
 // Media queries
 
 @media screen and (max-width: 991px) {
+  // Navigation
+
   .font-change-menu {
     font-family: "Source Serif 4";
   }
-  .menu-change {
+  .font-change-color {
+    color: #fff;
+  }
+
+  .nav-links {
     background: $main-color-dark;
     padding: 50px;
-    position: absolute;
+    position: fixed;
+    right: -125%;
     top: 0;
+    transition: right 0.5s ease-in;
   }
-  .font-change-color {
-    color: $main-color-light;
+
+  .with-menu .nav-links {
+    right: 0;
+    transition: right 0.3s ease-out;
+    z-index: 300;
   }
 }
+
+// body .with-menu {
+//   overflow: hidden;
+// }

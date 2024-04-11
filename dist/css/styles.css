@@ -12710,14 +12710,21 @@ html * {
   .font-change-menu {
     font-family: "Source Serif 4";
   }
-  .menu-change {
+  .font-change-color {
+    color: #fff;
+  }
+  .nav-links {
     background: #3e3e3e;
     padding: 50px;
-    position: absolute;
+    position: fixed;
+    right: -125%;
     top: 0;
+    transition: right 0.5s ease-in;
   }
-  .font-change-color {
-    color: #f4e9d9;
+  .with-menu .nav-links {
+    right: 0;
+    transition: right 0.3s ease-out;
+    z-index: 300;
   }
 }
 
