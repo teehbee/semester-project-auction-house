@@ -12645,6 +12645,14 @@ textarea.form-control-lg {
   background: #f4e9d9;
 }
 
+.light-font {
+  color: #fafafa;
+}
+
+.main-color-dark {
+  background: #3e3e3e;
+}
+
 html * {
   color: #3e3e3e;
   font-family: Inter;
@@ -12654,12 +12662,21 @@ html * {
   gap: 20px;
 }
 
-.nav-links-ul a {
+.nav-links-ul a,
+.footer-links a {
   text-decoration: none;
+}
+
+.nav-links-ul a:hover {
+  text-decoration: underline;
 }
 
 .list-style-off {
   list-style: none;
+}
+
+.active {
+  font-weight: 500;
 }
 
 .fs-1-125rem {
@@ -12676,6 +12693,15 @@ html * {
 @media (min-width: 992px) {
   .fs-0-875rem-lg-1-125rem {
     font-size: 1.125rem;
+  }
+}
+
+.fs-1rem-lg-1-25rem {
+  font-size: 1rem;
+}
+@media (min-width: 992px) {
+  .fs-1rem-lg-1-25rem {
+    font-size: 1.25rem;
   }
 }
 

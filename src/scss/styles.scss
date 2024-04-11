@@ -16,11 +16,20 @@
 
 $main-color-dark: #3e3e3e;
 $main-color-light: #f4e9d9;
+$main-color-white: #fafafa;
 
-// Color
+// Color utilities
 
 .main-color-light {
   background: $main-color-light;
+}
+
+.light-font {
+  color: $main-color-white;
+}
+
+.main-color-dark {
+  background: $main-color-dark;
 }
 
 // My custom styles
@@ -34,12 +43,21 @@ html * {
   gap: 20px;
 }
 
-.nav-links-ul a {
+.nav-links-ul a,
+.footer-links a {
   text-decoration: none;
+}
+
+.nav-links-ul a:hover {
+  text-decoration: underline;
 }
 
 .list-style-off {
   list-style: none;
+}
+
+.active {
+  font-weight: 500;
 }
 
 //Font variables
@@ -69,6 +87,14 @@ $custom-fs-2-25: 2.25rem;
 
   @include media-breakpoint-up("lg") {
     font-size: $custom-fs-1-125rem;
+  }
+}
+
+.fs-1rem-lg-1-25rem {
+  font-size: 1rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: $custom-fs-1-25rem;
   }
 }
 
