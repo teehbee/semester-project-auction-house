@@ -12697,6 +12697,27 @@ html * {
   object-fit: cover;
 }
 
+.padding-2-rem {
+  padding: 2rem;
+}
+
+#last-chance-frontpage {
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+}
+
+.border-none {
+  border: none;
+}
+
+.border-radius-none {
+  border-radius: 0;
+}
+
+.mw-261px {
+  max-width: 261px;
+}
+
 .white-button {
   border: 0.5 #3e3e3e solid;
 }
@@ -12777,6 +12798,7 @@ html * {
     right: -125%;
     top: 0;
     transition: right 0.5s ease-in;
+    z-index: 400;
   }
   .with-menu .nav-links {
     right: 0;

@@ -49,6 +49,8 @@ html * {
   font-family: "Source Serif 4";
 }
 
+// Utilities
+
 .nav-links-ul {
   gap: 20px;
 }
@@ -78,6 +80,27 @@ html * {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.padding-2-rem {
+  padding: 2rem;
+}
+
+#last-chance-frontpage {
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+}
+
+.border-none {
+  border: none;
+}
+
+.border-radius-none {
+  border-radius: 0;
+}
+
+.mw-261px {
+  max-width: 261px;
 }
 
 // Buttons
@@ -176,6 +199,7 @@ $custom-fs-2-5rem: 2.5rem;
     right: -125%;
     top: 0;
     transition: right 0.5s ease-in;
+    z-index: 400;
   }
 
   .with-menu .nav-links {
