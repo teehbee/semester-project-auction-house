@@ -95,12 +95,22 @@ html * {
   border: none;
 }
 
+.border-bottom-black {
+  border-bottom: 1px solid $main-color-dark;
+}
+
 .border-radius-none {
   border-radius: 0;
 }
 
 .mw-261px {
   max-width: 261px;
+}
+
+// Removes the styling of the dropdown icon on the header
+
+.dropdown-toggle::after {
+  display: none;
 }
 
 // Buttons

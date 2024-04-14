@@ -22,7 +22,7 @@
     <script defer type="module" src="src/js/index.js"></script>
     <title>Get Rid of it - Frontpage</title>
   </head>
-  <body class="main-color-light">
+  <body class="main-color-light logged-in">
     <header>
       <nav class="upper-nav py-3">
         <div class="container">
@@ -41,7 +41,12 @@
             </div>
             <div class="col-2 right-icons d-flex align-items-center justify-content-end">
               <a class="nav-link pe-3 d-none d-lg-block" href="#"><img src="assets/logo/heart-32px-dark.svg" /></a>
-              <a href="#"><img src="assets/logo/user-32px-dark.svg" /></a>
+              <a href="#" class="pe-3">
+                <img src="assets/logo/user-32px-dark.svg" />
+              </a>
+              <a id="profile-icon-header" href="#" class="d-none d-lg-block">
+                <img src="assets/logo/logo-logout-dark-32px.svg" />
+              </a>
             </div>
           </div>
         </div>
@@ -59,6 +64,9 @@
               </li>
               <li class="ps-3">
                 <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-user-light.svg" /></a>
+              </li>
+              <li class="ps-3">
+                <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-logout-light-28px.svg" /></a>
               </li>
             </ul>
             <ul class="d-flex justify-content-center flex-column flex-lg-row nav-links-ul list-unstyled pt-3">

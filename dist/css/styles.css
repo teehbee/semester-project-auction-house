@@ -12710,12 +12710,20 @@ html * {
   border: none;
 }
 
+.border-bottom-black {
+  border-bottom: 1px solid #3e3e3e;
+}
+
 .border-radius-none {
   border-radius: 0;
 }
 
 .mw-261px {
   max-width: 261px;
+}
+
+.dropdown-toggle::after {
+  display: none;
 }
 
 .white-button {
