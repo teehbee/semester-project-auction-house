@@ -12642,7 +12642,7 @@ textarea.form-control-lg {
   }
 }
 .main-color-light {
-  background: #f4e9d9;
+  background-color: #f4e9d9;
 }
 
 .light-font {
@@ -12728,12 +12728,13 @@ html * {
 
 dialog {
   z-index: 100;
-  width: 100%;
+  width: 100vw;
   height: 800px;
   position: absolute;
   top: 0;
   border: none;
   padding: 0;
+  margin: 0 auto;
 }
 
 .dialog-top-banner {
@@ -12759,6 +12760,10 @@ dialog form a {
 
 .bottom-dialog-banner {
   height: 50px;
+}
+
+#close-login-dialog {
+  cursor: pointer;
 }
 
 .white-button {

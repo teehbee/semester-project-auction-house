@@ -21,7 +21,7 @@ $main-color-white: #fafafa;
 // Color utilities
 
 .main-color-light {
-  background: $main-color-light;
+  background-color: $main-color-light;
 }
 
 .light-font {
@@ -115,12 +115,13 @@ html * {
 
 dialog {
   z-index: 100;
-  width: 100%;
+  width: 100vw;
   height: 800px;
   position: absolute;
   top: 0;
   border: none;
   padding: 0;
+  margin: 0 auto;
 }
 
 .dialog-top-banner {
@@ -146,6 +147,10 @@ dialog form a {
 
 .bottom-dialog-banner {
   height: 50px;
+}
+
+#close-login-dialog {
+  cursor: pointer;
 }
 
 // Buttons
