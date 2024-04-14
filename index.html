@@ -18,11 +18,11 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-
     <script defer type="module" src="src/js/index.js"></script>
+    <script defer type="module" src="src/js/modals/loginModal.js"></script>
     <title>Get Rid of it - Frontpage</title>
   </head>
-  <body class="main-color-light logged-in">
+  <body class="main-color-light logged-in backdrop">
     <header>
       <nav class="upper-nav py-3">
         <div class="container">
@@ -41,10 +41,10 @@
             </div>
             <div class="col-2 right-icons d-flex align-items-center justify-content-end">
               <a class="nav-link pe-3 d-none d-lg-block" href="#"><img src="assets/logo/heart-32px-dark.svg" /></a>
-              <a href="#" class="pe-3">
+              <a href="" class="pe-3 open-login-modal">
                 <img src="assets/logo/user-32px-dark.svg" />
               </a>
-              <a id="profile-icon-header" href="#" class="d-none d-lg-block">
+              <a id="profile-icon-header" href="" class="d-none d-lg-block">
                 <img src="assets/logo/logo-logout-dark-32px.svg" />
               </a>
             </div>
@@ -63,7 +63,7 @@
                 <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-heart-light.svg" /></a>
               </li>
               <li class="ps-3">
-                <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-user-light.svg" /></a>
+                <a class="d-block d-lg-none open-login-modal" href=""><img src="assets/logo/logo-user-light.svg" /></a>
               </li>
               <li class="ps-3">
                 <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-logout-light-28px.svg" /></a>
@@ -82,12 +82,47 @@
               <li>
                 <a class="fs-1-5rem-lg-1-25rem font-change-color" href="#">Register</a>
               </li>
-              <li>
-                <a class="fs-1-5rem-lg-1-25rem font-change-color" href="#">Log in</a>
+              <li class="open-login-modal">
+                <a class="fs-1-5rem-lg-1-25rem font-change-color" href="">Log in</a>
               </li>
             </ul>
           </div>
         </div>
+        <dialog id="login-dialog" class="main-color-dark">
+          <div class="dialog-top-banner d-block d-md-none"></div>
+          <div class="main-color-white w-100">
+            <div class="container text-center py-5 main-color-white">
+              <div id="close-login-dialog" class="position-absolute p-3">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" />
+                  <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close login form" />
+                </picture>
+              </div>
+              <h1 class="dialog-title fs-2-rem-md-2-5rem pb-3">Log in</h1>
+              <form class="form-width-dialog mx-auto" action="">
+                <div class="mb-3 mx-auto">
+                  <label for="login-email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="login-email" />
+                  <div class="form-error">* Please check if this field is filled out correctly</div>
+                </div>
+                <div class="mb-3 mx-auto">
+                  <label for="login-password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="login-password" />
+                  <div class="form-error">* Please check if this field is filled out correctly</div>
+                </div>
+                <a href="" class="btn btn-secondary mt-3">Submit</a>
+                <div class="pt-2">
+                  <a href="#">Forgot your password?</a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="bottom-dialog-banner mt-5 text-center">
+            <p id="open-register-modal" class="light-font font-source-serif-4 fs-1-25rem-md-1-5-rem">
+              New user? <a class="light-font font-source-serif-4 fs-1-25rem-md-1-5-rem" href="">Register a new user here</a>
+            </p>
+          </div>
+        </dialog>
       </nav>
     </header>
     <main>

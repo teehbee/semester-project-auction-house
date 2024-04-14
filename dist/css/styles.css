@@ -12722,8 +12722,43 @@ html * {
   max-width: 261px;
 }
 
-.dropdown-toggle::after {
-  display: none;
+.form-width-dialog {
+  max-width: 363px;
+}
+
+dialog {
+  z-index: 100;
+  width: 100%;
+  height: 800px;
+  position: absolute;
+  top: 0;
+  border: none;
+  padding: 0;
+}
+
+.dialog-top-banner {
+  height: 75px;
+  background: #3e3e3e;
+  padding: 0;
+  margin: 0;
+}
+
+.dialog-title {
+  font-family: "Source Serif 4";
+}
+
+#close-login-dialog {
+  top: 75px;
+  right: 0;
+}
+
+dialog form a {
+  width: 100%;
+  display: inline-block;
+}
+
+.bottom-dialog-banner {
+  height: 50px;
 }
 
 .white-button {
@@ -12753,6 +12788,15 @@ html * {
 @media (min-width: 992px) {
   .fs-1rem-lg-1-25rem {
     font-size: 1.25rem;
+  }
+}
+
+.fs-1-25rem-md-1-5-rem {
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  .fs-1-25rem-md-1-5-rem {
+    font-size: 1.5rem;
   }
 }
 
@@ -12792,6 +12836,15 @@ html * {
   }
 }
 
+.fs-2-rem-md-2-5rem {
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .fs-2-rem-md-2-5rem {
+    font-size: 2.5rem;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .font-change-menu {
     font-family: "Source Serif 4";
@@ -12828,6 +12881,15 @@ html * {
   }
   .hero-banner-text button {
     width: 50%;
+  }
+  dialog {
+    width: 75%;
+    max-width: 1000px;
+    top: 100px;
+  }
+  #close-login-dialog {
+    top: 0;
+    right: 0;
   }
 }
 @media screen and (min-width: 1200px) {
