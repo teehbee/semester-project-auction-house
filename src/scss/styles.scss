@@ -144,14 +144,15 @@ dialog {
 }
 
 #close-login-dialog,
-#close-registration-dialog {
+#close-registration-dialog,
+#close-listing-dialog {
   top: 75px;
   right: 0;
 }
 
-#return-from-register-dialog {
-  top: 75px;
-  left: 0;
+#close-search-dialog {
+  top: 0;
+  right: 0;
 }
 
 dialog form a {
@@ -164,7 +165,9 @@ dialog form a {
 }
 
 #close-login-dialog,
-#login-to-register-modal-switch {
+#login-to-register-modal-switch,
+#close-registration-dialog,
+#close-search-dialog {
   cursor: pointer;
 }
 
@@ -340,7 +343,8 @@ $custom-fs-2-5rem: 2.5rem;
   }
 
   #close-login-dialog,
-  #close-registration-dialog {
+  #close-registration-dialog,
+  #close-listing-dialog {
     top: 0;
     right: 0;
   }
