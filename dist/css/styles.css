@@ -12730,6 +12730,10 @@ html * {
   max-width: 363px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 dialog {
   z-index: 100;
   width: 100vw;
@@ -12784,6 +12788,10 @@ dialog::backdrop {
 .form-checkbox {
   height: 26px;
   width: 26px;
+}
+
+#login-to-register-modal-switch {
+  cursor: pointer;
 }
 
 .white-button {

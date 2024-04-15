@@ -115,6 +115,10 @@ html * {
   max-width: 363px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 // Dialog styling
 
 dialog {
@@ -171,6 +175,10 @@ dialog::backdrop {
 .form-checkbox {
   height: 26px;
   width: 26px;
+}
+
+#login-to-register-modal-switch {
+  cursor: pointer;
 }
 
 // Buttons
