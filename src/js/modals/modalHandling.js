@@ -8,6 +8,9 @@ import { openRegisterModal } from "./constants.js";
 import { openSearchModal } from "./constants.js";
 import { searchModal } from "./constants.js";
 import { closeSearch } from "./constants.js";
+// import { postListingModal } from "./constants.js";
+// import { closeListingModal } from "./constants.js";
+// import { openListingModal } from "./constants.js";
 
 // Open login modal
 
