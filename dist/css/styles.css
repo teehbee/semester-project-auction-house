@@ -12775,6 +12775,14 @@ dialog::backdrop {
   border: 0.5 #3e3e3e solid;
 }
 
+.fs-0-625rem {
+  font-size: 0.625rem;
+}
+
+.fs-0-75rem {
+  font-size: 0.75rem;
+}
+
 .fs-1-125rem {
   font-size: 1.125rem;
 }
@@ -12895,7 +12903,7 @@ dialog::backdrop {
   dialog {
     width: 75%;
     max-width: 1000px;
-    top: 100px;
+    top: 50px;
   }
   #close-login-dialog {
     top: 0;

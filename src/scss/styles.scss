@@ -166,6 +166,8 @@ dialog::backdrop {
 
 //Font variables
 
+$custom-fs-0-625rem: 0.625rem;
+$custom-fs-0-75rem: 0.75rem;
 $custom-fs-0-875rem: 0.875rem;
 $custom-fs-1-125rem: 1.125rem;
 $custom-fs-1-25rem: 1.25rem;
@@ -176,6 +178,14 @@ $custom-fs-2-25: 2.25rem;
 $custom-fs-2-5rem: 2.5rem;
 
 // Customs font sizes
+
+.fs-0-625rem {
+  font-size: $custom-fs-0-625rem;
+}
+
+.fs-0-75rem {
+  font-size: 0.75rem;
+}
 
 .fs-1-125rem {
   font-size: $custom-fs-1-125rem;
@@ -302,7 +312,7 @@ $custom-fs-2-5rem: 2.5rem;
   dialog {
     width: 75%;
     max-width: 1000px;
-    top: 100px;
+    top: 50px;
   }
 
   #close-login-dialog {
