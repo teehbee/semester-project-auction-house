@@ -94,8 +94,8 @@
                   <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close login form" />
                 </picture>
               </div>
-              <h1 class="dialog-title fs-2-rem-md-2-5rem pb-3">Log in</h1>
-              <form class="form-width-dialog mx-auto" action="">
+              <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">Log in</h2>
+              <form id="login-form" class="form-width-dialog mx-auto" action="">
                 <div class="mb-3 text-start">
                   <label for="login-email" class="form-label fs-0-75rem mb-2">Email address</label>
                   <input type="email" class="form-control" id="login-email" />
@@ -123,6 +123,60 @@
                 >Register a new user here</span
               >
             </p>
+          </div>
+        </dialog>
+        <dialog id="register-dialog" class="main-color-dark" open>
+          <div class="dialog-top-banner d-block d-md-none"></div>
+          <div class="main-color-white w-100">
+            <div class="container text-center py-5 main-color-white">
+              <div class="return-from-register-dialog position-absolute p-3">
+                <img src="/assets/logo/icon-back-dark-small.svg" aria-label="return from register form to login form" />
+              </div>
+              <div id="close-login-dialog" class="position-absolute p-3">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" />
+                  <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close login form" />
+                </picture>
+              </div>
+              <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">Register user</h2>
+              <form id="register.form" class="form-width-dialog mx-auto" action="">
+                <div class="mb-3 text-start">
+                  <label for="register-name" class="form-label fs-0-75rem mb-2">Name*</label>
+                  <input type="text" class="form-control" id="register-name" />
+                  <div class="form-error fs-0-625rem text-end text-danger">* Please check if this field is filled out correctly</div>
+                </div>
+                <div class="mb-3 text-start">
+                  <label for="register-email" class="form-label fs-0-75rem mb-2">Email address*</label>
+                  <input type="text" class="form-control" id="register-email" />
+                  <div class="form-error fs-0-625rem text-end text-danger">* Please check if this field is filled out correctly</div>
+                </div>
+                <div class="mb-3 mx-auto text-start">
+                  <label for="register-password" class="form-label fs-0-75rem mb-2">Password*</label>
+                  <input type="password" class="form-control" id="login-password" />
+                  <div class="form-error fs-0-625rem text-end text-danger">* Your password must be at least 8 letters</div>
+                </div>
+                <div class="mb-3 mx-auto text-start">
+                  <label for="register-password-confirm" class="form-label fs-0-75rem mb-2">Repeat Password*</label>
+                  <input type="password" class="form-control" id="login-password" />
+                  <div class="form-error fs-0-625rem text-end text-danger">* The passwords don't match</div>
+                </div>
+                <div class="">
+                  <div class="form-check d-flex">
+                    <input class="form-check-input form-checkbox me-3" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-0-625rem text-start" for="flexCheckDefault">
+                      By creating your user profile at Get rid of it, 
+you accept our Terms and Conditions.
+                    </label>
+                </div>
+                <a href="" class="btn btn-dark mt-3">Create profile</a>
+                <div class="pt-3 fs-0-625rem">
+                  <p>Already have a registered profile? <span class="return-from-register-dialog active-underlined">Log in</span></p>
+                </div>
+                <div class="spinner-border text-secondary mt-4" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </form>
+            </div>
           </div>
         </dialog>
       </nav>

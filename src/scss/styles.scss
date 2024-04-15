@@ -120,7 +120,7 @@ html * {
 dialog {
   z-index: 100;
   width: 100vw;
-  height: 800px;
+  min-height: 800px;
   position: absolute;
   top: 0;
   border: none;
@@ -144,6 +144,11 @@ dialog {
   right: 0;
 }
 
+#return-from-register-dialog {
+  top: 75px;
+  left: 0;
+}
+
 dialog form a {
   width: 100%;
   display: inline-block;
@@ -160,6 +165,11 @@ dialog form a {
 dialog::backdrop {
   background-color: $main-color-dark;
   opacity: 0.9;
+}
+
+.form-checkbox {
+  height: 26px;
+  width: 26px;
 }
 
 // Buttons
@@ -326,6 +336,10 @@ $custom-fs-2-5rem: 2.5rem;
   #close-login-dialog {
     top: 0;
     right: 0;
+  }
+
+  #return-from-register-dialog {
+    top: 0;
   }
 }
 
