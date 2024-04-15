@@ -6,6 +6,9 @@ import { closeLoginModal } from "./constants.js";
 
 const modalEventListeners = function (event) {
   event.preventDefault();
+  if (document.body.classList.contains("with-menu")) {
+    document.body.classList.remove("with-menu");
+  }
   loginModal.showModal();
 };
 
