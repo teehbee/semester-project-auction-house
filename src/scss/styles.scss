@@ -72,6 +72,10 @@ html * {
   font-weight: 500;
 }
 
+.active-underlined {
+  text-decoration: underline;
+}
+
 .hero-banner {
   height: 300px;
 }
@@ -189,6 +193,10 @@ $custom-fs-2-5rem: 2.5rem;
 
 .fs-1-125rem {
   font-size: $custom-fs-1-125rem;
+}
+
+.fs-1-25rem {
+  font-size: $custom-fs-1-25rem;
 }
 
 .fs-1-875rem {

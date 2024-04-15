@@ -19,7 +19,7 @@
       crossorigin="anonymous"
     ></script>
     <script defer type="module" src="src/js/index.js"></script>
-    <script defer type="module" src="src/js/modals/loginModal.js"></script>
+    <script defer type="module" src="src/js/modals/modalHandling.js"></script>
     <title>Get Rid of it - Frontpage</title>
   </head>
   <body class="main-color-light">
@@ -40,7 +40,6 @@
               </a>
             </div>
             <div class="col-2 right-icons d-flex align-items-center justify-content-end">
-              <a class="nav-link pe-3 d-none d-lg-block" href="#"><img src="assets/logo/heart-32px-dark.svg" /></a>
               <a href="" class="pe-3 open-login-modal">
                 <img src="assets/logo/user-32px-dark.svg" />
               </a>
@@ -58,9 +57,6 @@
               </li>
               <li class="ms-auto ps-3">
                 <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-search-light.svg" /></a>
-              </li>
-              <li class="ps-3">
-                <a class="d-block d-lg-none" href="#"><img src="assets/logo/logo-heart-light.svg" /></a>
               </li>
               <li class="ps-3">
                 <a class="d-block d-lg-none open-login-modal" href=""><img src="assets/logo/logo-user-light.svg" /></a>
@@ -103,16 +99,19 @@
                 <div class="mb-3 text-start">
                   <label for="login-email" class="form-label fs-0-75rem mb-2">Email address</label>
                   <input type="email" class="form-control" id="login-email" />
-                  <div class="form-error fs-0-625rem text-end text-danger">* Please check if this field is filled out correctly</div>
+                  <div class="form-error fs-0-625rem text-end text-danger d-none">* Please check if this field is filled out correctly</div>
                 </div>
                 <div class="mb-3 mx-auto text-start">
                   <label for="login-password" class="form-label fs-0-75rem mb-2">Password</label>
                   <input type="password" class="form-control" id="login-password" />
-                  <div class="form-error fs-0-625rem text-end text-danger">* Please check if this field is filled out correctly</div>
+                  <div class="form-error fs-0-625rem text-end text-danger d-none">* Please check if this field is filled out correctly</div>
                 </div>
                 <a href="" class="btn btn-dark mt-3">Submit</a>
                 <div class="pt-2 fs-0-75rem">
                   <a href="#">Forgot your password?</a>
+                </div>
+                <div class="spinner-border text-secondary mt-4 d-none" role="status">
+                  <span class="visually-hidden">Loading...</span>
                 </div>
               </form>
             </div>
@@ -149,11 +148,11 @@
       <section class="pt-5">
         <div class="container">
           <div class="row fs-1rem-lg-1-25rem">
-            <div class="col-4 col-md-2">
-              <a class="text-decoration-none" href="">Last chance - !</a>
+            <div class="col-4 col-md-2 active-underlined text-nowrap">
+              <a class="text-decoration-none" href="">Last chance</a>
             </div>
-            <div class="col-4 col-md-2">
-              <a class="text-decoration-none" href="">Just started - !</a>
+            <div class="col-4 col-md-2 text-nowrap">
+              <a class="text-decoration-none" href="">Just started</a>
             </div>
           </div>
           <div id="last-chance-frontpage" class="row py-5">
@@ -161,13 +160,10 @@
               <div class="card border-none border-radius-none">
                 <img class="padding-2-rem" src="assets/img/last-chance-item-640.jpg" alt="#" />
                 <div class="card-body">
-                  <h5 class="card-title">Box full of unsorted crap</h5>
+                  <h2 class="card-title fs-1-25rem">Box full of unsorted crap</h2>
                   <p id="last-chance-frontpage-time-left" class="card-text">24h 18m</p>
                   <p class="card-text">Next bid <span id="last-chance-frontpage-next-bid-amount">5000</span>,-</p>
                   <p class="card-text">Seller <span id="last-chance-frpntpage-seller">Dwight Schrute</span></p>
-                  <div class="position-absolute top-0 end-0 p-2">
-                    <img src="assets/logo/logo-heart-dark-27px.svg" alt="#" />
-                  </div>
                 </div>
               </div>
             </div>
@@ -175,13 +171,10 @@
               <div class="card border-none border-radius-none">
                 <img class="padding-2-rem" src="assets/img/last-chance-item-640.jpg" alt="#" />
                 <div class="card-body">
-                  <h5 class="card-title">Box full of unsorted crap</h5>
+                  <h2 class="card-title fs-1-25rem">Box full of unsorted crap</h2>
                   <p id="last-chance-frontpage-time-left" class="card-text">24h 18m</p>
                   <p class="card-text">Next bid <span id="last-chance-frontpage-next-bid-amount">5000</span>,-</p>
                   <p class="card-text">Seller <span id="last-chance-frpntpage-seller">Dwight Schrute</span></p>
-                  <div class="position-absolute top-0 end-0 p-2">
-                    <img src="assets/logo/logo-heart-dark-27px.svg" alt="#" />
-                  </div>
                 </div>
               </div>
             </div>
@@ -189,13 +182,10 @@
               <div class="card border-none border-radius-none">
                 <img class="padding-2-rem" src="assets/img/last-chance-item-640.jpg" alt="#" />
                 <div class="card-body">
-                  <h5 class="card-title">Box full of unsorted crap</h5>
+                  <h2 class="card-title fs-1-25rem">Box full of unsorted crap</h2>
                   <p id="last-chance-frontpage-time-left" class="card-text">24h 18m</p>
                   <p class="card-text">Next bid <span id="last-chance-frontpage-next-bid-amount">5000</span>,-</p>
                   <p class="card-text">Seller <span id="last-chance-frpntpage-seller">Dwight Schrute</span></p>
-                  <div class="position-absolute top-0 end-0 p-2">
-                    <img src="assets/logo/logo-heart-dark-27px.svg" alt="#" />
-                  </div>
                 </div>
               </div>
             </div>
@@ -203,13 +193,10 @@
               <div class="card border-none border-radius-none">
                 <img class="padding-2-rem" src="assets/img/last-chance-item-640.jpg" alt="#" />
                 <div class="card-body">
-                  <h5 class="card-title">Box full of unsorted crap</h5>
+                  <h2 class="card-title fs-1-25rem">Box full of unsorted crap</h2>
                   <p id="last-chance-frontpage-time-left" class="card-text">24h 18m</p>
                   <p class="card-text">Next bid <span id="last-chance-frontpage-next-bid-amount">5000</span>,-</p>
                   <p class="card-text">Seller <span id="last-chance-frpntpage-seller">Dwight Schrute</span></p>
-                  <div class="position-absolute top-0 end-0 p-2">
-                    <img src="assets/logo/logo-heart-dark-27px.svg" alt="#" />
-                  </div>
                 </div>
               </div>
             </div>

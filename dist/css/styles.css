@@ -12687,6 +12687,10 @@ html * {
   font-weight: 500;
 }
 
+.active-underlined {
+  text-decoration: underline;
+}
+
 .hero-banner {
   height: 300px;
 }
@@ -12785,6 +12789,10 @@ dialog::backdrop {
 
 .fs-1-125rem {
   font-size: 1.125rem;
+}
+
+.fs-1-25rem {
+  font-size: 1.25rem;
 }
 
 .fs-1-875rem {
