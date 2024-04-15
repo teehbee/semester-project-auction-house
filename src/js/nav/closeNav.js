@@ -1,7 +1,7 @@
 import { hamburgerClose } from "./constants.js";
 import { body } from "./constants.js";
 
-export function closeMenu() {
+function closeMenu() {
   body.classList.remove("with-menu");
 }
 

@@ -91,3 +91,5 @@ openListingModal.forEach(function (openListingModalLink) {
 closeListingModal.addEventListener("click", () => {
   postListingModal.close();
 });
+
+// URL handling of modals
