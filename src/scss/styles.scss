@@ -153,6 +153,11 @@ dialog form a {
   cursor: pointer;
 }
 
+dialog::backdrop {
+  background-color: $main-color-dark;
+  opacity: 0.9;
+}
+
 // Buttons
 
 .white-button {

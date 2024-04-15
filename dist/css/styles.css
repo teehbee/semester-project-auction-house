@@ -12766,6 +12766,11 @@ dialog form a {
   cursor: pointer;
 }
 
+dialog::backdrop {
+  background-color: #3e3e3e;
+  opacity: 0.9;
+}
+
 .white-button {
   border: 0.5 #3e3e3e solid;
 }
