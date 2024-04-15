@@ -12752,7 +12752,8 @@ dialog {
   font-family: "Source Serif 4";
 }
 
-#close-login-dialog {
+#close-login-dialog,
+#close-registration-dialog {
   top: 75px;
   right: 0;
 }
@@ -12923,7 +12924,8 @@ dialog::backdrop {
     max-width: 1000px;
     top: 50px;
   }
-  #close-login-dialog {
+  #close-login-dialog,
+  #close-registration-dialog {
     top: 0;
     right: 0;
   }
