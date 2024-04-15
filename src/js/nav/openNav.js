@@ -1,7 +1,7 @@
 import { hamburgerIcon } from "./constants.js";
 import { body } from "./constants.js";
 
-export function showMenu() {
+function showMenu() {
   body.classList.add("with-menu");
 }
 
