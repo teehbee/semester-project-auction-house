@@ -4,6 +4,7 @@ import { openLoginModal } from "./constants.js";
 import { closeLoginModal } from "./constants.js";
 import { closeLoginOpenRegisterModal } from "./constants.js";
 import { closeRegisterModal } from "./constants.js";
+import { openRegisterModal } from "./constants.js";
 
 // Open login modal
 
@@ -38,4 +39,8 @@ closeLoginOpenRegisterModal.addEventListener("click", () => {
   registerModal.showModal();
 });
 
-// Return from registration modal to login modal
+// Open registration modal from nav
+
+openRegisterModal.addEventListener("click", () => {
+  registerModal.showModal();
+});

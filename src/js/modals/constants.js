@@ -7,3 +7,5 @@ export const closeLoginModal = document.querySelector("#close-login-dialog");
 export const closeRegisterModal = document.querySelector("#close-registration-dialog");
 
 export const closeLoginOpenRegisterModal = document.querySelector("#login-to-register-modal-switch");
+
+export const openRegisterModal = document.querySelector(".open-register-modal");
