@@ -9,3 +9,9 @@ export const closeRegisterModal = document.querySelector("#close-registration-di
 export const closeLoginOpenRegisterModal = document.querySelector("#login-to-register-modal-switch");
 
 export const openRegisterModal = document.querySelector(".open-register-modal");
+
+export const openSearchModal = document.querySelectorAll(".search-icon");
+
+export const searchModal = document.querySelector("#search-dialog");
+
+export const closeSearch = document.querySelector("#close-search-dialog");
