@@ -228,7 +228,9 @@
                     >Name*</label
                   >
                   <input type="text" class="form-control" id="register-name" />
-                  <div class="form-error fs-0-625rem text-end text-danger">
+                  <div
+                    class="form-error fs-0-625rem text-end text-danger d-none"
+                  >
                     * Please check if this field is filled out correctly
                   </div>
                 </div>
@@ -237,7 +239,9 @@
                     >Email address*</label
                   >
                   <input type="text" class="form-control" id="register-email" />
-                  <div class="form-error fs-0-625rem text-end text-danger">
+                  <div
+                    class="form-error fs-0-625rem text-end text-danger d-none"
+                  >
                     * Please check if this field is filled out correctly
                   </div>
                 </div>
@@ -252,7 +256,9 @@
                     class="form-control"
                     id="login-password"
                   />
-                  <div class="form-error fs-0-625rem text-end text-danger">
+                  <div
+                    class="form-error fs-0-625rem text-end text-danger d-none"
+                  >
                     * Your password must be at least 8 letters
                   </div>
                 </div>
@@ -267,7 +273,9 @@
                     class="form-control"
                     id="login-password-confirm"
                   />
-                  <div class="form-error fs-0-625rem text-end text-danger">
+                  <div
+                    class="form-error fs-0-625rem text-end text-danger d-none"
+                  >
                     * The passwords don't match
                   </div>
                 </div>
@@ -289,7 +297,10 @@
                   </div>
                 </div>
                 <a href="" class="btn btn-dark mt-3">Create profile</a>
-                <div class="spinner-border text-secondary mt-4" role="status">
+                <div
+                  class="spinner-border text-secondary mt-4 d-none"
+                  role="status"
+                >
                   <span class="visually-hidden">Loading...</span>
                 </div>
               </form>
@@ -337,7 +348,7 @@
             </div>
           </div>
         </dialog>
-        <dialog id="post-listing-dialog" class="main-color-white" open>
+        <dialog id="post-listing-dialog" class="main-color-white">
           <div class="main-color-white w-100">
             <div class="container text-center py-5 main-color-white">
               <div id="close-listing-dialog" class="position-absolute p-3">

@@ -22,8 +22,12 @@ export const closeSearch = document.querySelector("#close-search-dialog");
 
 // Listings
 
-// export const postListingModal = document.querySelector("#post-listing-dialog");
+export const postListingModal = document.querySelector("#post-listing-dialog");
 
-// export const closeListingModal = document.querySelector("#close-listing-dialog");
+export const closeListingModal = document.querySelector(
+  "#close-listing-dialog",
+);
 
-// export const openListingModal = document.querySelectorAll("open-listing-dialog");
+export const openListingModal = document.querySelectorAll(
+  ".open-listing-dialog",
+);

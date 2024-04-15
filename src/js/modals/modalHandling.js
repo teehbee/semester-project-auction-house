@@ -8,9 +8,9 @@ import { openRegisterModal } from "./constants.js";
 import { openSearchModal } from "./constants.js";
 import { searchModal } from "./constants.js";
 import { closeSearch } from "./constants.js";
-// import { postListingModal } from "./constants.js";
-// import { closeListingModal } from "./constants.js";
-// import { openListingModal } from "./constants.js";
+import { postListingModal } from "./constants.js";
+import { closeListingModal } from "./constants.js";
+import { openListingModal } from "./constants.js";
 
 // Open login modal
 
@@ -71,3 +71,23 @@ closeSearch.addEventListener("click", () => {
 });
 
 // Post listings
+
+// Open post listings modal
+
+const ListingsModalOpenEventListeners = function (event) {
+  event.preventDefault();
+  postListingModal.showModal();
+};
+
+openListingModal.forEach(function (openListingModalLink) {
+  openListingModalLink.addEventListener(
+    "click",
+    ListingsModalOpenEventListeners,
+  );
+});
+
+// Close post listings modal
+
+closeListingModal.addEventListener("click", () => {
+  postListingModal.close();
+});
