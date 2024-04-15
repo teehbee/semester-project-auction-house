@@ -163,7 +163,8 @@ dialog form a {
   height: 50px;
 }
 
-#close-login-dialog {
+#close-login-dialog,
+#login-to-register-modal-switch {
   cursor: pointer;
 }
 
@@ -175,10 +176,6 @@ dialog::backdrop {
 .form-checkbox {
   height: 26px;
   width: 26px;
-}
-
-#login-to-register-modal-switch {
-  cursor: pointer;
 }
 
 // Buttons
