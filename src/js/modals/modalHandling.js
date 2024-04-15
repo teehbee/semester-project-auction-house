@@ -66,3 +66,5 @@ openSearchModal.forEach(function (openSearchLink) {
 closeSearch.addEventListener("click", () => {
   searchModal.close();
 });
+
+// Post listings
