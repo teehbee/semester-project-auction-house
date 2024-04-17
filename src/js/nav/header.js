@@ -7,20 +7,20 @@ header.innerHTML = `
     <div class="row text-center">
       <div class="left-icon col-2 align d-flex align-items-center">
         <a class="d-block d-lg-none" id="hamburger-icon" href="#"
-          ><img src="assets/logo/bars-dark.svg"
+          ><img src="/assets/logo/bars-dark.svg"
         /></a>
         <a class="search-icon nav-link d-none d-lg-block" href="#"
-          ><img src="assets/logo/search-32px-dark.svg"
+          ><img src="/assets/logo/search-32px-dark.svg"
         /></a>
       </div>
       <div class="col-8 logo-container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/index.html">
           <picture>
             <source
               media="(min-width: 576px)"
-              srcset="./assets/logo/logo-large.svg"
+              srcset="/assets/logo/logo-large.svg"
             />
-            <img src="./assets/logo/logo-small.svg" alt="Website logo" />
+            <img src="/assets/logo/logo-small.svg" alt="Website logo" />
           </picture>
         </a>
       </div>
@@ -28,10 +28,10 @@ header.innerHTML = `
         class="col-2 right-icons d-flex align-items-center justify-content-end"
       >
         <a href="" class="pe-3 open-login-modal">
-          <img src="assets/logo/user-32px-dark.svg" />
+          <img src="/assets/logo/user-32px-dark.svg" />
         </a>
         <a id="profile-icon-header" href="" class="d-none d-lg-block">
-          <img src="assets/logo/logo-logout-dark-32px.svg" />
+          <img src="/assets/logo/logo-logout-dark-32px.svg" />
         </a>
       </div>
     </div>
@@ -48,22 +48,22 @@ header.innerHTML = `
             class="d-block pe-auto d-lg-none pb-5"
             id="close-menu"
             href="#"
-            ><img src="assets/logo/logo-close-light.svg"
+            ><img src="/assets/logo/logo-close-light.svg"
           /></a>
         </li>
         <li class="ms-auto ps-3">
           <a class="d-block d-lg-none search-icon" href="#"
-            ><img src="assets/logo/logo-search-light.svg"
+            ><img src="/assets/logo/logo-search-light.svg"
           /></a>
         </li>
         <li class="ps-3">
           <a class="d-block d-lg-none open-login-modal" href=""
-            ><img src="assets/logo/logo-user-light.svg"
+            ><img src="/assets/logo/logo-user-light.svg"
           /></a>
         </li>
         <li class="ps-3">
           <a class="d-block d-lg-none" href="#"
-            ><img src="assets/logo/logo-logout-light-28px.svg"
+            ><img src="/assets/logo/logo-logout-light-28px.svg"
           /></a>
         </li>
       </ul>
@@ -311,7 +311,7 @@ header.innerHTML = `
               class="btn btn-dark"
               data-mdb-ripple-init
             >
-              <img src="assets/logo/logo-search-light.svg" />
+              <img src="/assets/logo/logo-search-light.svg" />
             </button>
           </div>
         </form>
