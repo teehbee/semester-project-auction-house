@@ -31,3 +31,13 @@ export const closeListingModal = document.querySelector(
 export const openListingModal = document.querySelectorAll(
   ".open-listing-dialog",
 );
+
+export const closeCategoriesModal = document.querySelector(
+  "#close-category-dialog",
+);
+
+export const categoriesModal = document.querySelector("#categories-dialog");
+
+export const openCategoriesModal = document.querySelector(
+  "#open-categories-modal",
+);

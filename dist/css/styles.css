@@ -12718,6 +12718,18 @@ html * {
   border-bottom: 1px solid #3e3e3e;
 }
 
+.height-38px {
+  height: 38px;
+}
+
+.max-width-180px {
+  max-width: 180px;
+}
+
+.max-width-350px {
+  max-width: 350px;
+}
+
 .border-radius-none {
   border-radius: 0;
 }
@@ -12732,6 +12744,10 @@ html * {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.card-width-306px {
+  max-width: 306px;
 }
 
 dialog {
@@ -12758,7 +12774,8 @@ dialog {
 
 #close-login-dialog,
 #close-registration-dialog,
-#close-listing-dialog {
+#close-listing-dialog,
+#close-category-dialog {
   top: 75px;
   right: 0;
 }
@@ -12890,6 +12907,15 @@ dialog::backdrop {
   }
 }
 
+.fs-1-25rem-md-2-25rem {
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  .fs-1-25rem-md-2-25rem {
+    font-size: 2.25rem;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .font-change-menu {
     font-family: "Source Serif 4";
@@ -12934,7 +12960,8 @@ dialog::backdrop {
   }
   #close-login-dialog,
   #close-registration-dialog,
-  #close-listing-dialog {
+  #close-listing-dialog,
+  #close-category-dialog {
     top: 0;
     right: 0;
   }

@@ -103,6 +103,18 @@ html * {
   border-bottom: 1px solid $main-color-dark;
 }
 
+.height-38px {
+  height: 38px;
+}
+
+.max-width-180px {
+  max-width: 180px;
+}
+
+.max-width-350px {
+  max-width: 350px;
+}
+
 .border-radius-none {
   border-radius: 0;
 }
@@ -117,6 +129,10 @@ html * {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.card-width-306px {
+  max-width: 306px;
 }
 
 // Dialog styling
@@ -145,7 +161,8 @@ dialog {
 
 #close-login-dialog,
 #close-registration-dialog,
-#close-listing-dialog {
+#close-listing-dialog,
+#close-category-dialog {
   top: 75px;
   right: 0;
 }
@@ -288,6 +305,14 @@ $custom-fs-2-5rem: 2.5rem;
   }
 }
 
+.fs-1-25rem-md-2-25rem {
+  font-size: $custom-fs-1-25rem;
+
+  @include media-breakpoint-up("md") {
+    font-size: $custom-fs-2-25;
+  }
+}
+
 // Media queries
 
 @media screen and (max-width: 991px) {
@@ -344,7 +369,8 @@ $custom-fs-2-5rem: 2.5rem;
 
   #close-login-dialog,
   #close-registration-dialog,
-  #close-listing-dialog {
+  #close-listing-dialog,
+  #close-category-dialog {
     top: 0;
     right: 0;
   }
