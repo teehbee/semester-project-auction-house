@@ -1,95 +1,128 @@
-import { loginModal } from "./constants.js";
-import { registerModal } from "./constants.js";
-import { openLoginModal } from "./constants.js";
-import { closeLoginModal } from "./constants.js";
-import { closeLoginOpenRegisterModal } from "./constants.js";
-import { closeRegisterModal } from "./constants.js";
-import { openRegisterModal } from "./constants.js";
-import { openSearchModal } from "./constants.js";
-import { searchModal } from "./constants.js";
-import { closeSearch } from "./constants.js";
-import { postListingModal } from "./constants.js";
-import { closeListingModal } from "./constants.js";
-import { openListingModal } from "./constants.js";
+import * as constants from "./constants.js";
 
-// Open login modal
+import { handleUrlForModals } from "./urlHandling.js";
 
-const modalEventListeners = function (event) {
+// Open login modal and add url. Also checks if the user is logged in to redirect to profile page instead.
+
+const loginModalEventListeners = function (event, loginModal) {
   event.preventDefault();
   if (document.body.classList.contains("with-menu")) {
     document.body.classList.remove("with-menu");
   }
-  loginModal.showModal();
+
+  if (document.body.classList.contains("logged-in")) {
+    window.location.href = "/profile/index.html";
+  } else {
+    loginModal.showModal();
+
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("modal", "login");
+    const newUrl = "?" + searchParams.toString();
+    history.pushState({}, "", newUrl);
+  }
 };
 
-openLoginModal.forEach(function (openModalLink) {
-  openModalLink.addEventListener("click", modalEventListeners);
+constants.openLoginModal.forEach(function (openModalLink) {
+  openModalLink.addEventListener("click", function (event) {
+    loginModalEventListeners(event, constants.loginModal);
+  });
 });
 
-// Close login modal
+// Close login modal and remove URL
 
-closeLoginModal.addEventListener("click", () => {
-  loginModal.close();
+constants.closeLoginModal.addEventListener("click", () => {
+  constants.loginModal.close();
+
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.delete("modal");
+  history.replaceState({}, "", "?" + searchParams.toString());
 });
 
-// Close registration modal
+// Switch from login to registration modal
 
-closeRegisterModal.addEventListener("click", () => {
-  registerModal.close();
+constants.closeLoginOpenRegisterModal.addEventListener("click", () => {
+  constants.loginModal.close();
+  constants.registerModal.showModal();
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.set("modal", "register");
+  history.pushState({}, "", "?" + searchParams.toString());
 });
 
-// Switch form login to registration modal
+// Open registration modal from nav and add url
 
-closeLoginOpenRegisterModal.addEventListener("click", () => {
-  loginModal.close();
-  registerModal.showModal();
+constants.openRegisterModal.addEventListener("click", () => {
+  constants.registerModal.showModal();
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.set("modal", "register");
+  history.pushState({}, "", "?" + searchParams.toString());
 });
 
-// Open registration modal from nav
+// Close registration modal and remove url
 
-openRegisterModal.addEventListener("click", () => {
-  registerModal.showModal();
+constants.closeRegisterModal.addEventListener("click", () => {
+  constants.registerModal.close();
+
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.delete("modal");
+  history.replaceState({}, "", "?" + searchParams.toString());
 });
-
-// Search
 
 // Open search modal
 
-const searchOpenEventListeners = function (event) {
+const searchOpenEventListeners = function (event, searchModal) {
   event.preventDefault();
   searchModal.showModal();
+
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.set("modal", "search");
+  const newUrl = "?" + searchParams.toString();
+  history.pushState({}, "", newUrl);
 };
 
-openSearchModal.forEach(function (openSearchLink) {
-  openSearchLink.addEventListener("click", searchOpenEventListeners);
+constants.openSearchModal.forEach(function (openSearchLink) {
+  openSearchLink.addEventListener("click", function (event) {
+    searchOpenEventListeners(event, constants.searchModal);
+  });
 });
 
 // Close search modal
 
-closeSearch.addEventListener("click", () => {
-  searchModal.close();
+constants.closeSearch.addEventListener("click", () => {
+  constants.searchModal.close();
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.delete("modal");
+  history.replaceState({}, "", "?" + searchParams.toString());
 });
 
 // Post listings
 
 // Open post listings modal
 
-const ListingsModalOpenEventListeners = function (event) {
+const ListingsModalOpenEventListeners = function (event, postListingModal) {
   event.preventDefault();
   postListingModal.showModal();
+
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.set("modal", "postListing");
+  const newUrl = "?" + searchParams.toString();
+  history.pushState({}, "", newUrl);
 };
 
-openListingModal.forEach(function (openListingModalLink) {
-  openListingModalLink.addEventListener(
-    "click",
-    ListingsModalOpenEventListeners,
-  );
+constants.openListingModal.forEach(function (openListingModalLink) {
+  openListingModalLink.addEventListener("click", function (event) {
+    ListingsModalOpenEventListeners(event, constants.postListingModal);
+  });
 });
 
 // Close post listings modal
 
-closeListingModal.addEventListener("click", () => {
-  postListingModal.close();
+constants.closeListingModal.addEventListener("click", () => {
+  constants.postListingModal.close();
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.delete("modal");
+  history.replaceState({}, "", "?" + searchParams.toString());
 });
 
-// URL handling of modals
+// Listen for modal url's
+
+handleUrlForModals();

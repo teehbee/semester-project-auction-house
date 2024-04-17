@@ -91,12 +91,12 @@ header.innerHTML = `
             >Contact Us</a
           >
         </li>
-        <li class="open-register-modal">
+        <li class="open-register-modal hidden-when-logged-in">
           <a class="fs-1-5rem-lg-1-25rem font-change-color" href="#"
             >Register</a
           >
         </li>
-        <li class="open-login-modal">
+        <li class="open-login-modal hidden-when-logged-in">
           <a class="fs-1-5rem-lg-1-25rem font-change-color" href=""
             >Log in</a
           >
@@ -323,7 +323,7 @@ header.innerHTML = `
       <div class="dialog-top-banner d-block d-md-none"></div>
       <div class="container text-center py-5 main-color-white">
         <div id="close-listing-dialog" class="position-absolute p-3">
-          <picture>
+          <picture class="cursor-pointer">
             <source
               media="(min-width: 768px)"
               srcset="/assets/logo/icon-close-dark-32px.svg"

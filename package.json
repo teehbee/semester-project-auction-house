@@ -1,7 +1,7 @@
 {
-  "name": "accomodation-template",
+  "name": "semester-project",
   "version": "1.0.0",
-  "description": "template project for a website customizable for accomodation businesses",
+  "description": "Auction house website",
   "type": "module",
   "main": "index.js",
   "scripts": {
