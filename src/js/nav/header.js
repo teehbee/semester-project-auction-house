@@ -91,12 +91,12 @@ header.innerHTML = `
             >Contact Us</a
           >
         </li>
-        <li class="open-register-modal">
+        <li class="open-register-modal hidden-when-logged-in">
           <a class="fs-1-5rem-lg-1-25rem font-change-color" href="#"
             >Register</a
           >
         </li>
-        <li class="open-login-modal">
+        <li class="open-login-modal hidden-when-logged-in">
           <a class="fs-1-5rem-lg-1-25rem font-change-color" href=""
             >Log in</a
           >
