@@ -292,6 +292,14 @@ $custom-fs-2-5rem: 2.5rem;
   }
 }
 
+.fs-1-25rem-md-2-25rem {
+  font-size: $custom-fs-1-25rem;
+
+  @include media-breakpoint-up("md") {
+    font-size: $custom-fs-2-25;
+  }
+}
+
 // Media queries
 
 @media screen and (max-width: 991px) {

@@ -12894,6 +12894,15 @@ dialog::backdrop {
   }
 }
 
+.fs-1-25rem-md-2-25rem {
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  .fs-1-25rem-md-2-25rem {
+    font-size: 2.25rem;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .font-change-menu {
     font-family: "Source Serif 4";
