@@ -12734,6 +12734,10 @@ html * {
   cursor: pointer;
 }
 
+.card-width-306px {
+  max-width: 306px;
+}
+
 dialog {
   z-index: 100;
   width: 100vw;
