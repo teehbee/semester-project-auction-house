@@ -13,6 +13,8 @@ export function handleUrlForModals() {
       constants.searchModal.showModal();
     } else if (modalType === "postListing") {
       constants.postListingModal.showModal();
+    } else if (modalType === "categories") {
+      constants.categoriesModal.showModal();
     }
   });
 }
