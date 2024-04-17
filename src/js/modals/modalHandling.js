@@ -1,5 +1,7 @@
 import * as constants from "./constants.js";
 
+import { handleUrlForModals } from "./urlHandling.js";
+
 // Open login modal and add url
 
 const loginModalEventListeners = function (event, loginModal) {
@@ -118,17 +120,4 @@ constants.closeListingModal.addEventListener("click", () => {
 
 // Listen for modal url's
 
-document.addEventListener("DOMContentLoaded", function () {
-  const searchParams = new URLSearchParams(window.location.search);
-  const modalType = searchParams.get("modal");
-
-  if (modalType === "login") {
-    constants.loginModal.showModal();
-  } else if (modalType === "register") {
-    constants.registerModal.showModal();
-  } else if (modalType === "search") {
-    constants.searchModal.showModal();
-  } else if (modalType === "postListing") {
-    constants.postListingModal.showModal();
-  }
-});
+handleUrlForModals();
