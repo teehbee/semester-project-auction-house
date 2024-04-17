@@ -2,19 +2,24 @@ import * as constants from "./constants.js";
 
 import { handleUrlForModals } from "./urlHandling.js";
 
-// Open login modal and add url
+// Open login modal and add url. Also checks if the user is logged in to redirect to profile page instead.
 
 const loginModalEventListeners = function (event, loginModal) {
   event.preventDefault();
   if (document.body.classList.contains("with-menu")) {
     document.body.classList.remove("with-menu");
   }
-  loginModal.showModal();
 
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.set("modal", "login");
-  const newUrl = "?" + searchParams.toString();
-  history.pushState({}, "", newUrl);
+  if (document.body.classList.contains("logged-in")) {
+    window.location.href = "/profile/index.html";
+  } else {
+    loginModal.showModal();
+
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("modal", "login");
+    const newUrl = "?" + searchParams.toString();
+    history.pushState({}, "", newUrl);
+  }
 };
 
 constants.openLoginModal.forEach(function (openModalLink) {
