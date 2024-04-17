@@ -123,6 +123,30 @@ constants.closeListingModal.addEventListener("click", () => {
   history.replaceState({}, "", "?" + searchParams.toString());
 });
 
+// Open categories modal and add url
+
+constants.openCategoriesModal.addEventListener("click", () => {
+  constants.categoriesModal.showModal();
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.set("modal", "categories");
+  history.pushState({}, "", "?" + searchParams.toString());
+});
+
+// Close categories modal and remove url
+
+constants.closeCategoriesModal.addEventListener("click", () => {
+  constants.categoriesModal.close();
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.delete("modal");
+  history.replaceState({}, "", "?" + searchParams.toString());
+});
+
 // Listen for modal url's
 
 handleUrlForModals();
+
+// export const closeCategoriesModal = document.querySelector("#close-category-dialog");
+
+// export const categoriesModal = document.querySelector("#categories-dialog");
+
+// export const openCategoriesModal = document.querySelector("#open-categories-modal");

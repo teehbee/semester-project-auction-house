@@ -12774,7 +12774,8 @@ dialog {
 
 #close-login-dialog,
 #close-registration-dialog,
-#close-listing-dialog {
+#close-listing-dialog,
+#close-category-dialog {
   top: 75px;
   right: 0;
 }
@@ -12959,7 +12960,8 @@ dialog::backdrop {
   }
   #close-login-dialog,
   #close-registration-dialog,
-  #close-listing-dialog {
+  #close-listing-dialog,
+  #close-category-dialog {
     top: 0;
     right: 0;
   }

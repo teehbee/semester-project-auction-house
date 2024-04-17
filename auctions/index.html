@@ -33,6 +33,84 @@
     <title>Get Rid of it - All auctions</title>
   </head>
   <body class="main-color-light">
+    <dialog id="categories-dialog" class="main-color-dark">
+      <div class="dialog-top-banner d-block d-md-none"></div>
+      <div class="main-color-white w-100">
+        <div class="container text-center py-5 main-color-white">
+          <div id="close-category-dialog" class="position-absolute p-3 cursor-pointer">
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="/assets/logo/icon-close-dark-32px.svg"
+              />
+              <img
+                src="/assets/logo/icon-close-dark-28px.svg"
+                aria-label="close registration form"
+              />
+            </picture>
+          </div>
+          <div class="border-bottom-black mb-3">
+          <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">
+            Categories
+          </h2>
+          </div>
+          <div class="row mx-auto">
+            <div class="text-start pb-3"><p class="fw-bolder">Categories by tag</p></div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
+                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox1">
+                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox1">
+                 Category 1
+                </label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
+                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox2">
+                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox2">
+                 Category 2
+                </label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
+                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox3">
+                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox3">
+                 Category 3
+                </label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
+                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox4">
+                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox4">
+                 Category 4
+                </label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
+                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox5">
+                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox5">
+                 Category 5
+                </label>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
+                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox6">
+                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox6">
+                 Category 6
+                </label>
+              </div>
+            </div>
+            <div class="pt-5">
+              <button type="button" class="btn btn-dark">View hits</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
     <section>
     <div class="container-fluid main-color-white">
       <div class="container">
@@ -42,7 +120,7 @@
           </h1>
         </div>
         <div class="row align-items-center">
-          <div class="col-12 col-md-3 col-lg-2 py-1 me-2 my-1 border rounded height-38px max-width-180px">
+          <div id="open-categories-modal" class="col-12 col-md-3 col-lg-2 py-1 me-2 my-1 border rounded height-38px max-width-180px cursor-pointer">
             <a class="text-decoration-none" href="#"
               ><img
                 src="/assets/logo/icon-categories-dark-24px.svg"
