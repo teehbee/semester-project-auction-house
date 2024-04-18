@@ -99,33 +99,6 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Open search modal
-
-const searchOpenEventListeners = function (event, searchModal) {
-  event.preventDefault();
-  searchModal.showModal();
-
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.set("modal", "search");
-  const newUrl = "?" + searchParams.toString();
-  history.pushState({}, "", newUrl);
-};
-
-constants.openSearchModal.forEach(function (openSearchLink) {
-  openSearchLink.addEventListener("click", function (event) {
-    searchOpenEventListeners(event, constants.searchModal);
-  });
-});
-
-// Close search modal
-
-constants.closeSearch.addEventListener("click", () => {
-  constants.searchModal.close();
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.delete("modal");
-  history.replaceState({}, "", "?" + searchParams.toString());
-});
-
 // Post listings
 
 // Open post listings modal
@@ -148,11 +121,24 @@ constants.openListingModal.forEach(function (openListingModalLink) {
 
 // Close post listings modal
 
-constants.closeListingModal.addEventListener("click", () => {
-  constants.postListingModal.close();
+function removeNewListingModalQueryParam() {
   const searchParams = new URLSearchParams(window.location.search);
   searchParams.delete("modal");
   history.replaceState({}, "", "?" + searchParams.toString());
+}
+
+constants.closeListingModal.addEventListener("click", () => {
+  constants.postListingModal.close();
+  removeNewListingModalQueryParam();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    if (constants.postListingModal.open) {
+      constants.postListingModal.close();
+      removeNewListingModalQueryParam();
+    }
+  }
 });
 
 // Listen for modal url's
