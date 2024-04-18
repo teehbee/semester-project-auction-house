@@ -30,12 +30,32 @@ constants.openLoginModal.forEach(function (openModalLink) {
 
 // Close login modal and remove URL
 
-constants.closeLoginModal.addEventListener("click", () => {
-  constants.loginModal.close();
+// constants.closeLoginModal.addEventListener("click", () => {
+//   constants.loginModal.close();
 
+//   const searchParams = new URLSearchParams(window.location.search);
+//   searchParams.delete("modal");
+//   history.replaceState({}, "", "?" + searchParams.toString());
+// });
+
+function removeLoginModalQueryParam() {
   const searchParams = new URLSearchParams(window.location.search);
   searchParams.delete("modal");
   history.replaceState({}, "", "?" + searchParams.toString());
+}
+
+constants.closeLoginModal.addEventListener("click", () => {
+  constants.loginModal.close();
+  removeLoginModalQueryParam();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    if (constants.loginModal.open) {
+      constants.loginModal.close();
+      removeLoginModalQueryParam();
+    }
+  }
 });
 
 // Switch from login to registration modal
