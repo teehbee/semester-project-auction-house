@@ -15,6 +15,8 @@ export function handleUrlForModals() {
       constants.postListingModal.showModal();
     } else if (modalType === "categories") {
       constants.categoriesModal.showModal();
+    } else if (modalType === "edit-profile") {
+      constants.profileModal.showModal();
     }
   });
 }

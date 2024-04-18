@@ -17,11 +17,12 @@
     <script type="module" src="/src/js/nav/openNav.js"></script>
     <script type="module" src="/src/js/nav/closeNav.js"></script>
     <script type="module" src="/src/js/modals/modalHandling.js"></script>
+    <script type="module" src="/src/js/modals/profileModals.js"></script>
     <meta name="description" content="Your profile page" />
     <title>Get Rid of it - Profile</title>
   </head>
   <body class="main-color-light">
-        <dialog id="profile-edit-dialog" class="main-color-dark" open>
+      <dialog id="profile-edit-dialog" class="main-color-dark">
       <div class="dialog-top-banner d-block d-md-none"></div>
       <div class="main-color-white w-100">
         <div class="container text-center py-5 main-color-white">
@@ -68,7 +69,7 @@
             <div class="row py-4 py-md-5">
               <div id="profile-image" class="col-4 col-md-4 position-relative">
                 <img class="object-fit-img border-radius-round profile-image" src="/assets/img/austin-distel-7uoMmzPd2JA-unsplash-620.jpg" aria-label="Profile picture with link to editing profile" />
-                <a class="position-absolute top-50 start-50 translate-middle cursor-pointer d-none" ref="#">Edit profile</a>
+                <a class="open-profile-edit-dialog position-absolute top-50 start-50 translate-middle cursor-pointer d-none" ref="#">Edit profile</a>
               </div>
               <div id="profile-data" class="col-6 col-md-3 col-lg-2 pt-xl-2 ps-4">
                 <div>
