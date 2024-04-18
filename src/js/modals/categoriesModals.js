@@ -13,11 +13,24 @@ constants.openCategoriesModal.addEventListener("click", () => {
 
 // Close categories modal and remove url
 
-constants.closeCategoriesModal.addEventListener("click", () => {
-  constants.categoriesModal.close();
+function removeCategoryModalQueryParam() {
   const searchParams = new URLSearchParams(window.location.search);
   searchParams.delete("modal");
   history.replaceState({}, "", "?" + searchParams.toString());
+}
+
+constants.closeCategoriesModal.addEventListener("click", () => {
+  constants.categoriesModal.close();
+  removeCategoryModalQueryParam();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    if (constants.categoriesModal.open) {
+      constants.categoriesModal.close();
+      removeCategoryModalQueryParam();
+    }
+  }
 });
 
 handleUrlForModals();
