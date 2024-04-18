@@ -79,12 +79,24 @@ constants.openRegisterModal.addEventListener("click", () => {
 
 // Close registration modal and remove url
 
-constants.closeRegisterModal.addEventListener("click", () => {
-  constants.registerModal.close();
-
+function removeRegisterModalQueryParam() {
   const searchParams = new URLSearchParams(window.location.search);
   searchParams.delete("modal");
   history.replaceState({}, "", "?" + searchParams.toString());
+}
+
+constants.closeRegisterModal.addEventListener("click", () => {
+  constants.registerModal.close();
+  removeRegisterModalQueryParam();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    if (constants.registerModal.open) {
+      constants.registerModal.close();
+      removeRegisterModalQueryParam();
+    }
+  }
 });
 
 // Open search modal
