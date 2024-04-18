@@ -86,6 +86,10 @@ html * {
   object-fit: cover;
 }
 
+.border-radius-round {
+  border-radius: 50%;
+}
+
 .padding-2-rem {
   padding: 2rem;
 }
@@ -135,6 +139,29 @@ html * {
   max-width: 306px;
 }
 
+// Profile
+
+#profile-image {
+  height: 100px;
+  width: 100px;
+  padding: 0;
+}
+
+#profile-data a {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.profile-button {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.avatar-image-checkbox {
+  max-height: 75px;
+  max-width: 75px;
+}
+
 // Dialog styling
 
 dialog {
@@ -162,7 +189,8 @@ dialog {
 #close-login-dialog,
 #close-registration-dialog,
 #close-listing-dialog,
-#close-category-dialog {
+#close-category-dialog,
+#close-profile-edit-dialog {
   top: 75px;
   right: 0;
 }
@@ -240,6 +268,14 @@ $custom-fs-2-5rem: 2.5rem;
 }
 
 // Customs font sizes with breakpoints
+
+.fs-0-75-rem-md-1-rem {
+  font-size: $custom-fs-0-75rem;
+
+  @include media-breakpoint-up("md") {
+    font-size: 1rem;
+  }
+}
 
 .fs-0-875rem-lg-1-125rem {
   font-size: $custom-fs-0-875rem;
@@ -359,6 +395,18 @@ $custom-fs-2-5rem: 2.5rem;
     width: 50%;
   }
 
+  // Profile
+
+  #profile-image {
+    height: 200px;
+    width: 200px;
+  }
+
+  .profile-button {
+    width: 100%;
+    margin: 0 auto;
+  }
+
   // Dialog
 
   dialog {
@@ -370,7 +418,8 @@ $custom-fs-2-5rem: 2.5rem;
   #close-login-dialog,
   #close-registration-dialog,
   #close-listing-dialog,
-  #close-category-dialog {
+  #close-category-dialog,
+  #close-profile-edit-dialog {
     top: 0;
     right: 0;
   }

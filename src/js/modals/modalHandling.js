@@ -28,14 +28,26 @@ constants.openLoginModal.forEach(function (openModalLink) {
   });
 });
 
-// Close login modal and remove URL
+// Close login modal
 
-constants.closeLoginModal.addEventListener("click", () => {
-  constants.loginModal.close();
-
+function removeLoginModalQueryParam() {
   const searchParams = new URLSearchParams(window.location.search);
   searchParams.delete("modal");
   history.replaceState({}, "", "?" + searchParams.toString());
+}
+
+constants.closeLoginModal.addEventListener("click", () => {
+  constants.loginModal.close();
+  removeLoginModalQueryParam();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    if (constants.loginModal.open) {
+      constants.loginModal.close();
+      removeLoginModalQueryParam();
+    }
+  }
 });
 
 // Switch from login to registration modal
@@ -50,48 +62,35 @@ constants.closeLoginOpenRegisterModal.addEventListener("click", () => {
 
 // Open registration modal from nav and add url
 
-constants.openRegisterModal.addEventListener("click", () => {
-  constants.registerModal.showModal();
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.set("modal", "register");
-  history.pushState({}, "", "?" + searchParams.toString());
+document.addEventListener("DOMContentLoaded", function () {
+  constants.openRegisterModal.addEventListener("click", () => {
+    constants.registerModal.showModal();
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("modal", "register");
+    history.pushState({}, "", "?" + searchParams.toString());
+  });
 });
 
 // Close registration modal and remove url
 
+function removeRegisterModalQueryParam() {
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.delete("modal");
+  history.replaceState({}, "", "?" + searchParams.toString());
+}
+
 constants.closeRegisterModal.addEventListener("click", () => {
   constants.registerModal.close();
-
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.delete("modal");
-  history.replaceState({}, "", "?" + searchParams.toString());
+  removeRegisterModalQueryParam();
 });
 
-// Open search modal
-
-const searchOpenEventListeners = function (event, searchModal) {
-  event.preventDefault();
-  searchModal.showModal();
-
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.set("modal", "search");
-  const newUrl = "?" + searchParams.toString();
-  history.pushState({}, "", newUrl);
-};
-
-constants.openSearchModal.forEach(function (openSearchLink) {
-  openSearchLink.addEventListener("click", function (event) {
-    searchOpenEventListeners(event, constants.searchModal);
-  });
-});
-
-// Close search modal
-
-constants.closeSearch.addEventListener("click", () => {
-  constants.searchModal.close();
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.delete("modal");
-  history.replaceState({}, "", "?" + searchParams.toString());
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    if (constants.registerModal.open) {
+      constants.registerModal.close();
+      removeRegisterModalQueryParam();
+    }
+  }
 });
 
 // Post listings
@@ -116,37 +115,26 @@ constants.openListingModal.forEach(function (openListingModalLink) {
 
 // Close post listings modal
 
+function removeNewListingModalQueryParam() {
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.delete("modal");
+  history.replaceState({}, "", "?" + searchParams.toString());
+}
+
 constants.closeListingModal.addEventListener("click", () => {
   constants.postListingModal.close();
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.delete("modal");
-  history.replaceState({}, "", "?" + searchParams.toString());
+  removeNewListingModalQueryParam();
 });
 
-// Open categories modal and add url
-
-constants.openCategoriesModal.addEventListener("click", () => {
-  constants.categoriesModal.showModal();
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.set("modal", "categories");
-  history.pushState({}, "", "?" + searchParams.toString());
-});
-
-// Close categories modal and remove url
-
-constants.closeCategoriesModal.addEventListener("click", () => {
-  constants.categoriesModal.close();
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.delete("modal");
-  history.replaceState({}, "", "?" + searchParams.toString());
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    if (constants.postListingModal.open) {
+      constants.postListingModal.close();
+      removeNewListingModalQueryParam();
+    }
+  }
 });
 
 // Listen for modal url's
 
 handleUrlForModals();
-
-// export const closeCategoriesModal = document.querySelector("#close-category-dialog");
-
-// export const categoriesModal = document.querySelector("#categories-dialog");
-
-// export const openCategoriesModal = document.querySelector("#open-categories-modal");

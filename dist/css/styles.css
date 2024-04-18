@@ -12701,6 +12701,10 @@ html * {
   object-fit: cover;
 }
 
+.border-radius-round {
+  border-radius: 50%;
+}
+
 .padding-2-rem {
   padding: 2rem;
 }
@@ -12750,6 +12754,27 @@ html * {
   max-width: 306px;
 }
 
+#profile-image {
+  height: 100px;
+  width: 100px;
+  padding: 0;
+}
+
+#profile-data a {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.profile-button {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.avatar-image-checkbox {
+  max-height: 75px;
+  max-width: 75px;
+}
+
 dialog {
   z-index: 100;
   width: 100vw;
@@ -12775,7 +12800,8 @@ dialog {
 #close-login-dialog,
 #close-registration-dialog,
 #close-listing-dialog,
-#close-category-dialog {
+#close-category-dialog,
+#close-profile-edit-dialog {
   top: 75px;
   right: 0;
 }
@@ -12833,6 +12859,15 @@ dialog::backdrop {
 
 .fs-1-875rem {
   font-size: 1.875rem;
+}
+
+.fs-0-75-rem-md-1-rem {
+  font-size: 0.75rem;
+}
+@media (min-width: 768px) {
+  .fs-0-75-rem-md-1-rem {
+    font-size: 1rem;
+  }
 }
 
 .fs-0-875rem-lg-1-125rem {
@@ -12953,6 +12988,14 @@ dialog::backdrop {
   .hero-banner-text button {
     width: 50%;
   }
+  #profile-image {
+    height: 200px;
+    width: 200px;
+  }
+  .profile-button {
+    width: 100%;
+    margin: 0 auto;
+  }
   dialog {
     width: 75%;
     max-width: 1000px;
@@ -12961,7 +13004,8 @@ dialog::backdrop {
   #close-login-dialog,
   #close-registration-dialog,
   #close-listing-dialog,
-  #close-category-dialog {
+  #close-category-dialog,
+  #close-profile-edit-dialog {
     top: 0;
     right: 0;
   }
