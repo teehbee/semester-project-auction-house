@@ -144,9 +144,3 @@ constants.closeCategoriesModal.addEventListener("click", () => {
 // Listen for modal url's
 
 handleUrlForModals();
-
-// export const closeCategoriesModal = document.querySelector("#close-category-dialog");
-
-// export const categoriesModal = document.querySelector("#categories-dialog");
-
-// export const openCategoriesModal = document.querySelector("#open-categories-modal");

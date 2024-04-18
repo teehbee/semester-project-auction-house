@@ -148,7 +148,7 @@ header.innerHTML = `
               * Please check if this field is filled out correctly
             </div>
           </div>
-          <a href="" class="btn btn-dark mt-3">Submit</a>
+          <a href="" class="btn btn-dark mt-3">Log in</a>
           <div
             class="spinner-border text-secondary mt-4 d-none"
             role="status"
