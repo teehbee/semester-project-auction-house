@@ -28,15 +28,7 @@ constants.openLoginModal.forEach(function (openModalLink) {
   });
 });
 
-// Close login modal and remove URL
-
-// constants.closeLoginModal.addEventListener("click", () => {
-//   constants.loginModal.close();
-
-//   const searchParams = new URLSearchParams(window.location.search);
-//   searchParams.delete("modal");
-//   history.replaceState({}, "", "?" + searchParams.toString());
-// });
+// Close login modal
 
 function removeLoginModalQueryParam() {
   const searchParams = new URLSearchParams(window.location.search);
@@ -70,11 +62,13 @@ constants.closeLoginOpenRegisterModal.addEventListener("click", () => {
 
 // Open registration modal from nav and add url
 
-constants.openRegisterModal.addEventListener("click", () => {
-  constants.registerModal.showModal();
-  const searchParams = new URLSearchParams(window.location.search);
-  searchParams.set("modal", "register");
-  history.pushState({}, "", "?" + searchParams.toString());
+document.addEventListener("DOMContentLoaded", function () {
+  constants.openRegisterModal.addEventListener("click", () => {
+    constants.registerModal.showModal();
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("modal", "register");
+    history.pushState({}, "", "?" + searchParams.toString());
+  });
 });
 
 // Close registration modal and remove url
