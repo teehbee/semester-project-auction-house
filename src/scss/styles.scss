@@ -150,6 +150,10 @@ html * {
   padding: 0 1rem;
 }
 
+.open-image-modal {
+  cursor: pointer;
+}
+
 // Profile
 
 #profile-image {
@@ -186,6 +190,11 @@ dialog {
   margin: 0 auto;
 }
 
+#categories-dialog {
+  min-height: 200px;
+  max-height: auto;
+}
+
 .dialog-top-banner {
   height: 75px;
   background: $main-color-dark;
@@ -205,6 +214,10 @@ dialog {
 #close-image-dialog {
   top: 75px;
   right: 0;
+}
+
+#close-image-dialog {
+  top: 0;
 }
 
 #close-search-dialog {
@@ -458,6 +471,30 @@ $custom-fs-2-5rem: 2.5rem;
     width: 100%;
   }
 
+  .modal-image-container img {
+    max-height: 800px;
+  }
+
+  .image-gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+  }
+
+  .image-gallery-arrow:hover {
+    font-size: 2.5rem;
+    transition: 0.1s ease-in-out;
+  }
+
+  .image-gallery-arrow-right {
+    right: 0 !important;
+  }
+
   // Dialog
 
   dialog {
@@ -470,8 +507,7 @@ $custom-fs-2-5rem: 2.5rem;
   #close-registration-dialog,
   #close-listing-dialog,
   #close-category-dialog,
-  #close-profile-edit-dialog,
-  #close-image-dialog {
+  #close-profile-edit-dialog {
     top: 0;
     right: 0;
   }
