@@ -12799,7 +12799,7 @@ dialog {
   margin: 0 auto;
 }
 
-#categories-dialog {
+#image-gallery-dialog {
   min-height: 200px;
   max-height: auto;
 }
@@ -13053,9 +13053,6 @@ dialog::backdrop {
   .image-gallery > img:first-child {
     width: 100%;
   }
-  .modal-image-container img {
-    max-height: 800px;
-  }
   .image-gallery-arrow {
     position: absolute;
     top: 50%;
@@ -13077,6 +13074,7 @@ dialog::backdrop {
     width: 75%;
     max-width: 1000px;
     top: 50px;
+    max-height: 2000px;
   }
   #close-login-dialog,
   #close-registration-dialog,

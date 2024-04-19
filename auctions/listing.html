@@ -18,12 +18,13 @@
     <script type="module" src="/src/js/nav/openNav.js"></script>
     <script type="module" src="/src/js/nav/closeNav.js"></script>
     <script type="module" src="/src/js/modals/modalHandling.js"></script>
+    <script type="module" src="/src/js/modals/imageGalleryModal.js"></script>
     <meta name="description" content="Listings page" />
     <title>Get Rid of it - Some auction</title>
   </head>
   <body class="main-color-light logged-in">
     <main>
-      <dialog id="categories-dialog" class="border">
+      <dialog id="image-gallery-dialog">
         <div id="close-image-dialog" class="position-absolute p-1 p-md-3 cursor-pointer">
           <picture>
             <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" />
@@ -32,7 +33,10 @@
         </div>
         <div class="main-color-white w-100 modal-image-container">
           <div class="gallery-image-in-modal p-4 p-md-5">
-            <img class="object-fit-img" src="/assets/img/last-chance-item-1920.jpg" alt="" />
+            <img class="img-fluid" src="/assets/img/last-chance-item-1920.jpg" alt="" />
+            <div id="image-gallery-alt-text" class="text-center pt-2">
+            <p>Alt text goes here:</p>
+          </div>
           </div>
         </div>
         <div class="d-none d-md-block">
