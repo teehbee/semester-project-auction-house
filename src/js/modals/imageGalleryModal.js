@@ -43,3 +43,5 @@ document.addEventListener("keydown", (event) => {
     }
   }
 });
+
+/* Handling the changing of images in image gallery modal */

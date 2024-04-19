@@ -21,7 +21,7 @@
     <meta name="description" content="Your profile page" />
     <title>Get Rid of it - Profile</title>
   </head>
-  <body class="main-color-light">
+  <body class="main-color-light logged-in">
       <dialog id="profile-edit-dialog" class="main-color-dark">
       <div class="dialog-top-banner d-block d-md-none"></div>
       <div class="main-color-white w-100">
@@ -102,7 +102,7 @@
           <div class="text-center py-3">
             <div class="auctions-loader fs-1-25rem-md-1-5-rem pt-5 d-none"></div>
           </div>
-        <div id="profile-your-listings-row" class="row py-5 gy-4">
+        <div id="profile-your-listings-row" class="row py-5 gy-4 overflow-auto flex-nowrap flex-md-wrap">
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
               <img class="p-3" src="/assets/img/last-chance-item-640.jpg" alt="#" />
@@ -172,7 +172,7 @@
             </div></a>
           </div>     
         </div>
-        <div id="profile-your-wins-row" class="row py-5 gy-4 d-none">
+        <div id="profile-your-wins-row" class="row py-5 gy-4 d-none overflow-auto flex-nowrap flex-md-wrap">
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <a href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
               <img class="p-3" src="/assets/img/last-chance-item-640.jpg" alt="#" />
