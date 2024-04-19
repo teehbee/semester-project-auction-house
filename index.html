@@ -5,32 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/css/styles.css" />
     <script src="/node_modules/bootstrap/dist/css/"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/99f531cd0d.js"
-      crossorigin="anonymous"
-    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/99f531cd0d.js"
+      crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"/>
     <script type="module" src="/src/js/nav/index.js"></script>
     <script type="module" src="/src/js/index.js"></script>
     <script type="module" src="/src/js/nav/header.js"></script>
+    <script type="module" src="/src/js/nav/footer.js"></script>
     <script type="module" src="/src/js/nav/openNav.js"></script>
     <script type="module" src="/src/js/nav/closeNav.js"></script>
-    <script type="module" src="/src/js/modals/modalHandling.js"></script>
-    
-   
-    <meta
-      name="description"
-      content="Frontpage for Get Rid of it auction house"
-    />
+    <script type="module" src="/src/js/modals/modalHandling.js"></script>   
+    <meta name="description"
+      content="Frontpage for Get Rid of it auction house"/>
     <title>Get Rid of it - Frontpage</title>
   </head>
   <body class="main-color-light logged-in">
@@ -69,23 +60,20 @@
       <section class="pt-5">
         <div class="container">
           <div class="row fs-1rem-lg-1-25rem">
-            <div class="col-4 col-md-2 active-underlined text-nowrap">
-              <a class="text-decoration-none" href="">Last chance</a>
+            <div class="col-4 col-md-1 active-underlined text-nowrap">
+              <a id="frontpage-auctions-last-chance" class="text-decoration-none" href="">Last chance</a>
             </div>
-            <div class="col-4 col-md-2 text-nowrap">
-              <a class="text-decoration-none" href="">Just started</a>
+            <div class="ps-md-5 col-4 col-md-1 text-nowrap">
+              <a id="frontpage-auctions-just-started" class="text-decoration-none" href="">Just started</a>
             </div>
+          </div>
+          <div class="text-center py-3">
+            <div class="auctions-loader fs-1-25rem-md-1-5-rem pt-5"></div>
           </div>
           <div id="last-chance-frontpage" class="row py-5">
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-              <div
-                class="card card-width-306px border-none border-radius-none mx-auto"
-              >
-                <img
-                  class="padding-2-rem"
-                  src="assets/img/last-chance-item-640.jpg"
-                  alt="#"
-                />
+              <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
+                <img class=" p-3" src="assets/img/last-chance-item-640.jpg" alt="#"/>
                 <div class="card-body">
                   <h2 class="card-title fs-1-25rem">
                     Box full of unsorted crap
@@ -100,22 +88,14 @@
                   </p>
                   <p class="card-text">
                     Seller
-                    <span id="last-chance-frpntpage-seller"
-                      >Dwight Schrute</span
-                    >
+                    <span id="last-chance-frpntpage-seller">Dwight Schrute</span>
                   </p>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-              <div
-                class="card card-width-306px border-none border-radius-none mx-auto"
-              >
-                <img
-                  class="padding-2-rem"
-                  src="assets/img/last-chance-item-640.jpg"
-                  alt="#"
-                />
+              <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
+                <img class=" p-3" src="assets/img/last-chance-item-640.jpg" alt="#"/>
                 <div class="card-body">
                   <h2 class="card-title fs-1-25rem">
                     Box full of unsorted crap
@@ -130,22 +110,14 @@
                   </p>
                   <p class="card-text">
                     Seller
-                    <span id="last-chance-frpntpage-seller"
-                      >Dwight Schrute</span
-                    >
+                    <span id="last-chance-frpntpage-seller">Dwight Schrute</span>
                   </p>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-              <div
-                class="card card-width-306px border-none border-radius-none mx-auto"
-              >
-                <img
-                  class="padding-2-rem"
-                  src="assets/img/last-chance-item-640.jpg"
-                  alt="#"
-                />
+              <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
+                <img class=" p-3" src="assets/img/last-chance-item-640.jpg" alt="#"/>
                 <div class="card-body">
                   <h2 class="card-title fs-1-25rem">
                     Box full of unsorted crap
@@ -160,22 +132,14 @@
                   </p>
                   <p class="card-text">
                     Seller
-                    <span id="last-chance-frpntpage-seller"
-                      >Dwight Schrute</span
-                    >
+                    <span id="last-chance-frpntpage-seller">Dwight Schrute</span>
                   </p>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-              <div
-                class="card card-width-306px border-none border-radius-none mx-auto"
-              >
-                <img
-                  class="padding-2-rem"
-                  src="assets/img/last-chance-item-640.jpg"
-                  alt="#"
-                />
+              <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
+                <img class=" p-3" src="assets/img/last-chance-item-640.jpg" alt="#"/>
                 <div class="card-body">
                   <h2 class="card-title fs-1-25rem">
                     Box full of unsorted crap
@@ -190,14 +154,13 @@
                   </p>
                   <p class="card-text">
                     Seller
-                    <span id="last-chance-frpntpage-seller"
-                      >Dwight Schrute</span
-                    >
+                    <span id="last-chance-frpntpage-seller">Dwight Schrute</span>
                   </p>
                 </div>
-              </div>
+              </div></a>
             </div>
           </div>
+          <div id="just-started-frontpage" class="row py-5 d-none"></div>
           <div class="text-end pb-5">
             <a class="ms-auto fs-1rem-lg-1-25rem" href="/auctions/index.html"
               >See all auctions</a

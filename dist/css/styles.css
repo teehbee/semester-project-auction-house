@@ -12754,6 +12754,19 @@ html * {
   max-width: 306px;
 }
 
+.image-gallery {
+  overflow: auto;
+  flex-wrap: nowrap;
+}
+
+.image-gallery img {
+  padding: 0 1rem;
+}
+
+.open-image-modal {
+  cursor: pointer;
+}
+
 #profile-image {
   height: 100px;
   width: 100px;
@@ -12786,6 +12799,11 @@ dialog {
   margin: 0 auto;
 }
 
+#image-gallery-dialog {
+  min-height: 200px;
+  max-height: auto;
+}
+
 .dialog-top-banner {
   height: 75px;
   background: #3e3e3e;
@@ -12801,9 +12819,14 @@ dialog {
 #close-registration-dialog,
 #close-listing-dialog,
 #close-category-dialog,
-#close-profile-edit-dialog {
+#close-profile-edit-dialog,
+#close-image-dialog {
   top: 75px;
   right: 0;
+}
+
+#close-image-dialog {
+  top: 0;
 }
 
 #close-search-dialog {
@@ -12841,6 +12864,20 @@ dialog::backdrop {
   border: 0.5 #3e3e3e solid;
 }
 
+.auctions-loader {
+  font-family: "font-source-serif-4";
+  animation: l1 1s linear infinite alternate;
+}
+
+.auctions-loader:before {
+  content: "Loading auctions...";
+}
+
+@keyframes l1 {
+  to {
+    opacity: 0;
+  }
+}
 .fs-0-625rem {
   font-size: 0.625rem;
 }
@@ -12894,6 +12931,15 @@ dialog::backdrop {
 @media (min-width: 768px) {
   .fs-1-25rem-md-1-5-rem {
     font-size: 1.5rem;
+  }
+}
+
+.fs-1-25rem-md-2-25rem {
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  .fs-1-25rem-md-2-25rem {
+    font-size: 2.25rem;
   }
 }
 
@@ -12996,10 +13042,39 @@ dialog::backdrop {
     width: 100%;
     margin: 0 auto;
   }
+  .image-gallery {
+    flex-wrap: wrap;
+  }
+  .image-gallery img {
+    height: auto;
+    width: 50%;
+    padding: 0.5rem;
+  }
+  .image-gallery > img:first-child {
+    width: 100%;
+  }
+  .image-gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+  }
+  .image-gallery-arrow:hover {
+    font-size: 2.5rem;
+    transition: 0.1s ease-in-out;
+  }
+  .image-gallery-arrow-right {
+    right: 0 !important;
+  }
   dialog {
     width: 75%;
     max-width: 1000px;
     top: 50px;
+    max-height: 2000px;
   }
   #close-login-dialog,
   #close-registration-dialog,

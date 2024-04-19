@@ -17,6 +17,8 @@ export function handleUrlForModals() {
       constants.categoriesModal.showModal();
     } else if (modalType === "edit-profile") {
       constants.profileModal.showModal();
+    } else if (modalType === "image-gallery") {
+      constants.imageGalleryModal.showModal();
     }
   });
 }

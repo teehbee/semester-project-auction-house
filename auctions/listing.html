@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script src="/node_modules/bootstrap/dist/css/"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/99f531cd0d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet" />
+    <script type="module" src="/src/js/nav/index.js"></script>
+    <script type="module" src="/src/js/index.js"></script>
+    <script type="module" src="/src/js/nav/header.js"></script>
+    <script type="module" src="/src/js/nav/footer.js"></script>
+    <script type="module" src="/src/js/nav/openNav.js"></script>
+    <script type="module" src="/src/js/nav/closeNav.js"></script>
+    <script type="module" src="/src/js/modals/modalHandling.js"></script>
+    <script type="module" src="/src/js/modals/imageGalleryModal.js"></script>
+    <meta name="description" content="Listings page" />
+    <title>Get Rid of it - Some auction</title>
+  </head>
+  <body class="main-color-light logged-in">
+    <main>
+      <dialog id="image-gallery-dialog">
+        <div id="close-image-dialog" class="position-absolute p-1 p-md-3 cursor-pointer">
+          <picture>
+            <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" />
+            <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close registration form" />
+          </picture>
+        </div>
+        <div class="main-color-white w-100 modal-image-container">
+          <div class="gallery-image-in-modal p-4 p-md-5">
+            <img class="img-fluid" src="/assets/img/last-chance-item-1920.jpg" alt="" />
+            <div id="image-gallery-alt-text" class="text-center pt-2">
+            <p>Alt text goes here:</p>
+          </div>
+          </div>
+        </div>
+        <div class="d-none d-md-block">
+          <span id="image-galler-previous-image" class="image-gallery-arrow image-gallery-arrow-left">&#60;</span>
+          <span id="image-galler-next" class="image-gallery-arrow image-gallery-arrow-right">&#62;</span>
+        </div>
+      </dialog>
+      <section class="main-color-white">
+        <div class="container">
+          <div class="listing-title text-center pt-3 pt-md-5 pb-md-3">
+            <h1 id="auction-title" class="fs-1-25rem-md-2-25rem font-source-serif-4 pt-2 pb-2">Auction title</h1>
+          </div>
+          <div class="row gx-5 py-3">
+            <div class="col-12 col-md-6">
+              <div class="image-gallery d-flex justify-content-center">
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/frontpage-hero-1-640.jpg" alt="" />
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/last-chance-item-640.jpg" alt="" />
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/frontpage-hero-1-640.jpg" alt="" />
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/last-chance-item-640.jpg" alt="" />
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/frontpage-hero-1-640.jpg" alt="" />
+              </div>
+            </div>
+            <div class="col-12 col-md-6 text-center">
+              <div id="current-bid-container" class="d-flex justify-content-between pt-3 border-bottom-black">
+                <p class="d-inline-block">Current bid:</p>
+                <p class="d-inline-block" id="current-bid">1500 credit</p>
+              </div>
+              <div id="next-bid-container" class="d-flex justify-content-between pt-3 border-bottom-black">
+                <p class="d-inline-block">Next bid:</p>
+                <p class="d-inline-block" id="next-bid">1600 credit</p>
+              </div>
+              <div id="auction-time-container" class="d-flex justify-content-between pt-3">
+                <p class="d-inline-block">Remaining time:</p>
+                <p class="d-inline-block" id="next-bid">18h 07m</p>
+              </div>
+              <div id="time-remaining-container" class="text-end fs-0-75rem">
+                <p>End time: 15.03.2024 - 22.40</p>
+              </div>
+                <form id="place-bid" action="" class="d-md-flex">
+                  <div id="place-bidding-container" class="row ms-auto"></div>
+                  <div class="col-12 col-md-5 my-2">
+                    <input type="text" class="form-control text-center text-md-start" placeholder="Your bid" />
+                  </div>
+                  <div class="col-12 col-md-4 col-lg-3 my-2 ms-md-2">
+                    <button class="btn btn-dark w-100">Place bid</button>
+                  </div>
+                </form>
+                <div class="accordion accordion-flush py-3" id="accordionFlushExample">
+                  <div class="accordion-item my-3">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Description
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body text-start">Bacon ipsum dolor amet bresaola swine landjaeger, ball tip frankfurter beef cow chislic sausage. Tenderloin turducken cow tri-tip chuck kevin landjaeger short loin bresaola doner brisket ham hock flank. Doner meatloaf cow, kielbasa venison ribeye drumstick meatball t-bone tri-tip pancetta jerky hamburger. Ball tip frankfurter rump burgdoggen. Short loin short ribs t-bone bresaola ribeye boudin pig meatball turkey.
+                      <p class="pt-2 strong">Tags: <span id="tags-on-accordian">Tags are appended here</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Specifics
+                      </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body text-start"><p>Seller: <span id="seller-name-accordian">Creed Bratton</span></p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="listings-from-seller">
+        <div class="text-center pt-3 pt-md-5">
+        <h3>Other auctions by the same seller</h3>
+      </div>
+      <div class="container">
+        <div class="text-center">
+          <div class="auctions-loader fs-1-25rem-md-1-5-rem d-none"></div>
+        </div>
+        <div class="row py-5 gy-4 overflow-auto flex-nowrap flex-md-wrap">
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <a class="text-decoration-none" href="/auctions/listing.html">
+              <div class="card card-width-306px border-none border-radius-none mx-auto">
+                <img class="p-3" src="/assets/img/last-chance-item-640.jpg" alt="#" />
+                <div class="card-body">
+                  <h2 class="card-title fs-1-25rem">Box full of unsorted crap</h2>
+                  <p class="last-chance-frontpage-time-left card-text">24h 18m</p>
+                  <p class="card-text">
+                    Next bid
+                    <span class="card-next-bid-amount">5000</span>,-
+                  </p>
+                  <p class="card-text">
+                    Seller
+                    <span class="card-listing-seller">Dwight Schrute</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <a class="text-decoration-none" href="/auctions/listing.html">
+              <div class="card card-width-306px border-none border-radius-none mx-auto">
+                <img class="p-3" src="/assets/img/last-chance-item-640.jpg" alt="#" />
+                <div class="card-body">
+                  <h2 class="card-title fs-1-25rem">Box full of unsorted crap</h2>
+                  <p class="last-chance-frontpage-time-left card-text">24h 18m</p>
+                  <p class="card-text">
+                    Next bid
+                    <span class="card-next-bid-amount">5000</span>,-
+                  </p>
+                  <p class="card-text">
+                    Seller
+                    <span class="card-listing-seller">Dwight Schrute</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <a class="text-decoration-none" href="/auctions/listing.html">
+              <div class="card card-width-306px border-none border-radius-none mx-auto">
+                <img class="p-3" src="/assets/img/last-chance-item-640.jpg" alt="#" />
+                <div class="card-body">
+                  <h2 class="card-title fs-1-25rem">Box full of unsorted crap</h2>
+                  <p class="last-chance-frontpage-time-left card-text">24h 18m</p>
+                  <p class="card-text">
+                    Next bid
+                    <span class="card-next-bid-amount">5000</span>,-
+                  </p>
+                  <p class="card-text">
+                    Seller
+                    <span class="card-listing-seller">Dwight Schrute</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <a class="text-decoration-none" href="/auctions/listing.html">
+              <div class="card card-width-306px border-none border-radius-none mx-auto">
+                <img class="p-3" src="/assets/img/last-chance-item-640.jpg" alt="#" />
+                <div class="card-body">
+                  <h2 class="card-title fs-1-25rem">Box full of unsorted crap</h2>
+                  <p class="last-chance-frontpage-time-left card-text">24h 18m</p>
+                  <p class="card-text">
+                    Next bid
+                    <span class="card-next-bid-amount">5000</span>,-
+                  </p>
+                  <p class="card-text">
+                    Seller
+                    <span class="card-listing-seller">Dwight Schrute</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+      </div>
+      </div>
+      </section>
+    </main>
+  </body>
+</html>
