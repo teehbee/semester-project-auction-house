@@ -12754,6 +12754,15 @@ html * {
   max-width: 306px;
 }
 
+.image-gallery {
+  overflow: auto;
+  flex-wrap: nowrap;
+}
+
+.image-gallery img {
+  padding: 0 1rem;
+}
+
 #profile-image {
   height: 100px;
   width: 100px;
@@ -12801,7 +12810,8 @@ dialog {
 #close-registration-dialog,
 #close-listing-dialog,
 #close-category-dialog,
-#close-profile-edit-dialog {
+#close-profile-edit-dialog,
+#close-image-dialog {
   top: 75px;
   right: 0;
 }
@@ -12911,6 +12921,15 @@ dialog::backdrop {
   }
 }
 
+.fs-1-25rem-md-2-25rem {
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  .fs-1-25rem-md-2-25rem {
+    font-size: 2.25rem;
+  }
+}
+
 .fs-1-5rem-lg-2-25rem {
   font-size: 1.5rem;
 }
@@ -13010,6 +13029,17 @@ dialog::backdrop {
     width: 100%;
     margin: 0 auto;
   }
+  .image-gallery {
+    flex-wrap: wrap;
+  }
+  .image-gallery img {
+    height: auto;
+    width: 50%;
+    padding: 0.5rem;
+  }
+  .image-gallery > img:first-child {
+    width: 100%;
+  }
   dialog {
     width: 75%;
     max-width: 1000px;
@@ -13019,7 +13049,8 @@ dialog::backdrop {
   #close-registration-dialog,
   #close-listing-dialog,
   #close-category-dialog,
-  #close-profile-edit-dialog {
+  #close-profile-edit-dialog,
+  #close-image-dialog {
     top: 0;
     right: 0;
   }

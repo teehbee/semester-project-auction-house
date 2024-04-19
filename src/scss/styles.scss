@@ -139,6 +139,17 @@ html * {
   max-width: 306px;
 }
 
+// Image gallery
+
+.image-gallery {
+  overflow: auto;
+  flex-wrap: nowrap;
+}
+
+.image-gallery img {
+  padding: 0 1rem;
+}
+
 // Profile
 
 #profile-image {
@@ -190,7 +201,8 @@ dialog {
 #close-registration-dialog,
 #close-listing-dialog,
 #close-category-dialog,
-#close-profile-edit-dialog {
+#close-profile-edit-dialog,
+#close-image-dialog {
   top: 75px;
   right: 0;
 }
@@ -316,6 +328,14 @@ $custom-fs-2-5rem: 2.5rem;
   }
 }
 
+.fs-1-25rem-md-2-25rem {
+  font-size: $custom-fs-1-25rem;
+
+  @include media-breakpoint-up("md") {
+    font-size: $custom-fs-2-25;
+  }
+}
+
 .fs-1-5rem-lg-2-25rem {
   font-size: $custom-fs-1-5rem;
 
@@ -422,6 +442,22 @@ $custom-fs-2-5rem: 2.5rem;
     margin: 0 auto;
   }
 
+  // Image gallery
+
+  .image-gallery {
+    flex-wrap: wrap;
+  }
+
+  .image-gallery img {
+    height: auto;
+    width: 50%;
+    padding: 0.5rem;
+  }
+
+  .image-gallery > img:first-child {
+    width: 100%;
+  }
+
   // Dialog
 
   dialog {
@@ -434,7 +470,8 @@ $custom-fs-2-5rem: 2.5rem;
   #close-registration-dialog,
   #close-listing-dialog,
   #close-category-dialog,
-  #close-profile-edit-dialog {
+  #close-profile-edit-dialog,
+  #close-image-dialog {
     top: 0;
     right: 0;
   }

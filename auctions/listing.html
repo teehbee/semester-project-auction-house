@@ -21,6 +21,53 @@
     <title>Get Rid of it - Some auction</title>
   </head>
   <body class="main-color-light logged-in">
-    <main></main>
+    <main>
+      <dialog id="categories-dialog" class="border" open>
+        <div id="close-image-dialog" class="position-absolute p-3 cursor-pointer">
+          <picture>
+            <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" />
+            <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close registration form" />
+          </picture>
+        </div>
+        <div class="main-color-white w-100">
+          <div class="gallery-image-in-modal p-5"><img class="object-fit-img" src="/assets/img/last-chance-item-1920.jpg" alt="" /></div>
+        </div>
+      </dialog>
+      <section class="main-color-white">
+        <div class="container">
+          <div class="listing-title text-center pt-3 pt-md-5 pb-md-3">
+            <h1 id="auction-title" class="fs-1-25rem-md-2-25rem font-source-serif-4 pt-2 pb-2">Auction title</h1>
+          </div>
+          <div class="row gx-5 pt-3">
+            <div class="col-12 col-md-6">
+              <div class="image-gallery d-flex justify-content-center">
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/frontpage-hero-1-640.jpg" alt="" />
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/frontpage-hero-1-640.jpg" alt="" />
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/frontpage-hero-1-640.jpg" alt="" />
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/frontpage-hero-1-640.jpg" alt="" />
+                <img class="img-fluid open-image-modal cursor-pointer" src="/assets/img/frontpage-hero-1-640.jpg" alt="" />
+              </div>
+            </div>
+            <div class="col-12 col-md-6 text-center">
+              <div id="current-bid-container" class="d-flex justify-content-between pt-3 border-bottom-black">
+                <p class="d-inline-block">Current bid:</p>
+                <p class="d-inline-block" id="current-bid">1500 credit</p>
+              </div>
+              <div id="next-bid-container" class="d-flex justify-content-between pt-3 border-bottom-black">
+                <p class="d-inline-block">Next bid:</p>
+                <p class="d-inline-block" id="next-bid">1600 credit</p>
+              </div>
+              <div id="auction-time-container" class="d-flex justify-content-between pt-3">
+                <p class="d-inline-block">Remaining time:</p>
+                <p class="d-inline-block" id="next-bid">18h 07m</p>
+              </div>
+              <div id="time-remaining-container" class="text-end fs-0-75rem">
+                <p>End time: 15.03.2024 - 22.40</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
