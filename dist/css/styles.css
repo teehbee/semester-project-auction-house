@@ -12841,6 +12841,20 @@ dialog::backdrop {
   border: 0.5 #3e3e3e solid;
 }
 
+.auctions-loader {
+  font-family: "font-source-serif-4";
+  animation: l1 1s linear infinite alternate;
+}
+
+.auctions-loader:before {
+  content: "Loading auctions...";
+}
+
+@keyframes l1 {
+  to {
+    opacity: 0;
+  }
+}
 .fs-0-625rem {
   font-size: 0.625rem;
 }

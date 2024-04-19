@@ -232,6 +232,21 @@ dialog::backdrop {
   border: 0.5 $main-color-dark solid;
 }
 
+// Loaders
+
+.auctions-loader {
+  font-family: "font-source-serif-4";
+  animation: l1 1s linear infinite alternate;
+}
+.auctions-loader:before {
+  content: "Loading auctions...";
+}
+@keyframes l1 {
+  to {
+    opacity: 0;
+  }
+}
+
 //Font variables
 
 $custom-fs-0-625rem: 0.625rem;
