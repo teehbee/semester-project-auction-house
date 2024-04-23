@@ -51,5 +51,3 @@ export async function loginUser(url, data) {
     loginSpinner.classList.add("d-none");
   }
 }
-
-// API Key fetch
