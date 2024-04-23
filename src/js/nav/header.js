@@ -288,7 +288,7 @@ header.innerHTML = `
       </div>
     </div>
   </dialog>
-  <dialog id="success-dialog" class="main-color-dark" open>
+  <dialog id="success-dialog" class="main-color-dark">
     <div class="main-color-white w-100">
       <div class="container text-center py-5">
         <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">

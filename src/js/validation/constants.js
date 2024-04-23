@@ -16,6 +16,8 @@ export const registrationButton = document.querySelector(
   "#submit-registration",
 );
 
+export const registrationConfirm = document.querySelector("#register-confirm");
+
 // Error classes for registration
 
 export const registrationNameError = document.querySelector(
@@ -36,11 +38,12 @@ export const registrationTermsError = document.querySelector(
 export const registrationMainError = document.querySelector(
   "#registration-error",
 );
+export const registrationConfirmError = document.querySelector(
+  "#registration-terms-error",
+);
 
 // Spinner for registration
 
 export const registrationSpinner = document.querySelector(
   "#registration-spinner",
 );
-
-// Success dialog
