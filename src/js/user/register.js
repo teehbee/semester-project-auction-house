@@ -17,6 +17,7 @@ import {
   registrationPasswordRepeat,
   registrationPasswordRepeatError,
   registrationForm,
+  registrationMainError,
 } from "../validation/constants.js";
 
 // Dialog elements
@@ -81,5 +82,5 @@ function validateRegisterForm(event) {
 if (registrationForm) {
   registrationForm.addEventListener("submit", validateRegisterForm);
 } else {
-  console.log("woops");
+  registrationMainError.classList.remove("d-none");
 }

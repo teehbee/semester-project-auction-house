@@ -271,6 +271,11 @@ header.innerHTML = `
         >
           * Please agree to the terms and conditions, if not, we cannot let you in.
         </div>
+        <div id="registration-error"
+          class="form-error fs-0-75rem text-danger pt-3 d-none"
+        >
+          Something went wrong. Please try again. 
+        </div>
           <div id="registration-spinner"
             class="spinner-border text-secondary mt-4 d-none"
             role="status"

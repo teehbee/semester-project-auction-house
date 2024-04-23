@@ -33,6 +33,9 @@ export const registrationPasswordRepeatError = document.querySelector(
 export const registrationTermsError = document.querySelector(
   "#registration-terms-error",
 );
+export const registrationMainError = document.querySelector(
+  "#registration-error",
+);
 
 // Spinner for registration
 
