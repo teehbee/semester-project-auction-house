@@ -1,4 +1,5 @@
 import { loginError } from "../validation/constants.js";
+import { loginModal } from "../modals/constants.js";
 
 const loginSpinner = document.querySelector("#login-spinner");
 
@@ -29,6 +30,17 @@ export async function loginUser(url, data) {
     localStorage.setItem(`accessToken`, accessToken);
 
     loginSpinner.classList.remove("d-none");
+
+    // Close modal and remove url parameter
+
+    function removeLoginModalQueryParam() {
+      const searchParams = new URLSearchParams(window.location.search);
+      searchParams.delete("modal");
+      history.replaceState({}, "", "?" + searchParams.toString());
+    }
+
+    loginModal.close();
+    removeLoginModalQueryParam();
 
     console.log(json);
     return true;
