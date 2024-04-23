@@ -47,3 +47,13 @@ export const registrationConfirmError = document.querySelector(
 export const registrationSpinner = document.querySelector(
   "#registration-spinner",
 );
+
+/* Login form */
+
+export const loginForm = document.querySelector("#login-form");
+export const loginEmail = document.querySelector("#login-email");
+export const loginPassword = document.querySelector("#login-password");
+
+// Error classes for login
+
+export const loginError = document.querySelector("#login-error");

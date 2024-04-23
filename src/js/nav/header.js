@@ -127,7 +127,7 @@ header.innerHTML = `
               >Email address</label
             >
             <input type="email" class="form-control" id="login-email" />
-            <div
+            <div id="login-email-error"
               class="form-error fs-0-625rem text-end text-danger d-none"
             >
               * Please check if this field is filled out correctly
@@ -142,14 +142,14 @@ header.innerHTML = `
               class="form-control"
               id="login-password"
             />
-            <div
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * Please check if this field is filled out correctly
-            </div>
           </div>
-          <a href="" class="btn btn-dark mt-3">Log in</a>
-          <div
+          <input type="submit" value="Log in" class="btn btn-dark mt-4 w-100">
+          <div id="login-error"
+              class="form-error fs-0-75rem pt-3 text-danger d-none"
+            >
+              Username or password is incorrect
+            </div>
+          <div id="login-spinner"
             class="spinner-border text-secondary mt-4 d-none"
             role="status"
           >
