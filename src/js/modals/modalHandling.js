@@ -135,6 +135,28 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// Close Success dialog   successDialogClose - Fix later
+
+function removeSuccessModalQueryParam() {
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.delete("modal");
+  history.replaceState({}, "", "?" + searchParams.toString());
+}
+
+constants.successDialogButton.addEventListener("click", () => {
+  constants.successDialog.close();
+  removeSuccessModalQueryParam();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    if (constants.successDialog.open) {
+      constants.successDialog.close();
+      removeSuccessModalQueryParam();
+    }
+  }
+});
+
 // Listen for modal url's
 
 handleUrlForModals();

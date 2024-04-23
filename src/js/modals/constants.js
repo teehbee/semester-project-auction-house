@@ -57,3 +57,13 @@ export const openImageGalleryModal =
 export const closeImageGalleryModal = document.querySelector(
   "#close-image-dialog",
 );
+
+// Success dialog
+
+export const successDialog = document.querySelector("#success-dialog");
+export const successDialogClose = document.querySelector(
+  "#close-success-dialog",
+);
+export const successDialogButton = document.querySelector(
+  "#success-dialog-continue",
+);

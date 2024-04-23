@@ -30,7 +30,7 @@ header.innerHTML = `
         <a href="" class="pe-3 open-login-modal">
           <img src="/assets/logo/user-32px-dark.svg" />
         </a>
-        <a id="logout-icon" href="" class="d-none d-lg-block">
+        <a id="profile-icon-header" href="" class="d-none d-lg-block">
           <img src="/assets/logo/logo-logout-dark-32px.svg" />
         </a>
       </div>
@@ -127,7 +127,7 @@ header.innerHTML = `
               >Email address</label
             >
             <input type="email" class="form-control" id="login-email" />
-            <div id="login-email-error"
+            <div
               class="form-error fs-0-625rem text-end text-danger d-none"
             >
               * Please check if this field is filled out correctly
@@ -142,14 +142,14 @@ header.innerHTML = `
               class="form-control"
               id="login-password"
             />
-          </div>
-          <input type="submit" value="Log in" class="btn btn-dark mt-4 w-100">
-          <div id="login-error"
-              class="form-error fs-0-75rem pt-3 text-danger d-none"
+            <div
+              class="form-error fs-0-625rem text-end text-danger d-none"
             >
-              Username or password is incorrect
+              * Please check if this field is filled out correctly
             </div>
-          <div id="login-spinner"
+          </div>
+          <a href="" class="btn btn-dark mt-3">Log in</a>
+          <div
             class="spinner-border text-secondary mt-4 d-none"
             role="status"
           >
@@ -241,7 +241,7 @@ header.innerHTML = `
             <input
               type="password"
               class="form-control"
-              id="register-password-confirm"
+              id="login-password-confirm"
             />
             <div id="registration-password-repeat-error"
               class="form-error fs-0-625rem text-end text-danger d-none"
@@ -265,18 +265,11 @@ header.innerHTML = `
                 our Terms and Conditions.
               </label>
             </div>
-            <div>
-            <input type="submit" value="Create profile" class="btn btn-dark mt-4 w-100">
-            </div>
+            <input type="submit" value="Create profile" class="btn btn-dark mt-3">
           <div id="registration-terms-error"
           class="form-error fs-0-625rem text-end text-danger pt-2 d-none"
         >
           * Please agree to the terms and conditions, if not, we cannot let you in.
-        </div>
-        <div id="registration-error"
-          class="form-error fs-0-75rem text-danger pt-3 d-none"
-        >
-          Something went wrong. Please try again. 
         </div>
           <div id="registration-spinner"
             class="spinner-border text-secondary mt-4 d-none"
@@ -285,19 +278,6 @@ header.innerHTML = `
             <span class="visually-hidden">Loading...</span>
           </div>
         </form>
-      </div>
-    </div>
-  </dialog>
-  <dialog id="success-dialog" class="main-color-dark">
-    <div class="main-color-white w-100">
-      <div class="container text-center py-5">
-        <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">
-          SUCCESS
-        </h2>
-        <div class="max-width-350px mx-auto">
-        <p class="pt-5 fs-1-25rem-md-1-5-rem">Congratulations, your account has been successfully created.</p>
-        <a href="#" id="success-dialog-continue" class="btn btn-dark w-100 mt-5">Continue</a>
-        </div> 
       </div>
     </div>
   </dialog>

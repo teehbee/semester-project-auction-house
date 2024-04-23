@@ -1,0 +1,59 @@
+/* Registration form */
+
+export const registrationForm = document.querySelector("#register-form");
+
+export const registrationUserName = document.querySelector("#register-name");
+export const registrationEmail = document.querySelector("#register-email");
+export const registrationPassword =
+  document.querySelector("#register-password");
+export const registrationPasswordRepeat = document.querySelector(
+  "#register-password-confirm",
+);
+export const registrationConsentInput =
+  document.querySelector("#register-confirm");
+
+export const registrationButton = document.querySelector(
+  "#submit-registration",
+);
+
+export const registrationConfirm = document.querySelector("#register-confirm");
+
+// Error classes for registration
+
+export const registrationNameError = document.querySelector(
+  "#register-name-error",
+);
+export const registrationEmailError = document.querySelector(
+  "#register-email-error",
+);
+export const registrationPasswordError = document.querySelector(
+  "#registration-password-error",
+);
+export const registrationPasswordRepeatError = document.querySelector(
+  "#registration-password-repeat-error",
+);
+export const registrationTermsError = document.querySelector(
+  "#registration-terms-error",
+);
+export const registrationMainError = document.querySelector(
+  "#registration-error",
+);
+export const registrationConfirmError = document.querySelector(
+  "#registration-terms-error",
+);
+
+// Spinner for registration
+
+export const registrationSpinner = document.querySelector(
+  "#registration-spinner",
+);
+
+/* Login form */
+
+export const loginForm = document.querySelector("#login-form");
+export const loginEmail = document.querySelector("#login-email");
+export const loginPassword = document.querySelector("#login-password");
+
+// Error classes for login
+
+export const loginError = document.querySelector("#login-error");
