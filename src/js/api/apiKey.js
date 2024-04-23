@@ -13,6 +13,7 @@ export async function fetchApiKey(apiKeyUrl) {
     const json = await response.json();
     const apiKey = json.data.key;
     localStorage.setItem("apiKey", apiKey);
+    location.reload();
     return true;
   } catch (error) {
     console.error(error);

@@ -30,7 +30,7 @@ header.innerHTML = `
         <a href="" class="pe-3 open-login-modal">
           <img src="/assets/logo/user-32px-dark.svg" />
         </a>
-        <a id="profile-icon-header" href="" class="d-none d-lg-block">
+        <a id="logout-icon" href="" class="d-none d-lg-block">
           <img src="/assets/logo/logo-logout-dark-32px.svg" />
         </a>
       </div>

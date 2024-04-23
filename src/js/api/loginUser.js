@@ -43,6 +43,7 @@ export async function loginUser(url, data) {
     removeLoginModalQueryParam();
 
     console.log(json);
+
     return true;
   } catch (error) {
     console.log(error);
