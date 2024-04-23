@@ -79,6 +79,15 @@ function validateRegisterForm(event) {
   registerUser(apiBaseUrl + register, user);
 }
 
+document.addEventListener("click", function (event) {
+  if (!registrationForm.contains(event.target)) {
+    registrationNameError.classList.add("d-none");
+    registrationEmailError.classList.add("d-none");
+    registrationPasswordError.classList.add("d-none");
+    registrationPasswordError.classList.add("d-none");
+  }
+});
+
 if (registrationForm) {
   registrationForm.addEventListener("submit", validateRegisterForm);
 } else {

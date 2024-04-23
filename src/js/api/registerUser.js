@@ -21,6 +21,8 @@ export async function registerUser(url, data) {
     console.log(response);
     const json = await response.json();
 
+    // Switch to success modal and change url parameter
+
     constants.registerModal.close();
     constants.successDialog.showModal();
     const searchParams = new URLSearchParams(window.location.search);
