@@ -12820,12 +12820,14 @@ dialog {
 #close-listing-dialog,
 #close-category-dialog,
 #close-profile-edit-dialog,
-#close-image-dialog {
+#close-image-dialog,
+#close-success-dialog {
   top: 75px;
   right: 0;
 }
 
-#close-image-dialog {
+#close-image-dialog,
+#close-success-dialog {
   top: 0;
 }
 
@@ -12846,7 +12848,8 @@ dialog form a {
 #close-login-dialog,
 #login-to-register-modal-switch,
 #close-registration-dialog,
-#close-search-dialog {
+#close-search-dialog,
+#close-success-dialog {
   cursor: pointer;
 }
 

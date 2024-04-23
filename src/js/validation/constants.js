@@ -42,3 +42,5 @@ export const registrationMainError = document.querySelector(
 export const registrationSpinner = document.querySelector(
   "#registration-spinner",
 );
+
+// Success dialog

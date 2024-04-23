@@ -265,7 +265,9 @@ header.innerHTML = `
                 our Terms and Conditions.
               </label>
             </div>
-            <input type="submit" value="Create profile" class="btn btn-dark mt-3">
+            <div>
+            <input type="submit" value="Create profile" class="btn btn-dark mt-4 w-100">
+            </div>
           <div id="registration-terms-error"
           class="form-error fs-0-625rem text-end text-danger pt-2 d-none"
         >
@@ -283,6 +285,19 @@ header.innerHTML = `
             <span class="visually-hidden">Loading...</span>
           </div>
         </form>
+      </div>
+    </div>
+  </dialog>
+  <dialog id="success-dialog" class="main-color-dark" open>
+    <div class="main-color-white w-100">
+      <div class="container text-center py-5">
+        <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">
+          SUCCESS
+        </h2>
+        <div class="max-width-350px mx-auto">
+        <p class="pt-5 fs-1-25rem-md-1-5-rem">Congratulations, your account has been successfully created.</p>
+        <a href="#" id="success-dialog-continue" class="btn btn-dark w-100 mt-5">Continue</a>
+        </div> 
       </div>
     </div>
   </dialog>
