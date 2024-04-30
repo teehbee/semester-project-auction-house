@@ -5,6 +5,7 @@ export function logOutUser() {
     event.preventDefault();
     localStorage.removeItem("apiKey");
     localStorage.removeItem("accessToken");
+    localStorage.removeItem("userName");
     location.reload();
   });
 }

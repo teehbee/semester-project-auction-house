@@ -9,9 +9,6 @@ header.innerHTML = `
         <a class="d-block d-lg-none" id="hamburger-icon" href="#"
           ><img src="/assets/logo/bars-dark.svg"
         /></a>
-        <a class="search-icon nav-link d-none d-lg-block" href="#"
-          ><img src="/assets/logo/search-32px-dark.svg"
-        /></a>
       </div>
       <div class="col-8 logo-container">
         <a class="navbar-brand" href="/index.html">
@@ -49,11 +46,6 @@ header.innerHTML = `
             id="close-menu"
             href="#"
             ><img src="/assets/logo/logo-close-light.svg"
-          /></a>
-        </li>
-        <li class="ms-auto ps-3">
-          <a class="d-block d-lg-none search-icon" href="#"
-            ><img src="/assets/logo/logo-search-light.svg"
           /></a>
         </li>
         <li class="ps-3">
