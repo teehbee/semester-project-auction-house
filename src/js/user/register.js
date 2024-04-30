@@ -23,8 +23,6 @@ import {
   registrationConfirmError,
 } from "../validation/constants.js";
 
-// Dialog elements
-
 // Register function
 
 import { apiBaseUrl, register } from "../api/constants.js";

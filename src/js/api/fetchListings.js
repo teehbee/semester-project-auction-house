@@ -6,7 +6,11 @@ export async function fetchListings() {
   try {
     auctionLoader.classList.remove("d-none");
 
-    const response = await fetch(`${apiBaseUrl}${allListings}`, {
+    const url = new URL(`${apiBaseUrl}${allListings}`);
+    url.searchParams.append(`_seller`, `true`);
+    url.searchParams.append(`_bids`, `true`);
+
+    const response = await fetch(url, {
       method: "GET",
     });
 

@@ -12754,6 +12754,10 @@ html * {
   max-width: 306px;
 }
 
+.listings-image-card {
+  height: 350px;
+}
+
 .image-gallery {
   overflow: auto;
   flex-wrap: nowrap;
