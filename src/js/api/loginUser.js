@@ -26,8 +26,11 @@ export async function loginUser(url, data) {
     const json = await response.json();
 
     const accessToken = json.data.accessToken;
+    const userName = json.data.name;
 
     localStorage.setItem(`accessToken`, accessToken);
+
+    localStorage.setItem(`userName`, userName);
 
     loginSpinner.classList.remove("d-none");
 

@@ -1,6 +1,6 @@
 import { loginUser } from "../api/loginUser.js";
 import { fetchApiKey } from "../api/apiKey.js";
-import { apiBaseUrl, login, apiKey } from "../api/constants.js";
+import { apiBaseUrl, login, apiKeyEndPoint } from "../api/constants.js";
 
 import {
   loginForm,
@@ -19,7 +19,7 @@ async function handleLogin(event) {
 
   const loginSuccess = await loginUser(apiBaseUrl + login, userLogin);
   if (loginSuccess) {
-    const apiKeyFetchSuccess = await fetchApiKey(apiBaseUrl + apiKey);
+    const apiKeyFetchSuccess = await fetchApiKey(apiBaseUrl + apiKeyEndPoint);
     if (apiKeyFetchSuccess) {
       console.log("API key fetched successfully");
     } else {

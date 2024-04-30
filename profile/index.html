@@ -18,6 +18,7 @@
     <script type="module" src="/src/js/nav/closeNav.js"></script>
     <script type="module" src="/src/js/modals/modalHandling.js"></script>
     <script type="module" src="/src/js/modals/profileModals.js"></script>
+    <script type="module" src="/src/js/user/profileData.js"></script>
     <meta name="description" content="Your profile page" />
     <title>Get Rid of it - Profile</title>
   </head>
@@ -62,27 +63,14 @@
     <main>
       <section id="profile-banner">
         <div class="container-fluid w-100 main-color-white">
-          <div class="container">
+          <div id="profile-content" class="container">
             <div class="text-center py-3">
             <h1 class="font-source-serif-4 fs-1-5rem-lg-2-25rem">Profile</h1>
             </div>
             <div class="row py-4 py-md-5">
               <div id="profile-image" class="col-4 col-md-4 position-relative">
-                <img class="object-fit-img border-radius-round profile-image" src="/assets/img/austin-distel-7uoMmzPd2JA-unsplash-620.jpg" aria-label="Profile picture with link to editing profile" />
-                <a class="open-profile-edit-dialog position-absolute top-50 start-50 translate-middle cursor-pointer d-none" ref="#">Edit profile</a>
               </div>
               <div id="profile-data" class="col-6 col-md-3 col-lg-2 pt-xl-2 ps-4">
-                <div>
-                <div id="profile-username" class="fs-0-75-rem-md-1-rem mb-0">
-                  <p>Username goes here</p>
-                </div>
-                <div id="profile-email" class="fs-0-75-rem-md-1-rem">
-                  <p>Email address goes here</p>
-                </div>
-              </div>
-                <div class="fs-0-75-rem-md-1-rem pt-0 pt-md-3 pt-lg-4 pt-xl-5">
-                  <p>Available credit: <span id="profile-credit" class="fs-0-75-rem-md-1-rem">1000</span></p>
-                </div>
             </div>
             <div class="col-12 col-md-3 col-lg-2 ms-auto">
               <div class="text-center">
@@ -102,7 +90,7 @@
           <div class="text-center py-3">
             <div class="auctions-loader fs-1-25rem-md-1-5-rem pt-5 d-none"></div>
           </div>
-        <div id="profile-your-listings-row" class="row py-5 gy-4 overflow-auto flex-nowrap flex-md-wrap">
+        <div id="profile-your-listings-row" class="row py-5 gy-4 overflow-auto flex-nowrap">
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
             <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
               <img class="p-3" src="/assets/img/last-chance-item-640.jpg" alt="#" />
