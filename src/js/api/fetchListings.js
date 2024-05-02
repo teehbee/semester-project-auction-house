@@ -9,6 +9,7 @@ export async function fetchListings() {
     const url = new URL(`${apiBaseUrl}${allListings}`);
     url.searchParams.append(`_seller`, `true`);
     url.searchParams.append(`_bids`, `true`);
+    url.searchParams.append("_active", "true");
 
     const response = await fetch(url, {
       method: "GET",
