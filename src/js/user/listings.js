@@ -9,13 +9,14 @@ const listingsMainContainer = document.querySelector(
 );
 const loadMoreListingsButton = document.querySelector("#load-more-listings");
 
-let currentIndex = 8; // Number of initially displayed posts
+let currentPage = 1; // Initial page number
+const listingsPerPage = 8; // Number of listings to display per page
 let allListings = [];
 
 // Fetch initial listings
 async function fetchAllListings() {
   try {
-    const listings = await fetchListings();
+    const listings = await fetchListings(currentPage, 8, "endsAt", "asc");
     allListings = listings.data;
     displayListings();
   } catch (error) {
@@ -31,15 +32,7 @@ function displayListings(input) {
   if (input) {
     listingsToShow = input;
   } else {
-    // Sort all listings based on time left
-    const sortedListings = allListings.sort((a, b) => {
-      const aTimeLeft = calculateTimeLeftInSeconds(a.endsAt);
-      const bTimeLeft = calculateTimeLeftInSeconds(b.endsAt);
-      return aTimeLeft - bTimeLeft;
-    });
-
-    // Display only the first `currentIndex` listings
-    listingsToShow = sortedListings.slice(0, currentIndex);
+    listingsToShow = allListings;
   }
 
   listingsToShow.forEach((listing) => {
@@ -60,38 +53,35 @@ function displayListings(input) {
   });
 
   listingsMainContainer.innerHTML = listingsHTML;
-
-  toggleLoadMoreButtonVisibility();
-}
-
-// Calculate time left in seconds
-function calculateTimeLeftInSeconds(endsAt) {
-  const { daysLeft, hoursLeft, minutesLeft, secondsLeft } =
-    calculateCountdown(endsAt);
-  return (
-    daysLeft * 24 * 60 * 60 +
-    hoursLeft * 60 * 60 +
-    minutesLeft * 60 +
-    secondsLeft
-  );
 }
 
 // Toggle visibility of load more button
 function toggleLoadMoreButtonVisibility() {
   loadMoreListingsButton.classList.toggle(
     "d-none",
-    currentIndex >= allListings.length,
+    allListings.length <= currentPage * listingsPerPage,
   );
 }
 
-// Increase displayed listings by 8 when clicking the load more button
-loadMoreListingsButton.addEventListener("click", (event) => {
+// Load more listings when clicking the load more button
+loadMoreListingsButton.addEventListener("click", async (event) => {
   event.preventDefault();
-  currentIndex += 8; // Increase currentIndex by 8 to load more listings
-  displayListings();
+
+  // Increment the current page
+  currentPage++;
+
+  try {
+    const listingsResponse = await fetchListings(currentPage, listingsPerPage);
+    const newPageListings = listingsResponse.data; // Extract the listings from the response
+    allListings = allListings.concat(newPageListings); // Concatenate the new listings with existing ones
+    displayListings();
+    toggleLoadMoreButtonVisibility();
+  } catch (error) {
+    console.error("Error fetching listings:", error);
+  }
 });
 
-// Eventlistener for search button and on enter
+// Event listener for search button and on enter
 searchSubmit.addEventListener("click", (event) => {
   event.preventDefault();
   const searchTerm = searchInput.value.trim();
