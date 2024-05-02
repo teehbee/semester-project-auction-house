@@ -23,5 +23,3 @@ export async function fetchListings() {
     console.log(error);
   }
 }
-
-fetchListings();

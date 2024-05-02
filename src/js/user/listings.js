@@ -3,32 +3,41 @@ import { fetchListings } from "../api/fetchListings.js";
 const listingsMainContainer = document.querySelector(
   "#listings-main-container",
 );
+const loadMoreListingsButton = document.querySelector("#load-more-listings");
+
+let currentIndex = 8;
+let allListings = [];
+
+// Fetch initial listings
 
 async function fetchAllListings() {
   try {
     const listings = await fetchListings();
-    const listingsArray = listings.data;
-    let listingsHTML = "";
+    allListings = listings.data;
+    displayListings(currentIndex);
+  } catch (error) {
+    console.error("Error fetching listings:", error);
+  }
+}
 
-    // Only shows posts where images are present
+// Display listings
 
-    const validListings = listingsArray.filter(
-      (listing) => listing.media && listing.media.length > 0,
-    );
+function displayListings(index) {
+  let listingsHTML = "";
+  const validListings = allListings
+    .filter((listing) => listing.media && listing.media.length > 0)
+    .slice(0, index);
 
-    // Check for latest bid.
+  validListings.forEach((listing) => {
+    const hasBids = listing.bids && listing.bids.length > 0;
+    const lastBid = hasBids
+      ? listing.bids[listing.bids.length - 1].amount
+      : "no bids yet";
 
-    validListings.forEach((listing) => {
-      const hasBids = listing.bids && listing.bids.length > 0;
-
-      const lastBid = hasBids
-        ? listing.bids[listing.bids.length - 1].amount
-        : "no bids yet";
-
-      const listingHTML = `
-        <div class="listings-container col-12 col-sm-6 col-lg-4 col-xl-3">
-            <a class="text-decoration-none" href="/auctions/listing.html">
-              <div class="card card-width-306px border-none border-radius-none mx-auto">
+    const listingHTML = `
+      <div class="listings-container col-12 col-sm-6 col-lg-4 col-xl-3">
+          <a class="text-decoration-none" href="/auctions/listing.html">
+            <div class="card card-width-306px border-none border-radius-none mx-auto">
               <img class="listings-image-card p-3 object-fit-img" src="${listing.media[0].url}" alt="${listing.media[0].alt}"/>
                 <div class="card-body">
                   <h2 class="card-title fs-1-25rem">${listing.title}</h2>
@@ -46,15 +55,24 @@ async function fetchAllListings() {
             </a>
           </div>
         `;
-      listingsHTML += listingHTML;
-    });
+    listingsHTML += listingHTML;
+  });
 
-    listingsMainContainer.innerHTML = listingsHTML;
+  listingsMainContainer.innerHTML = listingsHTML;
 
-    console.log(listings);
-  } catch (error) {
-    console.log(error);
+  // Remove load more button if no more posts to load
+
+  if (validListings.length < currentIndex) {
+    loadMoreListingsButton.classList.add("d-none");
   }
 }
+
+// Increase displayed listings by 8
+
+loadMoreListingsButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  currentIndex += 8;
+  displayListings(currentIndex);
+});
 
 fetchAllListings();
