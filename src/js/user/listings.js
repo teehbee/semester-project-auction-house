@@ -16,9 +16,15 @@ let allListings = [];
 // Fetch initial listings
 async function fetchAllListings() {
   try {
-    const listings = await fetchListings(currentPage, 8, "endsAt", "asc");
-    allListings = listings.data;
+    const listings = await fetchListings(
+      currentPage,
+      listingsPerPage,
+      "endsAt",
+      "asc",
+    );
+    allListings = [...allListings, ...listings.data]; // Append new listings to the existing ones
     displayListings();
+    console.log(allListings);
   } catch (error) {
     console.error("Error fetching listings:", error);
   }
@@ -56,29 +62,18 @@ function displayListings(input) {
 }
 
 // Toggle visibility of load more button
-function toggleLoadMoreButtonVisibility() {
-  loadMoreListingsButton.classList.toggle(
-    "d-none",
-    allListings.length <= currentPage * listingsPerPage,
-  );
-}
+// function toggleLoadMoreButtonVisibility() {
+//   loadMoreListingsButton.classList.toggle(
+//     "d-none",
+//     allListings.length <= currentPage * listingsPerPage,
+//   );
+// }
 
-// Load more listings when clicking the load more button
-loadMoreListingsButton.addEventListener("click", async (event) => {
-  event.preventDefault();
+// Eventlistener for adding more posts
 
-  // Increment the current page
+loadMoreListingsButton.addEventListener("click", async () => {
   currentPage++;
-
-  try {
-    const listingsResponse = await fetchListings(currentPage, listingsPerPage);
-    const newPageListings = listingsResponse; // Extract the listings from the response
-    allListings = allListings.concat(newPageListings); // Concatenate the new listings with existing ones
-    displayListings();
-    toggleLoadMoreButtonVisibility();
-  } catch (error) {
-    console.error("Error fetching listings:", error);
-  }
+  await fetchAllListings();
 });
 
 // Event listener for search button and on enter
