@@ -1,5 +1,5 @@
 import { fetchListings } from "../api/fetchListings.js";
-import { searchPosts } from "../posts/listingsSearch.js";
+import { fetchSearch } from "../api/fetchSearch.js";
 import { searchInput, searchSubmit } from "../posts/constants.js";
 import { calculateCountdown } from "../posts/countdown.js";
 import { listingTemplate } from "../posts/listingCardHtml.js";
@@ -22,7 +22,7 @@ async function fetchAllListings() {
       "endsAt",
       "asc",
     );
-    allListings = [...allListings, ...listings.data]; // Append new listings to the existing ones
+    allListings = [...allListings, ...listings.data]; // Append new listings to allListings
     displayListings();
     console.log(allListings);
   } catch (error) {
@@ -77,18 +77,21 @@ loadMoreListingsButton.addEventListener("click", async () => {
 });
 
 // Event listener for search button and on enter
-searchSubmit.addEventListener("click", (event) => {
+
+searchSubmit.addEventListener("click", async (event) => {
   event.preventDefault();
   const searchTerm = searchInput.value.trim();
-  const filteredListings = searchPosts(allListings, searchTerm);
+  const searchResult = await fetchSearch(searchTerm);
+  const filteredListings = searchResult.data;
   displayListings(filteredListings);
 });
 
-searchInput.addEventListener("keydown", (event) => {
+searchInput.addEventListener("keydown", async (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
     const searchTerm = searchInput.value.trim();
-    const filteredListings = searchPosts(allListings, searchTerm);
+    const searchResult = await fetchSearch(searchTerm);
+    const filteredListings = searchResult.data;
     displayListings(filteredListings);
   }
 });
