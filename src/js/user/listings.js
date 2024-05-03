@@ -72,7 +72,7 @@ loadMoreListingsButton.addEventListener("click", async (event) => {
 
   try {
     const listingsResponse = await fetchListings(currentPage, listingsPerPage);
-    const newPageListings = listingsResponse.data; // Extract the listings from the response
+    const newPageListings = listingsResponse; // Extract the listings from the response
     allListings = allListings.concat(newPageListings); // Concatenate the new listings with existing ones
     displayListings();
     toggleLoadMoreButtonVisibility();
