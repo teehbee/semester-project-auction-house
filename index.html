@@ -22,6 +22,8 @@
     <script type="module" src="/src/js/modals/modalHandling.js"></script> 
     <script type="module" src="/src/js/user/register.js"></script>
     <script type="module" src="/src/js/user/login.js"></script>
+    <script type="module" src="/src/js/user/frontpageListings.js"></script>
+
     <meta name="description"
       content="Frontpage for Get Rid of it auction house"/>
     <title>Get Rid of it - Frontpage</title>
@@ -62,105 +64,21 @@
       <section class="pt-5">
         <div class="container">
           <div class="row fs-1rem-lg-1-25rem">
-            <div class="col-4 col-md-1 active-underlined text-nowrap">
-              <a id="frontpage-auctions-last-chance" class="text-decoration-none" href="">Last chance</a>
+            <div class="col-4 col-md-1 text-nowrap">
+              <div id="frontpage-auctions-last-chance" class="active-underlined">
+              <a class="text-decoration-none" href="">Last chance</a>
+            </div>
             </div>
             <div class="ps-md-5 col-4 col-md-1 text-nowrap">
+              <div id="frontpage-auctions-just-started">
               <a id="frontpage-auctions-just-started" class="text-decoration-none" href="">Just started</a>
+            </div>
             </div>
           </div>
           <div class="text-center py-3">
             <div class="auctions-loader fs-1-25rem-md-1-5-rem pt-5"></div>
           </div>
-          <div id="last-chance-frontpage" class="row py-5">
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-              <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
-                <img class=" p-3" src="assets/img/last-chance-item-640.jpg" alt="#"/>
-                <div class="card-body">
-                  <h2 class="card-title fs-1-25rem">
-                    Box full of unsorted crap
-                  </h2>
-                  <p id="last-chance-frontpage-time-left" class="card-text">
-                    24h 18m
-                  </p>
-                  <p class="card-text">
-                    Next bid
-                    <span id="last-chance-frontpage-next-bid-amount">5000</span
-                    >,-
-                  </p>
-                  <p class="card-text">
-                    Seller
-                    <span id="last-chance-frpntpage-seller">Dwight Schrute</span>
-                  </p>
-                </div>
-              </div></a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-              <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
-                <img class=" p-3" src="assets/img/last-chance-item-640.jpg" alt="#"/>
-                <div class="card-body">
-                  <h2 class="card-title fs-1-25rem">
-                    Box full of unsorted crap
-                  </h2>
-                  <p id="last-chance-frontpage-time-left" class="card-text">
-                    24h 18m
-                  </p>
-                  <p class="card-text">
-                    Next bid
-                    <span id="last-chance-frontpage-next-bid-amount">5000</span
-                    >,-
-                  </p>
-                  <p class="card-text">
-                    Seller
-                    <span id="last-chance-frpntpage-seller">Dwight Schrute</span>
-                  </p>
-                </div>
-              </div></a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-              <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
-                <img class=" p-3" src="assets/img/last-chance-item-640.jpg" alt="#"/>
-                <div class="card-body">
-                  <h2 class="card-title fs-1-25rem">
-                    Box full of unsorted crap
-                  </h2>
-                  <p id="last-chance-frontpage-time-left" class="card-text">
-                    24h 18m
-                  </p>
-                  <p class="card-text">
-                    Next bid
-                    <span id="last-chance-frontpage-next-bid-amount">5000</span
-                    >,-
-                  </p>
-                  <p class="card-text">
-                    Seller
-                    <span id="last-chance-frpntpage-seller">Dwight Schrute</span>
-                  </p>
-                </div>
-              </div></a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-              <a class="text-decoration-none" href="/auctions/listing.html"><div class="card card-width-306px border-none border-radius-none mx-auto">
-                <img class=" p-3" src="assets/img/last-chance-item-640.jpg" alt="#"/>
-                <div class="card-body">
-                  <h2 class="card-title fs-1-25rem">
-                    Box full of unsorted crap
-                  </h2>
-                  <p id="last-chance-frontpage-time-left" class="card-text">
-                    24h 18m
-                  </p>
-                  <p class="card-text">
-                    Next bid
-                    <span id="last-chance-frontpage-next-bid-amount">5000</span
-                    >,-
-                  </p>
-                  <p class="card-text">
-                    Seller
-                    <span id="last-chance-frpntpage-seller">Dwight Schrute</span>
-                  </p>
-                </div>
-              </div></a>
-            </div>
+          <div id="last-chance-frontpage" class="row py-5 g-0">
           </div>
           <div id="just-started-frontpage" class="row py-5 d-none"></div>
           <div class="text-end pb-5">
