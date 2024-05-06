@@ -10,6 +10,8 @@ export const apiKeyEndPoint = "/auth/create-api-key";
 
 export const profile = "/auction/profiles/";
 
+export const singleListing = "/auction/listings/";
+
 const accessToken = localStorage.getItem("accessToken");
 
 const apiKey = localStorage.getItem("apiKey");

@@ -1,6 +1,6 @@
 export const listingTemplate = (listing, countdownHTML, lastBid) => `
   <div class="listings-container col-12 col-sm-6 col-lg-4 col-xl-3">
-    <a class="text-decoration-none" href="/auctions/listing.html">
+    <a class="text-decoration-none" href="../auctions/listing.html?id=${listing.id}">
       <div class="card card-width-306px border-none border-radius-none mx-auto">
         <img class="listings-image-card p-3 object-fit-img" src="${listing.media[0]?.url || "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"}" alt="${listing.media[0]?.alt || "Image description is missing"}"/>
         <div class="card-body">

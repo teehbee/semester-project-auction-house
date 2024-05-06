@@ -8,9 +8,9 @@ const frontpageListingsContainer = document.querySelector(
   "#last-chance-frontpage",
 );
 
-import { calculateCountdown } from "../posts/countdown.js";
+import { calculateCountdown } from "../listings/countdown.js";
 import { fetchListings } from "../api/fetchListings.js";
-import { listingTemplate } from "../posts/listingCardHtml.js";
+import { listingTemplate } from "../listings/listingCardHtml.js";
 
 function displaySpecificListings(sortOrder) {
   fetchListings(1, 4, "endsAt", sortOrder)
