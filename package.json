@@ -10,7 +10,7 @@
     "start": "live-server",
     "watch": "sass --watch src/scss:dist/css & live-server",
     "dev": "npm-run-all --parallel watch start",
-    "format": "prettier -w src/**/*.js",
+    "format": "prettier src/**/*.js",
     "lint": "eslint src/**/*.js",
     "prepare": "husky install"
   },

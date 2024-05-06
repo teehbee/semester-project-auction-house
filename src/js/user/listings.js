@@ -1,35 +1,100 @@
-const listingsContainer = document.querySelector(".listings-container");
-
 import { fetchListings } from "../api/fetchListings.js";
+import { fetchSearch } from "../api/fetchSearch.js";
+import { searchInput, searchSubmit } from "../posts/constants.js";
+import { calculateCountdown } from "../posts/countdown.js";
+import { listingTemplate } from "../posts/listingCardHtml.js";
 
+const listingsMainContainer = document.querySelector(
+  "#listings-main-container",
+);
+const loadMoreListingsButton = document.querySelector("#load-more-listings");
+
+let currentPage = 1; // Initial page number
+const listingsPerPage = 8; // Number of listings to display per page
+let allListings = [];
+
+// Fetch initial listings
 async function fetchAllListings() {
   try {
-    const listings = await fetchListings();
-
-    listingsContainer.innerHTML = `
-       <a class="text-decoration-none" href="/auctions/listing.html">
-              <div class="card card-width-306px border-none border-radius-none mx-auto">
-                <img class="p-3" src="/assets/img/last-chance-item-640.jpg" alt="#" />
-                <div class="card-body">
-                  <h2 class="card-title fs-1-25rem">Box full of unsorted crap</h2>
-                  <p class="last-chance-frontpage-time-left card-text">24h 18m</p>
-                  <p class="card-text">
-                    Next bid
-                    <span class="card-next-bid-amount">5000</span>,-
-                  </p>
-                  <p class="card-text">
-                    Seller
-                    <span class="card-listing-seller">Dwight Schrute</span>
-                  </p>
-                </div>
-              </div>
-            </a>
-      `;
-
-    console.log(listings);
+    const listings = await fetchListings(
+      currentPage,
+      listingsPerPage,
+      "endsAt",
+      "asc",
+    );
+    allListings = [...allListings, ...listings.data]; // Append new listings to allListings
+    displayListings();
+    console.log(allListings);
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching listings:", error);
   }
 }
 
+// Display listings
+function displayListings(input) {
+  let listingsHTML = "";
+  let listingsToShow;
+
+  if (input) {
+    listingsToShow = input;
+  } else {
+    listingsToShow = allListings;
+  }
+
+  listingsToShow.forEach((listing) => {
+    const hasBids = listing.bids && listing.bids.length > 0;
+    const lastBid = hasBids
+      ? listing.bids[listing.bids.length - 1].amount
+      : "no bids yet";
+
+    const { daysLeft, hoursLeft, minutesLeft, secondsLeft } =
+      calculateCountdown(listing.endsAt);
+
+    const countdownHTML = `
+      <p class="card-text">Time left: ${daysLeft} days ${hoursLeft} hours ${minutesLeft} minutes ${secondsLeft} seconds</p>
+    `;
+
+    const listingHTML = listingTemplate(listing, countdownHTML, lastBid);
+    listingsHTML += listingHTML;
+  });
+
+  listingsMainContainer.innerHTML = listingsHTML;
+}
+
+// Toggle visibility of load more button
+// function toggleLoadMoreButtonVisibility() {
+//   loadMoreListingsButton.classList.toggle(
+//     "d-none",
+//     allListings.length <= currentPage * listingsPerPage,
+//   );
+// }
+
+// Eventlistener for adding more posts
+
+loadMoreListingsButton.addEventListener("click", async () => {
+  currentPage++;
+  await fetchAllListings();
+});
+
+// Event listener for search button and on enter
+
+searchSubmit.addEventListener("click", async (event) => {
+  event.preventDefault();
+  const searchTerm = searchInput.value.trim();
+  const searchResult = await fetchSearch(searchTerm);
+  const filteredListings = searchResult.data;
+  displayListings(filteredListings);
+});
+
+searchInput.addEventListener("keydown", async (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    const searchTerm = searchInput.value.trim();
+    const searchResult = await fetchSearch(searchTerm);
+    const filteredListings = searchResult.data;
+    displayListings(filteredListings);
+  }
+});
+
+// Fetch initial listings when the page loads
 fetchAllListings();

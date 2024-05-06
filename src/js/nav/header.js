@@ -293,47 +293,6 @@ header.innerHTML = `
       </div>
     </div>
   </dialog>
-  <dialog id="search-dialog" class="main-color-white">
-    <div class="main-color-white w-100">
-      <div class="container text-center py-5 main-color-white">
-        <div id="close-search-dialog" class="position-absolute p-3">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="/assets/logo/icon-close-dark-32px.svg"
-            />
-            <img
-              src="/assets/logo/icon-close-dark-28px.svg"
-              aria-label="close registration form"
-            />
-          </picture>
-        </div>
-        <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">Search</h2>
-        <form
-          id="search-form"
-          class="form-width-dialog mx-auto pt-5"
-          action=""
-        >
-          <div class="input-group">
-            <input
-              type="search"
-              class="form-control rounded"
-              placeholder="Search listings"
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-            <button
-              type="button"
-              class="btn btn-dark"
-              data-mdb-ripple-init
-            >
-              <img src="/assets/logo/logo-search-light.svg" />
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </dialog>
   <dialog id="post-listing-dialog" class="main-color-white">
     <div class="main-color-white w-100">
       <div class="dialog-top-banner d-block d-md-none"></div>
