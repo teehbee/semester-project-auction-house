@@ -16,13 +16,11 @@ const accessToken = localStorage.getItem("accessToken");
 
 const apiKey = localStorage.getItem("apiKey");
 
-export const options = {
+export const allListings = "/auction/listings";
+
+export const headers = {
   headers: {
     Authorization: `Bearer ${accessToken}`,
     "X-Noroff-API-Key": apiKey,
   },
 };
-
-// Listings endpoints
-
-export const allListings = "/auction/listings";
