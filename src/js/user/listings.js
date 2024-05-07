@@ -1,8 +1,8 @@
 import { fetchListings } from "../api/fetchListings.js";
 import { fetchSearch } from "../api/fetchSearch.js";
-import { searchInput, searchSubmit } from "../posts/constants.js";
-import { calculateCountdown } from "../posts/countdown.js";
-import { listingTemplate } from "../posts/listingCardHtml.js";
+import { searchInput, searchSubmit } from "../listings/constants.js";
+import { calculateCountdown } from "../listings/countdown.js";
+import { listingTemplate } from "../listings/listingCardHtml.js";
 
 const listingsMainContainer = document.querySelector(
   "#listings-main-container",
