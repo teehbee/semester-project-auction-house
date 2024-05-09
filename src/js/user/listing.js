@@ -7,6 +7,8 @@ async function singleListing() {
   try {
     const singleListing = await getSpecificListing();
 
+    console.log(singleListing);
+
     // Checking if bids are present. If not "no bids yet" is displayed
 
     const hasBids = singleListing.bids && singleListing.bids.length > 0;
@@ -42,9 +44,11 @@ async function singleListing() {
     </div>
     <div class="row gx-5 py-3">
       <div class="col-12 col-md-6">
+      <a href="" id="open-image-gallery"> 
         <div class="image-gallery">
-          <img class="img-fluid open-image-modal cursor-pointer" src="${singleListing.media[0]?.url || "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"}" alt="${singleListing.media[0]?.alt || "No image uploaded"}"/>
+          <img class="img-fluid" src="${singleListing.media[0]?.url || "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"}" alt="${singleListing.media[0]?.alt || "No image uploaded"}"/>
         </div>
+        </a>
       </div>
       <div class="col-12 col-md-6 text-center">
         <div id="current-bid-container" class="d-flex justify-content-between pt-3 border-bottom-black">
@@ -99,9 +103,95 @@ async function singleListing() {
       </div>
     </div>
     `;
+
+    // Attach eventlistener for opening image gallery modal
+
+    const openImageGallery = document.querySelector("#open-image-gallery");
+    const imageGalleryDialog = document.querySelector("#image-gallery-dialog");
+    const closeImageGallery = document.querySelector("#close-image-dialog");
+    const modalGalleryContainer = document.querySelector(
+      ".gallery-image-in-modal",
+    );
+    const modalImageNext = document.querySelector("#image-gallery-next");
+    const modalImagePrev = document.querySelector("#image-gallery-previous");
+
+    // Attach event listener to open the modal dialog showing the first image initially
+
+    openImageGallery.addEventListener("click", function (event) {
+      event.preventDefault();
+      imageGalleryDialog.showModal();
+      updateModalImage(0);
+    });
+
+    // Close image modal with icon or escape click
+
+    closeImageGallery.addEventListener("click", function (event) {
+      event.preventDefault();
+      imageGalleryDialog.close();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        if (imageGalleryDialog.open) {
+          imageGalleryDialog.close();
+        }
+      }
+    });
+
+    // Append images to image gallery modal and defining the image index
+
+    function updateModalImage(index) {
+      const media = singleListing.media[index];
+      modalGalleryContainer.innerHTML = `
+        <img class="img-fluid" src="${media?.url || "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"}" alt="${media?.alt || "No image uploaded"}"/>
+        <div id="image-gallery-alt-text" class="text-center pt-2">
+          <p>${media?.alt || ""}</p>
+        </div>
+      `;
+
+      if (index > 0) {
+        modalImagePrev.classList.remove("d-none");
+      } else {
+        modalImagePrev.classList.add("d-none");
+      }
+      // Hide or show the next arrow based on the index value
+      if (index < singleListing.media.length - 1) {
+        modalImageNext.classList.remove("d-none");
+      } else {
+        modalImageNext.classList.add("d-none");
+      }
+    }
+
+    // Variable to keep track of current index number for image
+
+    let currentIndex = 0;
+
+    // Eventlistener for displaying the next image
+
+    if (modalImageNext) {
+      modalImageNext.addEventListener("click", function (event) {
+        event.preventDefault();
+        currentIndex = (currentIndex + 1) % singleListing.media.length;
+        updateModalImage(currentIndex);
+      });
+    }
+
+    // Eventlistener for displaying the previous image
+
+    if (modalImagePrev) {
+      modalImagePrev.addEventListener("click", function (event) {
+        event.preventDefault();
+        currentIndex =
+          (currentIndex - 1 + singleListing.media.length) %
+          singleListing.media.length;
+        updateModalImage(currentIndex);
+      });
+    }
   } catch (error) {
     console.log(error);
   }
 }
 
 singleListing();
+
+// Modal handling for image gallery
