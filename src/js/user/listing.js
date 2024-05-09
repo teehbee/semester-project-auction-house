@@ -42,9 +42,11 @@ async function singleListing() {
     </div>
     <div class="row gx-5 py-3">
       <div class="col-12 col-md-6">
+      <a href="" id="open-image-gallery"> 
         <div class="image-gallery">
-          <img class="img-fluid open-image-modal cursor-pointer" src="${singleListing.media[0]?.url || "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"}" alt="${singleListing.media[0]?.alt || "No image uploaded"}"/>
+          <img class="img-fluid" src="${singleListing.media[0]?.url || "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"}" alt="${singleListing.media[0]?.alt || "No image uploaded"}"/>
         </div>
+        </a>
       </div>
       <div class="col-12 col-md-6 text-center">
         <div id="current-bid-container" class="d-flex justify-content-between pt-3 border-bottom-black">
@@ -99,9 +101,31 @@ async function singleListing() {
       </div>
     </div>
     `;
+
+    // Attach eventlistener for opening image gallery modal
+
+    const openImageGallery = document.querySelector("#open-image-gallery");
+    const imageGalleryDialog = document.querySelector("#image-gallery-dialog");
+    const closeImageGallery = document.querySelector("#close-image-dialog");
+
+    // Attach event listener to open the modal dialog
+    openImageGallery.addEventListener("click", function (event) {
+      event.preventDefault();
+      imageGalleryDialog.showModal();
+    });
+    // Append images to image gallery modal
+
+    // Close image modal
+
+    closeImageGallery.addEventListener("click", function (event) {
+      event.preventDefault();
+      imageGalleryDialog.close();
+    });
   } catch (error) {
     console.log(error);
   }
 }
 
 singleListing();
+
+// Modal handling for image gallery
