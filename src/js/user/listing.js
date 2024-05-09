@@ -7,14 +7,24 @@ async function singleListing() {
   try {
     const singleListing = await getSpecificListing();
 
-    console.log(singleListing);
-
     // Checking if bids are present. If not "no bids yet" is displayed
 
     const hasBids = singleListing.bids && singleListing.bids.length > 0;
     const lastBid = hasBids
       ? singleListing.bids[singleListing.bids.length - 1].amount
       : "no bids yet";
+
+    // Conversion of time format
+
+    let endTime = new Date(singleListing.endsAt);
+
+    let formattedTime = endTime.toLocaleString("en-GB", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
     // Countdown converter
 
@@ -46,17 +56,22 @@ async function singleListing() {
           <p class="d-inline-block">${countdownHTML}</p>
         </div>
         <div id="time-remaining-container" class="text-end fs-0-75rem">
-          <p>End time: ${singleListing.endsAt}</p>
+          <p>End time: ${formattedTime}</p>
         </div>
           <form id="place-bid" action="" class="d-md-flex">
             <div id="place-bidding-container" class="row ms-auto"></div>
             <div class="col-12 col-md-5 my-2">
-              <input type="text" class="form-control text-center text-md-start" placeholder="Your bid" />
+              <input type="number" id="bid-amount" class="form-control text-center text-md-start" placeholder="Your bid" />
             </div>
             <div class="col-12 col-md-4 col-lg-3 my-2 ms-md-2">
-              <button class="btn btn-dark w-100">Place bid</button>
+              <a href="#" id="bid-submit" class="btn btn-dark w-100">Place bid</a>
             </div>
           </form>
+           <div id="bid-error"
+              class="form-error fs-0-625rem text-end text-danger d-none"
+            >
+              * You are too poor *sad trumpet music*
+            </div>
           <div class="accordion accordion-flush py-3" id="accordionFlushExample">
             <div class="accordion-item my-3">
               <h2 class="accordion-header" id="flush-headingOne">

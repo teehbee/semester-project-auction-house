@@ -69,7 +69,7 @@ header.innerHTML = `
             >Live Auctions</a
           >
         </li>
-        <li class="open-listing-dialog">
+        <li class="open-listing-dialog hidden-not-logged-in d-none">
           <a
             class="fs-2-rem-lg-1-25rem font-change-menu font-change-color"
             href="#"
@@ -322,7 +322,7 @@ header.innerHTML = `
               >Title</label
             >
             <input type="text" class="form-control" id="listing-title" />
-            <div
+            <div id="listing-form-error-title"
               class="form-error fs-0-625rem text-end text-danger d-none"
             >
               * Please check if this field is filled out correctly
@@ -339,7 +339,7 @@ header.innerHTML = `
               id="listing-description"
               rows="5"
             ></textarea>
-            <div
+            <div id="listing-form-error-description"
               class="form-error fs-0-625rem text-end text-danger d-none"
             >
               * Please check if this field is filled out correctly
@@ -350,20 +350,20 @@ header.innerHTML = `
               >Image (url)</label
             >
             <input type="text" class="form-control" id="listing-image" />
-            <div
+            <div id="image-form-error-description"
               class="form-error fs-0-625rem text-end text-danger d-none"
             >
               * Must be a full valid url address
             </div>
           </div>
           <div class="mb-3 mx-auto text-start">
-            <label for="listing-tags" class="form-label fs-0-75rem mb-2"
-              >Tags (separate by comma)</label
+            <label for="listing-image-description" class="form-label fs-0-75rem mb-2"
+              >Image description (optional)</label
             >
             <input
               type="text"
               class="form-control"
-              id="tags-entry"
+              id="listing-image-description"
             />
           </div>
           <div class="mb-3 mx-auto text-start">
@@ -373,11 +373,11 @@ header.innerHTML = `
               >End date</label
             >
             <input
-              type="text"
+              type="datetime-local"
               class="form-control"
               id="listing-end-date"
             />
-            <div
+            <div id="end-time-error-description"
               class="form-error fs-0-625rem text-end text-danger d-none"
             >
               * Must be selected
@@ -389,15 +389,21 @@ header.innerHTML = `
                 class="form-check-input form-checkbox me-3"
                 type="checkbox"
                 value=""
-                id="flexCheckDefault"
+                id="confirm-listing-checkbox"
               />
               <label
                 class="form-check-label fs-0-625rem text-start"
-                for="flexCheckDefault"
+                for="confirm-listing-checkbox"
               >
                 By creating your user profile at Get rid of it, you accept
                 our Terms and Conditions.
               </label>
+              
+            </div>
+             <div id="confirm-listing-error"
+              class="form-error fs-0-625rem text-end text-danger d-none"
+            >
+              * Must be selected
             </div>
           </div>
           <a href="" class="btn btn-dark mt-3">Create listing</a>
