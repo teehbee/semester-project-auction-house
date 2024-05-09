@@ -57,3 +57,47 @@ export const loginPassword = document.querySelector("#login-password");
 // Error classes for login
 
 export const loginError = document.querySelector("#login-error");
+
+// Post listings
+
+export const listingForm = document.querySelector("#listing-form");
+export const listingTitle = document.querySelector("#listing-title");
+export const listingDescription = document.querySelector(
+  "#listing-description",
+);
+export const listingImageUrl = document.querySelector("#listing-image");
+export const listingImageDescription = document.querySelector(
+  "#listing-image-description",
+);
+export const listingEndTime = document.querySelector("#listing-end-date");
+export const listingConfirmCheckbox = document.querySelector(
+  "#confirm-listing-checkbox",
+);
+
+// Error classes for post listings
+
+export const titleErrorListing = document.querySelector(
+  "#listing-form-error-title",
+);
+export const descriptionErrorListing = document.querySelector(
+  "#listing-form-error-description",
+);
+export const imageErrorListing = document.querySelector(
+  "#image-form-error-description",
+);
+export const EndTimeErrorListing = document.querySelector(
+  "#end-time-error-description",
+);
+export const confirmListingError = document.querySelector(
+  "#confirm-listing-error",
+);
+
+// Post bids
+
+export const biddingForm = document.querySelector("#place-bid");
+export const biddingAmount = document.querySelector("#bid-amount");
+export const biddingSubmit = document.querySelector("#bid-submit");
+
+// Error class for bidding
+
+export const biddingError = document.querySelector("#bid-error");
