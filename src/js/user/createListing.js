@@ -1,6 +1,7 @@
 import { addListing } from "../api/fetchAddListing.js";
 
 import {
+  listingDialog,
   listingForm,
   listingTitle,
   listingDescription,
@@ -69,6 +70,10 @@ listingSubmission.addEventListener("click", async function (event) {
       listingSpinner.classList.add("d-none");
       listingSuccessMessage.classList.remove("d-none");
       listingForm.reset();
+      setTimeout(() => {
+        listingDialog.close();
+        removeNewListingModalQueryParam();
+      }, 5000);
     } else {
       listingSpinner.classList.add("d-none");
       console.log("Failed to add listing:", responseData);
@@ -77,3 +82,9 @@ listingSubmission.addEventListener("click", async function (event) {
     console.log("Error adding listing:", error);
   }
 });
+
+function removeNewListingModalQueryParam() {
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.delete("modal");
+  history.replaceState({}, "", "?" + searchParams.toString());
+}

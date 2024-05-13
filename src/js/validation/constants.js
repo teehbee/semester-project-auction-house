@@ -60,6 +60,8 @@ export const loginError = document.querySelector("#login-error");
 
 // Post listings
 
+export const listingDialog = document.querySelector("#post-listing-dialog");
+
 export const listingForm = document.querySelector("#listing-form");
 export const listingTitle = document.querySelector("#listing-title");
 export const listingDescription = document.querySelector(
