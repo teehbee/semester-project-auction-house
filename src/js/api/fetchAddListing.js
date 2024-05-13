@@ -12,15 +12,11 @@ export async function addListing(newListing) {
       body: requestBody,
     });
 
-    if (!response.ok) {
+    if (!response.ok || response.status !== 201) {
       throw new Error(`HTTP error status: ${response.status}`);
     }
 
     const responseData = await response.json();
-
-    if (responseData.success) {
-      console.log("Listing is up!");
-    }
 
     return responseData;
   } catch (error) {

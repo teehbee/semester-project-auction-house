@@ -73,7 +73,11 @@ export const listingConfirmCheckbox = document.querySelector(
   "#confirm-listing-checkbox",
 );
 
+export const listingSpinner = document.querySelector("#listing-spinner");
+
 export const listingSubmission = document.querySelector("#submit-listing");
+
+export const listingSuccessMessage = document.querySelector("#listing-success");
 
 // Error classes for post listings
 

@@ -359,7 +359,8 @@ header.innerHTML = `
              <div id="confirm-listing-error" class="form-error fs-0-625rem text-end text-danger d-none">* Must be selected</div>
           </div>
           <a href="" id="submit-listing" class="btn btn-dark mt-3">Create listing</a>
-          <div
+          <p id="listing-success" class="pt-3 d-none">Listing was successfully posted. This window will close in a few seconds.</p>
+          <div id="listing-spinner"
             class="spinner-border text-secondary mt-4 d-none"
             role="status"
           >

@@ -11,6 +11,9 @@ import {
   EndTimeErrorListing,
   confirmListingError,
   listingSubmission,
+  imageErrorListing,
+  listingSpinner,
+  listingSuccessMessage,
 } from "../validation/constants.js";
 
 listingSubmission.addEventListener("click", async function (event) {
@@ -18,7 +21,7 @@ listingSubmission.addEventListener("click", async function (event) {
 
   const listingEndTimeValue = document.querySelector("#listing-end-date").value;
 
-  if (!listingTitle) {
+  if (!listingTitle.value) {
     titleErrorListing.classList.remove("d-none");
   } else {
     titleErrorListing.classList.add("d-none");
@@ -30,16 +33,21 @@ listingSubmission.addEventListener("click", async function (event) {
     EndTimeErrorListing.classList.add("d-none");
   }
 
-  if (!listingConfirmCheckbox) {
+  if (!listingConfirmCheckbox.checked) {
     confirmListingError.classList.remove("d-none");
   } else {
     confirmListingError.classList.add("d-none");
   }
 
   const media = [];
-  if (listingImageUrl) {
+  if (listingImageUrl.value) {
+    const imageUrl = listingImageUrl.value.trim(); // Trim whitespace
+    if (!imageUrl.startsWith("http://") && !imageUrl.startsWith("https://")) {
+      imageErrorListing.classList.remove("d-none"); // Show error message
+      return; // Stop the execution of the function
+    }
     media.push({
-      url: listingImageUrl.value,
+      url: imageUrl,
       alt: listingImageDescription.value,
     });
   }
@@ -52,14 +60,17 @@ listingSubmission.addEventListener("click", async function (event) {
   };
 
   try {
-    // Call the addListing function with the prepared data
     const responseData = await addListing(data);
 
-    if (responseData.success) {
+    listingSpinner.classList.remove("d-none");
+
+    if (!responseData.error) {
       console.log("Listing is up!");
-      // Optionally, clear the form after successful submission
+      listingSpinner.classList.add("d-none");
+      listingSuccessMessage.classList.remove("d-none");
       listingForm.reset();
     } else {
+      listingSpinner.classList.add("d-none");
       console.log("Failed to add listing:", responseData);
     }
   } catch (error) {
