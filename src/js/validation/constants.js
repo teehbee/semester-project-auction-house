@@ -69,10 +69,11 @@ export const listingImageUrl = document.querySelector("#listing-image");
 export const listingImageDescription = document.querySelector(
   "#listing-image-description",
 );
-export const listingEndTime = document.querySelector("#listing-end-date");
 export const listingConfirmCheckbox = document.querySelector(
   "#confirm-listing-checkbox",
 );
+
+export const listingSubmission = document.querySelector("#submit-listing");
 
 // Error classes for post listings
 
