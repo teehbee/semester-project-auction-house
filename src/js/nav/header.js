@@ -313,101 +313,54 @@ header.innerHTML = `
           Create listing
         </h2>
         <form
-          id="listing-form"
-          class="form-width-dialog mx-auto"
-          action=""
-        >
+          id="listing-form" class="form-width-dialog mx-auto">
           <div class="mb-3 text-start">
             <label for="listing-title" class="form-label fs-0-75rem mb-2"
-              >Title</label
-            >
-            <input type="text" class="form-control" id="listing-title" />
+              >Title</label>
+            <input type="text" class="form-control" id="listing-title" required/>
             <div id="listing-form-error-title"
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
+              class="form-error fs-0-625rem text-end text-danger d-none">
               * Please check if this field is filled out correctly
             </div>
           </div>
           <div class="mb-3 text-start">
-            <label
-              for="listing-description"
-              class="form-label fs-0-75rem mb-2"
-              >Description</label
-            >
-            <textarea
-              class="form-control"
-              id="listing-description"
-              rows="5"
-            ></textarea>
+            <label for="listing-description" class="form-label fs-0-75rem mb-2">
+            Description</label>
+            <textarea class="form-control" id="listing-description" rows="5" required></textarea>
             <div id="listing-form-error-description"
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * Please check if this field is filled out correctly
-            </div>
+              class="form-error fs-0-625rem text-end text-danger d-none">* Please check if this field is filled out correctly</div>
           </div>
           <div class="mb-3 mx-auto text-start">
             <label for="listing-image" class="form-label fs-0-75rem mb-2"
-              >Image (url)</label
-            >
-            <input type="text" class="form-control" id="listing-image" />
+              >Image-url (optional)</label>
+            <input type="text" class="form-control" id="listing-image"/>
             <div id="image-form-error-description"
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * Must be a full valid url address
-            </div>
+              class="form-error fs-0-625rem text-end text-danger d-none">* Must be a full valid url address</div>
           </div>
           <div class="mb-3 mx-auto text-start">
             <label for="listing-image-description" class="form-label fs-0-75rem mb-2"
-              >Image description (optional)</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="listing-image-description"
-            />
+              >Image description (optional)</label>
+            <input type="text" class="form-control" id="listing-image-description"/>
           </div>
           <div class="mb-3 mx-auto text-start">
-            <label
-              for="listing-end-date"
-              class="form-label fs-0-75rem mb-2"
-              >End date</label
-            >
-            <input
-              type="datetime-local"
-              class="form-control"
-              id="listing-end-date"
-            />
-            <div id="end-time-error-description"
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * Must be selected
-            </div>
+            <label for="listing-end-date" class="form-label fs-0-75rem mb-2">End date</label>
+            <input type="datetime-local" class="form-control" id="listing-end-date" required/>
+            <div id="end-time-error-description" class="form-error fs-0-625rem text-end text-danger d-none">* Must be selected</div>
           </div>
           <div class="">
-            <div class="form-check d-flex">
-              <input
-                class="form-check-input form-checkbox me-3"
-                type="checkbox"
-                value=""
-                id="confirm-listing-checkbox"
-              />
-              <label
-                class="form-check-label fs-0-625rem text-start"
-                for="confirm-listing-checkbox"
-              >
+          <div class="form-check d-flex">
+              <input class="form-check-input form-checkbox me-3" type="checkbox" value=""
+                id="confirm-listing-checkbox" required/>
+              <label class="form-check-label fs-0-625rem text-start" for="confirm-listing-checkbox">
                 By creating your user profile at Get rid of it, you accept
                 our Terms and Conditions.
               </label>
-              
             </div>
-             <div id="confirm-listing-error"
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * Must be selected
-            </div>
+             <div id="confirm-listing-error" class="form-error fs-0-625rem text-end text-danger d-none">* Must be selected</div>
           </div>
-          <a href="" class="btn btn-dark mt-3">Create listing</a>
-          <div
+          <a href="" id="submit-listing" class="btn btn-dark mt-3">Create listing</a>
+          <p id="listing-success" class="pt-3 d-none">Listing was successfully posted. This window will close in a few seconds.</p>
+          <div id="listing-spinner"
             class="spinner-border text-secondary mt-4 d-none"
             role="status"
           >

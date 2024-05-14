@@ -4,7 +4,9 @@ const userName = localStorage.getItem("userName");
 
 export async function getProfileData() {
   try {
-    const response = await fetch(`${apiBaseUrl}${profile}${userName}`, headers);
+    const urlWithParams = `${apiBaseUrl}${profile}${userName}?_listings=true&_wins=true`;
+
+    const response = await fetch(urlWithParams, headers);
 
     const profileData = await response.json();
 

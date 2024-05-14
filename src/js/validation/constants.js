@@ -60,6 +60,8 @@ export const loginError = document.querySelector("#login-error");
 
 // Post listings
 
+export const listingDialog = document.querySelector("#post-listing-dialog");
+
 export const listingForm = document.querySelector("#listing-form");
 export const listingTitle = document.querySelector("#listing-title");
 export const listingDescription = document.querySelector(
@@ -69,10 +71,15 @@ export const listingImageUrl = document.querySelector("#listing-image");
 export const listingImageDescription = document.querySelector(
   "#listing-image-description",
 );
-export const listingEndTime = document.querySelector("#listing-end-date");
 export const listingConfirmCheckbox = document.querySelector(
   "#confirm-listing-checkbox",
 );
+
+export const listingSpinner = document.querySelector("#listing-spinner");
+
+export const listingSubmission = document.querySelector("#submit-listing");
+
+export const listingSuccessMessage = document.querySelector("#listing-success");
 
 // Error classes for post listings
 
