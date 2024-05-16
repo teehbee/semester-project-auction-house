@@ -8,36 +8,30 @@ header.innerHTML = `
       <div class="left-icon col-2 align d-flex align-items-center">
         <a class="d-block d-lg-none" id="hamburger-icon" href="#"
           ><img src="/assets/logo/bars-dark.svg"
-        /></a>
+        aria-label="menu icon" width="31" height="33"/></a>
       </div>
       <div class="col-8 logo-container">
         <a class="navbar-brand" href="/index.html">
           <picture>
-            <source
-              media="(min-width: 576px)"
-              srcset="/assets/logo/logo-large.svg"
-            />
-            <img src="/assets/logo/logo-small.svg" alt="Website logo" />
+            <source media="(min-width: 576px)" srcset="/assets/logo/logo-large.svg" width="249" height="69"/>
+            <img src="/assets/logo/logo-small.svg" alt="Website logo" width="131" height="40"/>
           </picture>
         </a>
       </div>
       <div
-        class="col-2 right-icons d-flex align-items-center justify-content-end"
-      >
+        class="col-2 right-icons d-flex align-items-center justify-content-end">
         <a href="" class="pe-3 open-login-modal">
-          <img src="/assets/logo/user-32px-dark.svg" />
+          <img src="/assets/logo/user-32px-dark.svg" aria-label="profile icon" width="32" height="32"/>
         </a>
-        <a id="logout-icon" href="" class="d-none d-lg-block">
-          <img src="/assets/logo/logo-logout-dark-32px.svg" />
+        <a href="#" class="logout-icon d-none d-lg-block">
+          <img src="/assets/logo/logo-logout-dark-32px.svg" aria-label="logout icon" width="32" height="32"/>
         </a>
       </div>
     </div>
   </div>
   <div class="container-fluid p-0">
     <div class="nav-links menu-change w-100">
-      <ul
-        ul
-        id="nav-icons"
+      <ul id="nav-icons"
         class="d-flex d-block d-lg-none list-style-off light-icons ps-0 pb-3 border-bottom"
       >
         <li class="me-auto">
@@ -46,17 +40,17 @@ header.innerHTML = `
             id="close-menu"
             href="#"
             ><img src="/assets/logo/logo-close-light.svg"
-          /></a>
+           width="41" height="41"/></a>
         </li>
         <li class="ps-3">
-          <a class="d-block d-lg-none open-login-modal" href=""
-            ><img src="/assets/logo/logo-user-light.svg"
-          /></a>
+          <a class="d-block d-lg-none open-login-modal" href="#"
+            ><img src="/assets/logo/logo-user-light.svg" aria-label="login icon"
+          width="28" height="28"/></a>
         </li>
         <li class="ps-3">
-          <a class="d-block d-lg-none" href="#"
+          <a class="logout-icon d-block d-lg-none" href="#"
             ><img src="/assets/logo/logo-logout-light-28px.svg"
-          /></a>
+          aria-label="logout icon" alt="" width="28" height="28"/></a>
         </li>
       </ul>
       <ul
@@ -74,13 +68,6 @@ header.innerHTML = `
             class="fs-2-rem-lg-1-25rem font-change-menu font-change-color"
             href="#"
             >Sell Items</a
-          >
-        </li>
-        <li>
-          <a
-            class="fs-2-rem-lg-1-25rem font-change-menu font-change-color"
-            href="#"
-            >Contact Us</a
           >
         </li>
         <li class="open-register-modal hidden-when-logged-in">
@@ -102,14 +89,8 @@ header.innerHTML = `
       <div class="container text-center py-5 main-color-white">
         <div id="close-login-dialog" class="position-absolute p-3">
           <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="/assets/logo/icon-close-dark-32px.svg"
-            />
-            <img
-              src="/assets/logo/icon-close-dark-28px.svg"
-              aria-label="close login form"
-            />
+            <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" width="32" height="32"/>
+            <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close login form" width="28" height="28"/>
           </picture>
         </div>
         <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">Log in</h2>
@@ -169,12 +150,10 @@ header.innerHTML = `
           <picture>
             <source
               media="(min-width: 768px)"
-              srcset="/assets/logo/icon-close-dark-32px.svg"
-            />
+              srcset="/assets/logo/icon-close-dark-32px.svg" width="32" height="32"/>
             <img
               src="/assets/logo/icon-close-dark-28px.svg"
-              aria-label="close registration form"
-            />
+              aria-label="close registration form" width="28" height="28"/>
           </picture>
         </div>
         <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">
@@ -247,7 +226,7 @@ header.innerHTML = `
                 class="form-check-input form-checkbox me-3"
                 type="checkbox"
                 value=""
-                id="register-confirm"
+                id="register-confirm" aria-label="checkbox for confirming registration"
               />
               <label
                 class="form-check-label fs-0-625rem text-start"
@@ -301,11 +280,11 @@ header.innerHTML = `
           <picture class="cursor-pointer">
             <source
               media="(min-width: 768px)"
-              srcset="/assets/logo/icon-close-dark-32px.svg"
+              srcset="/assets/logo/icon-close-dark-32px.svg" width="32" height="32"
             />
             <img
               src="/assets/logo/icon-close-dark-28px.svg"
-              aria-label="close registration form"
+              aria-label="close registration form" width="28" height="28"
             />
           </picture>
         </div>
@@ -344,7 +323,7 @@ header.innerHTML = `
           </div>
           <div class="mb-3 mx-auto text-start">
             <label for="listing-end-date" class="form-label fs-0-75rem mb-2">End date</label>
-            <input type="datetime-local" class="form-control" id="listing-end-date" required/>
+            <input type="datetime-local" class="form-control" id="listing-end-date" value="2024-05-26T23:59" required/>
             <div id="end-time-error-description" class="form-error fs-0-625rem text-end text-danger d-none">* Must be selected</div>
           </div>
           <div class="">

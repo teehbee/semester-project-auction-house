@@ -1,11 +1,13 @@
 export function logOutUser() {
-  const logOutIcon = document.querySelector("#logout-icon");
+  const logOutIcons = document.querySelectorAll(".logout-icon");
 
-  logOutIcon.addEventListener("click", function (event) {
+  logOutIcons.forEach(function (logOutIcon) {
+logOutIcon.addEventListener("click", function (event) {
     event.preventDefault();
     localStorage.removeItem("apiKey");
     localStorage.removeItem("accessToken");
     localStorage.removeItem("userName");
-    location.reload();
+    window.location.href = "../index.html";
   });
+});
 }

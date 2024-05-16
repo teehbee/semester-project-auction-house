@@ -1,15 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/dist/css/styles.css" />
-    <script src="/node_modules/bootstrap/dist/css/"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/99f531cd0d.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
     <script type="module" src="/src/js/index.js"></script>
     <script type="module" src="/src/js/nav/index.js"></script>
     <script type="module" src="/src/js/nav/header.js"></script>
@@ -19,70 +18,11 @@
     <script type="module" src="/src/js/modals/modalHandling.js"></script>
     <script type="module" src="/src/js/user/register.js"></script>
     <script type="module" src="/src/js/user/login.js"></script>
-    <script type="module" src="/src/js/modals/categoriesModals.js"></script>
     <script type="module" src="/src/js/user/listings.js"></script>
-    <meta name="description" content="All auction listings" />
+    <meta name="description" content="All auctions">
     <title>Get Rid of it - All auctions</title>
   </head>
   <body class="main-color-light">
-    <dialog id="categories-dialog" class="main-color-dark">
-      <div class="dialog-top-banner d-block d-md-none"></div>
-      <div class="main-color-white w-100">
-        <div class="container text-center py-5 main-color-white">
-          <div id="close-category-dialog" class="position-absolute p-3 cursor-pointer">
-            <picture>
-              <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" />
-              <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close registration form" />
-            </picture>
-          </div>
-          <div class="border-bottom-black mb-3">
-            <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">Categories</h2>
-          </div>
-          <div class="row mx-auto border-bottom-black pb-5">
-            <div class="text-start pb-3"><p class="fw-bolder">Categories by tag</p></div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
-                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox1" />
-                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox1"> Category 1 </label>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
-                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox2" />
-                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox2"> Category 2 </label>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
-                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox3" />
-                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox3"> Category 3 </label>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
-                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox4" />
-                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox4"> Category 4 </label>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
-                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox5" />
-                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox5"> Category 5 </label>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="form-check text-start d-flex justify-content-between justify-content-md-start">
-                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox6" />
-                <label class="form-check-label fs-1rem-lg-1-25rem" for="checkbox6"> Category 6 </label>
-              </div>
-            </div>
-            <div class="pt-5">
-              <button type="button" class="btn btn-dark">View hits</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </dialog>
     <section>
       <div class="container-fluid main-color-white">
         <div class="container">
@@ -90,13 +30,10 @@
             <h1 class="fs-1-25rem-md-2-25rem font-source-serif-4">Live auctions</h1>
           </div>
           <div class="row align-items-center">
-            <div id="open-categories-modal" class="col-12 col-md-3 col-lg-2 py-1 me-2 my-1 border rounded height-38px max-width-180px cursor-pointer">
-              <a class="text-decoration-none" href="#"><img src="/assets/logo/icon-categories-dark-24px.svg" alt="" /><span class="ps-2">Categories</span></a>
-            </div>
             <div class="col-12 col-md-6 ps-0 py-2 my-2">
-              <form id="search-form" class="max-width-350px" action="">
+              <form id="search-form" class="max-width-350px">
                 <div class="input-group">
-                  <input type="search" id="search-form-input" class="form-control rounded" placeholder="Search for..." aria-label="Search" aria-describedby="search-addon" />
+                  <input type="search" id="search-form-input" class="form-control rounded" placeholder="Search for..." aria-label="Search field" />
                   <a href="" id="search-button" class="btn btn-dark" data-mdb-ripple-init>Search</a>
                 </div>
               </form>

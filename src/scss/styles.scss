@@ -145,6 +145,14 @@ html * {
   height: 350px;
 }
 
+.listings-container {
+  min-height: 502px;
+}
+
+.listings-container .card-body {
+  min-height: 152px;
+}
+
 // Image gallery
 
 .image-gallery {

@@ -1,18 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="dist/css/styles.css" />
-    <script src="/node_modules/bootstrap/dist/css/"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"/>
+      rel="stylesheet">
     <script src="https://kit.fontawesome.com/99f531cd0d.js"
       crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
-      rel="stylesheet"/>
+      rel="stylesheet">
     <script type="module" src="/src/js/index.js"></script>
     <script type="module" src="/src/js/nav/index.js"></script>
     <script type="module" src="/src/js/nav/header.js"></script>
@@ -24,9 +23,8 @@
     <script type="module" src="/src/js/user/login.js"></script>
     <script type="module" src="/src/js/user/frontpageListings.js"></script>
     <script type="module" src="/src/js/user/createListing.js"></script>
-
     <meta name="description"
-      content="Frontpage for Get Rid of it auction house"/>
+      content="Frontpage for Get Rid of it auction house">
     <title>Get Rid of it - Frontpage</title>
   </head>
   <body class="main-color-light">
@@ -36,21 +34,19 @@
           <picture>
             <source
               media="(min-width: 576px)"
-              srcset="./assets/img/frontpage-hero-1-1920.jpg"
-            />
+              srcset="./assets/img/frontpage-hero-1-1920.jpg" width=1250 height=500>
             <img
               class="object-fit-img"
               src="./assets/img/frontpage-hero-1-640.jpg"
-              alt="Website logo"
-            />
+              alt="Image of a collection of shoes" width="464" height="350">
           </picture>
         </div>
         <div class="hero-banner-text w-100 py-5">
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-5 col-lg-4 col-xl-3 text-start">
-                <h1 class="font-source-serif-4 fs-1-5rem-md-2-5rem">
-                  International auction house for you to get rid of your crap
+                <h1 class="font-source-serif-4">
+                  International auction house for you to get rid of your garbage
                 </h1>
                 <div class="pt-3 pb-md-3">
                   <a class="btn btn-outline-dark" href="/auctions/index.html"
@@ -65,30 +61,28 @@
       <section class="pt-5">
         <div class="container">
           <div class="row fs-1rem-lg-1-25rem">
-            <div class="col-4 col-md-1 text-nowrap">
+            <div class="col-4 col-md-2 col-xl-1 text-nowrap">
               <div id="frontpage-auctions-last-chance" class="active-underlined">
               <a class="text-decoration-none" href="">Last chance</a>
             </div>
             </div>
             <div class="ps-md-5 col-4 col-md-1 text-nowrap">
               <div id="frontpage-auctions-just-started">
-              <a id="frontpage-auctions-just-started" class="text-decoration-none" href="">Just started</a>
+              <a id="frontpage-auctions-just-started-button" class="text-decoration-none" href="">Just started</a>
             </div>
             </div>
           </div>
           <div class="text-center py-3">
             <div class="auctions-loader fs-1-25rem-md-1-5-rem pt-5"></div>
           </div>
-          <div id="last-chance-frontpage" class="row py-5 g-0">
+          <div id="last-chance-frontpage" class="row py-5">
           </div>
-          <div id="just-started-frontpage" class="row py-5 d-none"></div>
           <div class="text-end pb-5">
             <a class="ms-auto fs-1rem-lg-1-25rem" href="/auctions/index.html"
               >See all auctions</a
             >
             </div>
           </div>
-        </div>
       </section>
     </main>
   </body>

@@ -10,7 +10,7 @@ async function profileDataAdd() {
     console.log(profileInfoContent);
 
     profileImage.innerHTML = `
-                <img class="object-fit-img border-radius-round profile-image" src="${profileInfoContent.data.avatar.url}" aria-label="Profile picture with link to editing profile" />
+                <img class="object-fit-img border-radius-round profile-image" src="${profileInfoContent.data.avatar.url}" aria-label="Profile picture" width="200" height="200"/>
     `;
 
     profileContent.innerHTML = `
