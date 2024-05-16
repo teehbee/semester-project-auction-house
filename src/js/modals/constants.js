@@ -27,16 +27,6 @@ export const closeListingModal = document.querySelector(
   "#close-listing-dialog",
 );
 
-// Categories
-
-export const categoriesModal = document.querySelector("#categories-dialog");
-export const openCategoriesModal = document.querySelector(
-  "#open-categories-modal",
-);
-export const closeCategoriesModal = document.querySelector(
-  "#close-category-dialog",
-);
-
 // Edit profile
 
 export const profileModal = document.querySelector("#profile-edit-dialog");

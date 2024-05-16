@@ -18,6 +18,8 @@ const apiKey = localStorage.getItem("apiKey");
 
 export const allListings = "/auction/listings";
 
+export const bids = "/bids";
+
 export const headers = {
   headers: {
     Authorization: `Bearer ${accessToken}`,

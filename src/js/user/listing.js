@@ -1,5 +1,6 @@
 import { getSpecificListing } from "../api/ListingFetch.js";
 import { calculateCountdown } from "../listings/countdown.js";
+import { placeBidOnListing } from "../api/fetchBid.js";
 
 const listingContainer = document.querySelector("#listing-container");
 
@@ -37,6 +38,24 @@ async function singleListing() {
       <p class=ms-auto>${daysLeft} days ${hoursLeft} hours ${minutesLeft} minutes ${secondsLeft} seconds</p>
     `;
 
+    // Bidding history
+
+    singleListing.bids.sort((a, b) => b.amount - a.amount);
+
+    let biddingHistoryHTML = "";
+    if (hasBids) {
+      biddingHistoryHTML += '<div class="accordion-body text-start">';
+      singleListing.bids.forEach((bid) => {
+        biddingHistoryHTML += `
+          <p><span>${bid.bidder.name} - ${bid.amount} credits</span></p>
+        `;
+      });
+      biddingHistoryHTML += "</div>";
+    } else {
+      biddingHistoryHTML +=
+        '<div class="accordion-body text-start"><p>No bids yet</p></div>';
+    }
+
     listingContainer.innerHTML = `
     <div class="container">
     <div class="listing-title text-center pt-3 pt-md-5 pb-md-3">
@@ -62,20 +81,25 @@ async function singleListing() {
         <div id="time-remaining-container" class="text-end fs-0-75rem">
           <p>End time: ${formattedTime}</p>
         </div>
-          <form id="place-bid" action="" class="d-md-flex">
+          <form id="place-bid" class="d-md-flex">
             <div id="place-bidding-container" class="row ms-auto"></div>
             <div class="col-12 col-md-5 my-2">
-              <input type="number" id="bid-amount" class="form-control text-center text-md-start" placeholder="Your bid" />
+              <input type="number" id="bid-amount" class="form-control text-center text-md-start" placeholder="Your bid"/>
             </div>
             <div class="col-12 col-md-4 col-lg-3 my-2 ms-md-2">
-              <a href="#" id="bid-submit" class="btn btn-dark w-100">Place bid</a>
+              <a=href="" id="bid-submit" class="btn btn-dark w-100">Place bid</a>
             </div>
           </form>
-           <div id="bid-error"
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * You are too poor *sad trumpet music*
-            </div>
+            <div id="bid-error"
+            class="form-error fs-0-625rem text-end text-danger d-none"
+          >
+            * Your bid must be higher than the current bid*
+          </div>
+            <div id="bid-success"
+            class="text-center text-md-end d-none"
+          >
+            Bid is placed. Good luck!
+          </div>
           <div class="accordion accordion-flush py-3" id="accordionFlushExample">
             <div class="accordion-item my-3">
               <h2 class="accordion-header" id="flush-headingOne">
@@ -88,7 +112,7 @@ async function singleListing() {
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
+            <div class="accordion-item my-3">
               <h2 class="accordion-header" id="flush-headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                   Specifics
@@ -98,11 +122,57 @@ async function singleListing() {
                 <div class="accordion-body text-start"><p>Seller: <span id="seller-name-accordian">${singleListing.seller.name}</span></p></div>
               </div>
             </div>
+            <div class="accordion-item my-3">
+            <h2 class="accordion-header" id="flush-headingTree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTree" aria-expanded="false" aria-controls="flush-collapseTree">
+                Bidding history
+              </button>
+            </h2>
+            <div id="flush-collapseTree" class="bidding-history-container accordion-collapse collapse" aria-labelledby="flush-headingTree" data-bs-parent="#accordionFlushExample">
+              ${biddingHistoryHTML}
+            </div>
+          </div>
           </div>
         </div>
       </div>
     </div>
     `;
+
+    // Bidding functionality
+
+    const bidInput = document.querySelector("#bid-amount");
+    const bidConfirmation = document.querySelector("#bid-success");
+    const bidSubmit = document.querySelector("#bid-submit");
+    const bidTooLow = document.querySelector("#bid-error");
+
+    bidSubmit.addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      if (!bidInput.valueAsNumber) {
+        console.error("Bid amount cannot be empty");
+        return;
+      }
+
+      const bidAmount = bidInput.valueAsNumber; // Assuming bidInput is a number input
+
+      const result = await placeBidOnListing(bidAmount);
+      console.log(result);
+
+      // Update bidConfirmation visibility based on the result
+      if (!result.error) {
+        // Adjust 'success' based on your API's response structure
+        bidConfirmation.classList.remove("d-none");
+
+        // Set a timeout to reload the page after 5 seconds
+        setTimeout(function () {
+          location.reload();
+        }, 5000);
+      } else {
+        bidTooLow.classList.remove("d-none");
+        console.error("Bidding failed:", result.message);
+        // Optionally, show an error message or handle the failure differently
+      }
+    });
 
     // Attach eventlistener for opening image gallery modal
 

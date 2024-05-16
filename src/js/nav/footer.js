@@ -5,11 +5,8 @@ footer.innerHTML = `
 <div class="container text-start text-md-center py-2 py-md-3 pt-md-5">
   <a class="navbar-brand" href="/index.html">
     <picture>
-      <source
-        media="(min-width: 768px)"
-        srcset="/assets/logo/logo-large-white.svg"
-      />
-      <img src="/assets/logo/logo-small-white.svg" alt="Website logo" />
+      <source media="(min-width: 768px)" srcset="/assets/logo/logo-large-white.svg" width="249" height="69"/>
+      <img src="/assets/logo/logo-small-white.svg" alt="Website logo" width="131" height="40"/>
     </picture>
   </a>
   <div class="pt-2 pt-md-3 fw-light fs-1rem-lg-1-25rem">
