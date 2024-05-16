@@ -38,6 +38,24 @@ async function singleListing() {
       <p class=ms-auto>${daysLeft} days ${hoursLeft} hours ${minutesLeft} minutes ${secondsLeft} seconds</p>
     `;
 
+    // Bidding history
+
+    singleListing.bids.sort((a, b) => b.amount - a.amount);
+
+    let biddingHistoryHTML = "";
+    if (hasBids) {
+      biddingHistoryHTML += '<div class="accordion-body text-start">';
+      singleListing.bids.forEach((bid) => {
+        biddingHistoryHTML += `
+          <p><span>${bid.bidder.name} - ${bid.amount} credits</span></p>
+        `;
+      });
+      biddingHistoryHTML += "</div>";
+    } else {
+      biddingHistoryHTML +=
+        '<div class="accordion-body text-start"><p>No bids yet</p></div>';
+    }
+
     listingContainer.innerHTML = `
     <div class="container">
     <div class="listing-title text-center pt-3 pt-md-5 pb-md-3">
@@ -94,7 +112,7 @@ async function singleListing() {
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
+            <div class="accordion-item my-3">
               <h2 class="accordion-header" id="flush-headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                   Specifics
@@ -104,6 +122,16 @@ async function singleListing() {
                 <div class="accordion-body text-start"><p>Seller: <span id="seller-name-accordian">${singleListing.seller.name}</span></p></div>
               </div>
             </div>
+            <div class="accordion-item my-3">
+            <h2 class="accordion-header" id="flush-headingTree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTree" aria-expanded="false" aria-controls="flush-collapseTree">
+                Bidding history
+              </button>
+            </h2>
+            <div id="flush-collapseTree" class="bidding-history-container accordion-collapse collapse" aria-labelledby="flush-headingTree" data-bs-parent="#accordionFlushExample">
+              ${biddingHistoryHTML}
+            </div>
+          </div>
           </div>
         </div>
       </div>
