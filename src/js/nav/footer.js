@@ -13,7 +13,7 @@ footer.innerHTML = `
     <p class="light-font pt-2 pt-md-3">
       The shabbiest auction house there is. Since 2024.
     </p>
-    <p class="light-font pt-2 pt-md-3">Adress goes here</p>
+    <p class="light-font pt-2 pt-md-3">This, That & The Other Street, Nova Scotia, Canada</p>
   </div>
   <div>
     <ul
