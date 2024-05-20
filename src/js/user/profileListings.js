@@ -1,13 +1,9 @@
 import { getProfileData } from "../api/profileFetch.js";
 import { calculateCountdown } from "../listings/countdown.js";
 
-// const showOwnListings = document.querySelector("#profile-show-your-listings");
-// const showOwnWins = document.querySelector("#profile-show-your-wins");
-
 const ownListingsContainer = document.querySelector(
   "#profile-your-listings-row",
 );
-// const ownWinsContainer = document.querySelector("#profile-your-wins-row");
 const profileListingsLoader = document.querySelector(
   "#profile-listings-loader",
 );
