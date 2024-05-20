@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/99f531cd0d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="module" src="/src/js/index.js"></script>
+    <script type="module" src="/src/js/nav/index.js"></script>
+    <script type="module" src="/src/js/nav/nav.js"></script>
+    <script type="module" src="/src/js/nav/openNav.js"></script>
+    <script type="module" src="/src/js/nav/closeNav.js"></script>
+    <script type="module" src="/src/js/modals/modalHandling.js"></script>
+    <script type="module" src="/src/js/user/register.js"></script>
+    <script type="module" src="/src/js/user/login.js"></script>
+    <script type="module" src="/src/js/user/listing.js"></script>
+    <meta name="description" content="Listings page" />
+    <title>Get Rid of it - Some auction</title>
+  </head>
+  <body class="main-color-light">
+    <main>
+      <dialog id="image-gallery-dialog">
+        <div id="close-image-dialog" class="position-absolute p-1 p-md-3 cursor-pointer">
+          <picture>
+            <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" />
+            <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close registration form" />
+          </picture>
+        </div>
+        <div class="main-color-white w-100 modal-image-container">
+          <div class="gallery-image-in-modal p-4 p-md-5 text-center">
+          
+          </div>
+        </div>
+        <div class="d-none d-md-block">
+          <span id="image-gallery-previous" class="image-gallery-arrow image-gallery-arrow-left">&#60;</span>
+          <span id="image-gallery-next" class="image-gallery-arrow image-gallery-arrow-right">&#62;</span>
+        </div>
+      </dialog>
+      <section id="listing-container" class="main-color-white pb-5">
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/99f531cd0d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet" />
+    <script type="module" src="/src/js/index.js"></script>
+    <script type="module" src="/src/js/nav/index.js"></script>
+    <script type="module" src="/src/js/nav/nav.js"></script>
+    <script type="module" src="/src/js/nav/openNav.js"></script>
+    <script type="module" src="/src/js/nav/closeNav.js"></script>
+    <script type="module" src="/src/js/modals/modalHandling.js"></script>
+    <script type="module" src="/src/js/modals/profileModals.js"></script>
+    <script type="module" src="/src/js/user/profileData.js"></script>
+    <script type="module" src="/src/js/user/updateProfile.js"></script>
+    <script type="module" src="/src/js/user/profileListings.js"></script>
+    <meta name="description" content="Your profile page" />
+    <title>Get Rid of it - Profile</title>
+  </head>
+  <body class="main-color-light">
+      <dialog id="profile-edit-dialog" class="main-color-dark">
+      <div class="dialog-top-banner d-block d-md-none"></div>
+      <div class="main-color-white w-100">
+        <div class="container text-center py-5 main-color-white">
+          <div id="close-profile-edit-dialog" class="position-absolute p-3 cursor-pointer">
+            <picture>
+              <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" width="28" height="28"/>
+              <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close registration form" width="17" height="17" alt=""/>
+            </picture>
+          </div>
+          <div>
+            <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">Update profile</h2>
+          </div>
+          <div class="row mx-auto">
+            <form id="avatar-url-input" class="form-width-dialog mx-auto">
+            <div class="my-3 text-start">
+            <input type="text" class="form-control" id="avatar-url" aria-label="field for entering profile image url">
+               <label for="avatar-url" class="form-label fs-0-75rem mb-2"
+              >Enter url to update avatar</label
+            >
+            </div>
+            <div id="url-form-error"
+              class="form-error fs-0-625rem text-end text-danger d-none"
+            >
+              * Must be a valid url address
+            </div>
+            <a href="" id="submit-profile-update" class="profile-button btn btn-dark mt-5">Update profile</a>
+            </form>
+        </div>
+      </div>
+    </dialog>
+    <main>
+      <section id="profile-banner">
+        <div class="container-fluid w-100 main-color-white">
+          <div id="profile-content" class="container">
+            <div class="text-center py-3">
+            <h1 class="font-source-serif-4 fs-1-5rem-lg-2-25rem">Profile</h1>
+            </div>
+            <div class="row py-4 py-md-5">
+              <div id="profile-image" class="col-4 col-md-4 position-relative">
+              </div>
+              <div id="profile-data" class="col-6 col-md-3 col-lg-2 pt-xl-2 ps-4">
+            </div>
+            <div class="col-12 col-md-3 col-lg-2 ms-auto">
+              <div class="text-center">
+                 <a href="" class="profile-button open-listing-dialog btn btn-dark mt-3">Post listing</a>
+                  <a href="" class="profile-button open-profile-edit-dialog btn white-button mt-3 border 1px">Edit profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="profile-listings">
+        <div class="container">
+          <div class="text-center">
+            <p class="fs-1rem-lg-1-25rem pt-3 pt-md-5 fw-regular">Your listings</p>
+          </div>
+          <div class="text-center py-3">
+            <p id="no-auctions-placeholder" class="fs-1-25rem pt-5 d-none">Nothing to show here</p>
+            <div id="profile-listings-loader" class="auctions-loader fs-1-25rem-md-1-5-rem pt-5 d-none"></div>
+          </div>
+        <div id="profile-your-listings-row" class="row py-5 gy-4">
+        </div>
+        <div id="profile-your-wins-row" class="row py-5 gy-4 d-none overflow-auto flex-nowrap flex-md-wrap"> 
+        </div>
+        </div>
+        </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
