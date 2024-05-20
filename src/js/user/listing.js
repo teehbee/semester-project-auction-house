@@ -79,7 +79,7 @@ async function singleListing() {
         <div id="time-remaining-container" class="text-end fs-0-75rem">
           <p>End time: ${formattedTime}</p>
         </div>
-          <div id="bid-container-main" class="">
+          <div id="bid-container-main" class="d-none">
           <form id="place-bid" class="d-md-flex">
             <div id="place-bidding-container" class="row ms-auto"></div>
             <div class="col-12 col-md-5 my-2">
@@ -137,6 +137,14 @@ async function singleListing() {
       </div>
     </div>
     `;
+
+    const biddingContainer = document.querySelector("#bid-container-main");
+
+    if (document.body.classList.contains("logged-in")) {
+      biddingContainer.classList.remove("d-none");
+    } else {
+      biddingContainer.classList.add("d-none");
+    }
 
     // Bidding functionality and error handling
 
