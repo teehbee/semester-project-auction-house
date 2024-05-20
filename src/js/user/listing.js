@@ -175,7 +175,6 @@ async function singleListing() {
           bidTooLow.classList.remove("d-none");
         }
       } catch (error) {
-        bidTooLow.classList.remove("d-none");
         console.log(error);
       }
     });

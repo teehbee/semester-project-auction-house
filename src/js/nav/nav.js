@@ -357,7 +357,7 @@ header.innerHTML = `
 
 document.body.prepend(header);
 
-// Footer element
+// Footer
 
 const footer = document.createElement("footer");
 

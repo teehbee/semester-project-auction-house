@@ -34,7 +34,6 @@ function displaySpecificListings(sortOrder) {
     .catch((error) => console.error("Error fetching listings:", error));
 }
 
-// Display the first four listings in ascending order when the page loads
 displaySpecificListings("asc");
 
 // Changing sorting order for showing the last four listings

@@ -29,8 +29,6 @@ import { apiBaseUrl, register } from "../api/constants.js";
 
 import { registerUser } from "../api/registerUser.js";
 
-/* --- */
-
 function validateRegisterForm(event) {
   event.preventDefault();
 

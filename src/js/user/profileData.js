@@ -7,8 +7,6 @@ async function profileDataAdd() {
   try {
     const profileInfoContent = await getProfileData();
 
-    console.log(profileInfoContent);
-
     profileImage.innerHTML = `
                 <img class="object-fit-img border-radius-round profile-image" src="${profileInfoContent.data.avatar.url}" aria-label="Profile picture" width="200" height="200"/>
     `;
