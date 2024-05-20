@@ -24,7 +24,6 @@ async function fetchAllListings() {
     );
     allListings = [...allListings, ...listings.data]; // Append new listings to allListings
     displayListings();
-    console.log(allListings);
   } catch (error) {
     console.error("Error fetching listings:", error);
   }
@@ -60,16 +59,6 @@ function displayListings(input) {
 
   listingsMainContainer.innerHTML = listingsHTML;
 }
-
-// Toggle visibility of load more button
-// function toggleLoadMoreButtonVisibility() {
-//   loadMoreListingsButton.classList.toggle(
-//     "d-none",
-//     allListings.length <= currentPage * listingsPerPage,
-//   );
-// }
-
-// Eventlistener for adding more posts
 
 loadMoreListingsButton.addEventListener("click", async () => {
   currentPage++;

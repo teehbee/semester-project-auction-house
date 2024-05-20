@@ -8,8 +8,6 @@ async function singleListing() {
   try {
     const singleListing = await getSpecificListing();
 
-    console.log(singleListing);
-
     // Checking if bids are present. If not "no bids yet" is displayed
 
     const hasBids = singleListing.bids && singleListing.bids.length > 0;
@@ -81,6 +79,7 @@ async function singleListing() {
         <div id="time-remaining-container" class="text-end fs-0-75rem">
           <p>End time: ${formattedTime}</p>
         </div>
+          <div id="bid-container-main" class="d-none">
           <form id="place-bid" class="d-md-flex">
             <div id="place-bidding-container" class="row ms-auto"></div>
             <div class="col-12 col-md-5 my-2">
@@ -90,6 +89,7 @@ async function singleListing() {
               <a=href="" id="bid-submit" class="btn btn-dark w-100">Place bid</a>
             </div>
           </form>
+          </div>
             <div id="bid-error"
             class="form-error fs-0-625rem text-end text-danger d-none"
           >
@@ -138,7 +138,15 @@ async function singleListing() {
     </div>
     `;
 
-    // Bidding functionality
+    const biddingContainer = document.querySelector("#bid-container-main");
+
+    if (document.body.classList.contains("logged-in")) {
+      biddingContainer.classList.remove("d-none");
+    } else {
+      biddingContainer.classList.add("d-none");
+    }
+
+    // Bidding functionality and error handling
 
     const bidInput = document.querySelector("#bid-amount");
     const bidConfirmation = document.querySelector("#bid-success");
@@ -149,28 +157,25 @@ async function singleListing() {
       event.preventDefault();
 
       if (!bidInput.valueAsNumber) {
-        console.error("Bid amount cannot be empty");
+        bidTooLow.classList.remove("d-none");
         return;
+      } else {
+        bidTooLow.classList.add("d-none");
       }
 
-      const bidAmount = bidInput.valueAsNumber; // Assuming bidInput is a number input
+      const bidAmount = bidInput.valueAsNumber;
 
-      const result = await placeBidOnListing(bidAmount);
-      console.log(result);
+      try {
+        const result = await placeBidOnListing(bidAmount);
 
-      // Update bidConfirmation visibility based on the result
-      if (!result.error) {
-        // Adjust 'success' based on your API's response structure
-        bidConfirmation.classList.remove("d-none");
-
-        // Set a timeout to reload the page after 5 seconds
-        setTimeout(function () {
-          location.reload();
-        }, 5000);
-      } else {
-        bidTooLow.classList.remove("d-none");
-        console.error("Bidding failed:", result.message);
-        // Optionally, show an error message or handle the failure differently
+        if (!result.error) {
+          bidConfirmation.classList.remove("d-none");
+          setTimeout(() => location.reload(), 5000);
+        } else {
+          bidTooLow.classList.remove("d-none");
+        }
+      } catch (error) {
+        console.log(error);
       }
     });
 
@@ -263,5 +268,3 @@ async function singleListing() {
 }
 
 singleListing();
-
-// Modal handling for image gallery

@@ -20,8 +20,6 @@ async function fetchAndDisplayProfileListings() {
 
     const listings = getProfileListings.data.listings;
 
-    console.log(listings);
-
     ownListingsContainer.innerHTML = "";
 
     if (listings.length === 0) {

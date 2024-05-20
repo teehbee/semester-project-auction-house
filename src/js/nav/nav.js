@@ -1,3 +1,5 @@
+// Header
+
 const header = document.createElement("header");
 
 header.innerHTML = `
@@ -8,39 +10,30 @@ header.innerHTML = `
       <div class="left-icon col-2 align d-flex align-items-center">
         <a class="d-block d-lg-none" id="hamburger-icon" href="#"
           ><img src="/assets/logo/bars-dark.svg"
-        /></a>
-        <a class="search-icon nav-link d-none d-lg-block" href="#"
-          ><img src="/assets/logo/search-32px-dark.svg"
-        /></a>
+        aria-label="menu icon" width="31" height="33"/></a>
       </div>
       <div class="col-8 logo-container">
         <a class="navbar-brand" href="/index.html">
           <picture>
-            <source
-              media="(min-width: 576px)"
-              srcset="/assets/logo/logo-large.svg"
-            />
-            <img src="/assets/logo/logo-small.svg" alt="Website logo" />
+            <source media="(min-width: 576px)" srcset="/assets/logo/logo-large.svg" width="249" height="69"/>
+            <img src="/assets/logo/logo-small.svg" alt="Website logo" width="131" height="40"/>
           </picture>
         </a>
       </div>
       <div
-        class="col-2 right-icons d-flex align-items-center justify-content-end"
-      >
+        class="col-2 right-icons d-flex align-items-center justify-content-end">
         <a href="" class="pe-3 open-login-modal">
-          <img src="/assets/logo/user-32px-dark.svg" />
+          <img src="/assets/logo/user-32px-dark.svg" aria-label="profile icon" width="32" height="32"/>
         </a>
-        <a id="profile-icon-header" href="" class="d-none d-lg-block">
-          <img src="/assets/logo/logo-logout-dark-32px.svg" />
+        <a href="#" class="logout-icon d-none d-lg-block">
+          <img src="/assets/logo/logo-logout-dark-32px.svg" aria-label="logout icon" width="32" height="32"/>
         </a>
       </div>
     </div>
   </div>
   <div class="container-fluid p-0">
     <div class="nav-links menu-change w-100">
-      <ul
-        ul
-        id="nav-icons"
+      <ul id="nav-icons"
         class="d-flex d-block d-lg-none list-style-off light-icons ps-0 pb-3 border-bottom"
       >
         <li class="me-auto">
@@ -49,22 +42,17 @@ header.innerHTML = `
             id="close-menu"
             href="#"
             ><img src="/assets/logo/logo-close-light.svg"
-          /></a>
-        </li>
-        <li class="ms-auto ps-3">
-          <a class="d-block d-lg-none search-icon" href="#"
-            ><img src="/assets/logo/logo-search-light.svg"
-          /></a>
+           width="41" height="41"/></a>
         </li>
         <li class="ps-3">
-          <a class="d-block d-lg-none open-login-modal" href=""
-            ><img src="/assets/logo/logo-user-light.svg"
-          /></a>
+          <a class="d-block d-lg-none open-login-modal" href="#"
+            ><img src="/assets/logo/logo-user-light.svg" aria-label="login icon"
+          width="28" height="28"/></a>
         </li>
         <li class="ps-3">
-          <a class="d-block d-lg-none" href="#"
+          <a class="logout-icon d-block d-lg-none" href="#"
             ><img src="/assets/logo/logo-logout-light-28px.svg"
-          /></a>
+          aria-label="logout icon" alt="" width="28" height="28"/></a>
         </li>
       </ul>
       <ul
@@ -77,18 +65,11 @@ header.innerHTML = `
             >Live Auctions</a
           >
         </li>
-        <li class="open-listing-dialog">
+        <li class="open-listing-dialog hidden-not-logged-in d-none">
           <a
             class="fs-2-rem-lg-1-25rem font-change-menu font-change-color"
             href="#"
             >Sell Items</a
-          >
-        </li>
-        <li>
-          <a
-            class="fs-2-rem-lg-1-25rem font-change-menu font-change-color"
-            href="#"
-            >Contact Us</a
           >
         </li>
         <li class="open-register-modal hidden-when-logged-in">
@@ -110,14 +91,8 @@ header.innerHTML = `
       <div class="container text-center py-5 main-color-white">
         <div id="close-login-dialog" class="position-absolute p-3">
           <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="/assets/logo/icon-close-dark-32px.svg"
-            />
-            <img
-              src="/assets/logo/icon-close-dark-28px.svg"
-              aria-label="close login form"
-            />
+            <source media="(min-width: 768px)" srcset="/assets/logo/icon-close-dark-32px.svg" width="32" height="32"/>
+            <img src="/assets/logo/icon-close-dark-28px.svg" aria-label="close login form" width="28" height="28"/>
           </picture>
         </div>
         <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">Log in</h2>
@@ -127,7 +102,7 @@ header.innerHTML = `
               >Email address</label
             >
             <input type="email" class="form-control" id="login-email" />
-            <div
+            <div id="login-email-error"
               class="form-error fs-0-625rem text-end text-danger d-none"
             >
               * Please check if this field is filled out correctly
@@ -142,14 +117,14 @@ header.innerHTML = `
               class="form-control"
               id="login-password"
             />
-            <div
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * Please check if this field is filled out correctly
-            </div>
           </div>
-          <a href="" class="btn btn-dark mt-3">Log in</a>
-          <div
+          <input type="submit" value="Log in" class="btn btn-dark mt-4 w-100">
+          <div id="login-error"
+              class="form-error fs-0-75rem pt-3 text-danger d-none"
+            >
+              Username or password is incorrect
+            </div>
+          <div id="login-spinner"
             class="spinner-border text-secondary mt-4 d-none"
             role="status"
           >
@@ -177,12 +152,10 @@ header.innerHTML = `
           <picture>
             <source
               media="(min-width: 768px)"
-              srcset="/assets/logo/icon-close-dark-32px.svg"
-            />
+              srcset="/assets/logo/icon-close-dark-32px.svg" width="32" height="32"/>
             <img
               src="/assets/logo/icon-close-dark-28px.svg"
-              aria-label="close registration form"
-            />
+              aria-label="close registration form" width="28" height="28"/>
           </picture>
         </div>
         <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">
@@ -241,7 +214,7 @@ header.innerHTML = `
             <input
               type="password"
               class="form-control"
-              id="login-password-confirm"
+              id="register-password-confirm"
             />
             <div id="registration-password-repeat-error"
               class="form-error fs-0-625rem text-end text-danger d-none"
@@ -255,7 +228,7 @@ header.innerHTML = `
                 class="form-check-input form-checkbox me-3"
                 type="checkbox"
                 value=""
-                id="register-confirm"
+                id="register-confirm" aria-label="checkbox for confirming registration"
               />
               <label
                 class="form-check-label fs-0-625rem text-start"
@@ -265,11 +238,18 @@ header.innerHTML = `
                 our Terms and Conditions.
               </label>
             </div>
-            <input type="submit" value="Create profile" class="btn btn-dark mt-3">
+            <div>
+            <input type="submit" value="Create profile" class="btn btn-dark mt-4 w-100">
+            </div>
           <div id="registration-terms-error"
           class="form-error fs-0-625rem text-end text-danger pt-2 d-none"
         >
           * Please agree to the terms and conditions, if not, we cannot let you in.
+        </div>
+        <div id="registration-error"
+          class="form-error fs-0-75rem text-danger pt-3 d-none"
+        >
+          Something went wrong. Please try again. 
         </div>
           <div id="registration-spinner"
             class="spinner-border text-secondary mt-4 d-none"
@@ -281,44 +261,16 @@ header.innerHTML = `
       </div>
     </div>
   </dialog>
-  <dialog id="search-dialog" class="main-color-white">
+  <dialog id="success-dialog" class="main-color-dark">
     <div class="main-color-white w-100">
-      <div class="container text-center py-5 main-color-white">
-        <div id="close-search-dialog" class="position-absolute p-3">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="/assets/logo/icon-close-dark-32px.svg"
-            />
-            <img
-              src="/assets/logo/icon-close-dark-28px.svg"
-              aria-label="close registration form"
-            />
-          </picture>
-        </div>
-        <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">Search</h2>
-        <form
-          id="search-form"
-          class="form-width-dialog mx-auto pt-5"
-          action=""
-        >
-          <div class="input-group">
-            <input
-              type="search"
-              class="form-control rounded"
-              placeholder="Search listings"
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-            <button
-              type="button"
-              class="btn btn-dark"
-              data-mdb-ripple-init
-            >
-              <img src="/assets/logo/logo-search-light.svg" />
-            </button>
-          </div>
-        </form>
+      <div class="container text-center py-5">
+        <h2 class="dialog-title fs-2-rem-md-2-5rem pb-3">
+          SUCCESS
+        </h2>
+        <div class="max-width-350px mx-auto">
+        <p class="pt-5 fs-1-25rem-md-1-5-rem">Congratulations, your account has been successfully created.</p>
+        <a href="#" id="success-dialog-continue" class="btn btn-dark w-100 mt-5">Continue</a>
+        </div> 
       </div>
     </div>
   </dialog>
@@ -330,11 +282,11 @@ header.innerHTML = `
           <picture class="cursor-pointer">
             <source
               media="(min-width: 768px)"
-              srcset="/assets/logo/icon-close-dark-32px.svg"
+              srcset="/assets/logo/icon-close-dark-32px.svg" width="32" height="32"
             />
             <img
               src="/assets/logo/icon-close-dark-28px.svg"
-              aria-label="close registration form"
+              aria-label="close registration form" width="28" height="28"
             />
           </picture>
         </div>
@@ -342,95 +294,54 @@ header.innerHTML = `
           Create listing
         </h2>
         <form
-          id="listing-form"
-          class="form-width-dialog mx-auto"
-          action=""
-        >
+          id="listing-form" class="form-width-dialog mx-auto">
           <div class="mb-3 text-start">
             <label for="listing-title" class="form-label fs-0-75rem mb-2"
-              >Title</label
-            >
-            <input type="text" class="form-control" id="listing-title" />
-            <div
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
+              >Title</label>
+            <input type="text" class="form-control" id="listing-title" required/>
+            <div id="listing-form-error-title"
+              class="form-error fs-0-625rem text-end text-danger d-none">
               * Please check if this field is filled out correctly
             </div>
           </div>
           <div class="mb-3 text-start">
-            <label
-              for="listing-description"
-              class="form-label fs-0-75rem mb-2"
-              >Description</label
-            >
-            <textarea
-              class="form-control"
-              id="listing-description"
-              rows="5"
-            ></textarea>
-            <div
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * Please check if this field is filled out correctly
-            </div>
+            <label for="listing-description" class="form-label fs-0-75rem mb-2">
+            Description</label>
+            <textarea class="form-control" id="listing-description" rows="5" required></textarea>
+            <div id="listing-form-error-description"
+              class="form-error fs-0-625rem text-end text-danger d-none">* Please check if this field is filled out correctly</div>
           </div>
           <div class="mb-3 mx-auto text-start">
             <label for="listing-image" class="form-label fs-0-75rem mb-2"
-              >Image (url)</label
-            >
-            <input type="text" class="form-control" id="listing-image" />
-            <div
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * Must be a full valid url address
-            </div>
+              >Image-url (optional)</label>
+            <input type="text" class="form-control" id="listing-image"/>
+            <div id="image-form-error-description"
+              class="form-error fs-0-625rem text-end text-danger d-none">* Must be a full valid url address</div>
           </div>
           <div class="mb-3 mx-auto text-start">
-            <label for="listing-tags" class="form-label fs-0-75rem mb-2"
-              >Tags (separate by comma)</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="tags-entry"
-            />
+            <label for="listing-image-description" class="form-label fs-0-75rem mb-2"
+              >Image description (optional)</label>
+            <input type="text" class="form-control" id="listing-image-description"/>
           </div>
           <div class="mb-3 mx-auto text-start">
-            <label
-              for="listing-end-date"
-              class="form-label fs-0-75rem mb-2"
-              >End date</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="listing-end-date"
-            />
-            <div
-              class="form-error fs-0-625rem text-end text-danger d-none"
-            >
-              * Must be selected
-            </div>
+            <label for="listing-end-date" class="form-label fs-0-75rem mb-2">End date</label>
+            <input type="datetime-local" class="form-control" id="listing-end-date" value="2024-05-26T23:59" required/>
+            <div id="end-time-error-description" class="form-error fs-0-625rem text-end text-danger d-none">* Must be selected</div>
           </div>
           <div class="">
-            <div class="form-check d-flex">
-              <input
-                class="form-check-input form-checkbox me-3"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label
-                class="form-check-label fs-0-625rem text-start"
-                for="flexCheckDefault"
-              >
+          <div class="form-check d-flex">
+              <input class="form-check-input form-checkbox me-3" type="checkbox" value=""
+                id="confirm-listing-checkbox" required/>
+              <label class="form-check-label fs-0-625rem text-start" for="confirm-listing-checkbox">
                 By creating your user profile at Get rid of it, you accept
                 our Terms and Conditions.
               </label>
             </div>
+             <div id="confirm-listing-error" class="form-error fs-0-625rem text-end text-danger d-none">* Must be selected</div>
           </div>
-          <a href="" class="btn btn-dark mt-3">Create listing</a>
-          <div
+          <a href="" id="submit-listing" class="btn btn-dark mt-3">Create listing</a>
+          <p id="listing-success" class="pt-3 d-none">Listing was successfully posted. This window will close in a few seconds.</p>
+          <div id="listing-spinner"
             class="spinner-border text-secondary mt-4 d-none"
             role="status"
           >
@@ -445,3 +356,42 @@ header.innerHTML = `
 `;
 
 document.body.prepend(header);
+
+// Footer
+
+const footer = document.createElement("footer");
+
+footer.innerHTML = `
+<footer class="main-color-dark">
+<div class="container text-start text-md-center py-2 py-md-3 pt-md-5">
+  <a class="navbar-brand" href="/index.html">
+    <picture>
+      <source media="(min-width: 768px)" srcset="/assets/logo/logo-large-white.svg" width="249" height="69"/>
+      <img src="/assets/logo/logo-small-white.svg" alt="Website logo" width="131" height="40"/>
+    </picture>
+  </a>
+  <div class="pt-2 pt-md-3 fw-light fs-1rem-lg-1-25rem">
+    <p class="light-font pt-2 pt-md-3">
+      The shabbiest auction house there is. Since 2024.
+    </p>
+    <p class="light-font pt-2 pt-md-3">This, That & The Other Street, Nova Scotia, Canada</p>
+  </div>
+  <div>
+    <ul
+      class="footer-links py-2 py-md-3 px-0 fw-light fs-1rem-lg-1-25rem"
+    >
+      <li class="pt-2 pt-md-3">
+        <a class="light-font" href="/auctions/index.html"
+          >Live auctions</a
+        >
+      </li>
+      <li class="pt-2 pt-md-3 open-listing-dialog">
+        <a class="light-font" href="#">Sell items</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</footer>
+`;
+
+document.body.append(footer);

@@ -66,7 +66,6 @@ listingSubmission.addEventListener("click", async function (event) {
     listingSpinner.classList.remove("d-none");
 
     if (!responseData.error) {
-      console.log("Listing is up!");
       listingSpinner.classList.add("d-none");
       listingSuccessMessage.classList.remove("d-none");
       listingForm.reset();
@@ -76,7 +75,6 @@ listingSubmission.addEventListener("click", async function (event) {
       }, 5000);
     } else {
       listingSpinner.classList.add("d-none");
-      console.log("Failed to add listing:", responseData);
     }
   } catch (error) {
     console.log("Error adding listing:", error);

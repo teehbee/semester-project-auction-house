@@ -20,6 +20,5 @@ export async function fetchSearch(searchTerm) {
   } catch (error) {
     console.error("Error searching listings:", error);
     return [];
-    // Add error here when no search results
   }
 }

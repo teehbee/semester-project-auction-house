@@ -15,7 +15,7 @@ export async function placeBidOnListing(bidAmount) {
       body: JSON.stringify({ amount: bidAmount }),
     });
 
-    if (!response.ok || response.status !== 201) {
+    if (!response.ok) {
       throw new Error(`HTTP error status: ${response.status}`);
     }
 
@@ -23,5 +23,6 @@ export async function placeBidOnListing(bidAmount) {
     return result;
   } catch (error) {
     console.error("Error placing bid:", error);
+    throw error;
   }
 }
